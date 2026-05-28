@@ -21,6 +21,7 @@
       </a>
       <nav class="nav-links" aria-label="Site sections">
         <a href="#systems">Systems</a>
+        <a href="#recent">Recent</a>
         <a href="#principles">Principles</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -38,12 +39,13 @@
         />
 
         <div class="hero-copy">
-          <p class="system-line">based in Thessaloniki, Greece / GitHub since 2012 / 98 public repos</p>
+          <p class="system-line">Thessaloniki, Greece / GitHub since 2012 / 99 public repos / May 2026</p>
           <h1 id="hero-title">Spiros Raptis</h1>
-          <p class="headline">Agentic Systems Engineer / AI Systems Builder / Past Trading-System Work</p>
+          <p class="headline">Agentic Systems Engineer / Automation Workbench / Past Trading-System Work</p>
           <p class="intro">
-            I build open-source tools, automation, and AI workflows that are
-            inspectable, versioned, composable, and boring in the good way.
+            Lately I have been turning useful messes into durable small systems:
+            mentor-review automation, remote display guards, health trackers,
+            private media tools, and the occasional past-markets lab.
           </p>
           <div class="hero-actions" aria-label="Profile links">
             <a class="button button-primary" href="https://github.com/spirosrap">GitHub</a>
@@ -69,18 +71,65 @@ edge: measurable</code></pre>
       <section class="section section-split" aria-labelledby="now-title">
         <div>
           <p class="section-label">Now building</p>
-          <h2 id="now-title">Small systems that remove real friction.</h2>
+          <h2 id="now-title">Small systems that make the work visible.</h2>
         </div>
         <div class="copy-column">
           <p>
             My projects usually start as a script that solves one sharp problem:
             queue visibility, faster screenshots into Codex, private media playback,
-            historical markets snapshots, or a local dashboard that says what is actually true.
+            health snapshots, display recovery, or a local dashboard that says what
+            is actually true.
           </p>
           <p>
             The pattern is simple: expose the state, keep the workflow inspectable,
-            then earn the abstraction only when repeated use proves it belongs.
+            write the receipt, then earn the abstraction only when repeated use
+            proves it belongs.
           </p>
+        </div>
+      </section>
+
+      <section id="recent" class="section recent" aria-labelledby="recent-title">
+        <div class="section-heading">
+          <p class="section-label">Recent dispatches</p>
+          <h2 id="recent-title">Shipped work from the last few weeks.</h2>
+        </div>
+
+        <div class="recent-grid">
+          <article class="recent-card">
+            <span>May 2026</span>
+            <h3>agenticspiros.com went public</h3>
+            <p>Built the static site, wired DNS and HTTPS on the SecurityTech server, and published the source as a public repo.</p>
+            <a href="https://github.com/spirosrap/agenticspiros.com">Repo</a>
+          </article>
+          <article class="recent-card">
+            <span>May 2026</span>
+            <h3>Udacity automation got receipts</h3>
+            <p>Hardened review-flow tooling around post-submit cleanup, archive proof, stale dashboard state, and completion signals.</p>
+            <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension">Repo</a>
+          </article>
+          <article class="recent-card">
+            <span>May 2026</span>
+            <h3>Withings tracking moved native</h3>
+            <p>Started a native Android scale and sleep tracker, building around real sync paths instead of wishful dashboards.</p>
+            <a href="https://github.com/spirosrap/withings-scale-tracker-android">Repo</a>
+          </article>
+          <article class="recent-card">
+            <span>May 2026</span>
+            <h3>Plex got a quieter front door</h3>
+            <p>Published a self-hosted Plex web UI for private browser playback, remote access, and subtitle-heavy use.</p>
+            <a href="https://github.com/spirosrap/plex-open-web">Repo</a>
+          </article>
+          <article class="recent-card">
+            <span>May 2026</span>
+            <h3>Signals, runners, relays</h3>
+            <p>Opened a small signal-runner experiment and kept working on local relay patterns for voice, video, and browser workflows.</p>
+            <a href="https://github.com/spirosrap/devday-signal-runner">Repo</a>
+          </article>
+          <article class="recent-card">
+            <span>May 2026</span>
+            <h3>Remote machines got guardrails</h3>
+            <p>Turned a recurring display failure on a remote host into a boring systemd guard that checks the real state before touching it.</p>
+          </article>
         </div>
       </section>
 
@@ -93,10 +142,31 @@ edge: measurable</code></pre>
         <div class="project-list">
           <article class="project-card">
             <div>
-              <h3>coinbase-perps-lab</h3>
-              <p>Past Rust lab and local dashboard for inspecting Coinbase INTX perpetual positions.</p>
+              <h3>agenticspiros.com</h3>
+              <p>This site: plain HTML/CSS, public source, Plesk-hosted, with the small PageSpeed fix that kept the homepage honest.</p>
             </div>
-            <a href="https://github.com/spirosrap/coinbase-perps-lab">Repo</a>
+            <a href="https://github.com/spirosrap/agenticspiros.com">Repo</a>
+          </article>
+          <article class="project-card">
+            <div>
+              <h3>udacity-mentor-dashboard-extension</h3>
+              <p>Browser tooling for mentor workflows, daily totals, queue automation, and stale-state recovery.</p>
+            </div>
+            <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension">Repo</a>
+          </article>
+          <article class="project-card">
+            <div>
+              <h3>withings-scale-tracker-android</h3>
+              <p>Native Android tracker for weight and sleep signals, built around the real sync path.</p>
+            </div>
+            <a href="https://github.com/spirosrap/withings-scale-tracker-android">Repo</a>
+          </article>
+          <article class="project-card">
+            <div>
+              <h3>plex-open-web</h3>
+              <p>Self-hosted Plex web UI for private browser playback, subtitles, and remote access.</p>
+            </div>
+            <a href="https://github.com/spirosrap/plex-open-web">Repo</a>
           </article>
           <article class="project-card">
             <div>
@@ -107,31 +177,10 @@ edge: measurable</code></pre>
           </article>
           <article class="project-card">
             <div>
-              <h3>udacity-mentor-dashboard-extension</h3>
-              <p>Browser tooling for mentor workflows, daily totals, and queue automation.</p>
+              <h3>coinbase-perps-lab</h3>
+              <p>Past Rust lab and local dashboard for inspecting Coinbase INTX perpetual positions.</p>
             </div>
-            <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension">Repo</a>
-          </article>
-          <article class="project-card">
-            <div>
-              <h3>zt-report</h3>
-              <p>Shell reporting for ZeroTier member status, aliases, IPs, and visibility.</p>
-            </div>
-            <a href="https://github.com/spirosrap/zt-report">Repo</a>
-          </article>
-          <article class="project-card">
-            <div>
-              <h3>crypto-finance</h3>
-              <p>Past Python experiments around trading systems, research, and automation.</p>
-            </div>
-            <a href="https://github.com/spirosrap/crypto-finance">Repo</a>
-          </article>
-          <article class="project-card">
-            <div>
-              <h3>plex-open-web</h3>
-              <p>Self-hosted Plex web UI for private browser playback.</p>
-            </div>
-            <a href="https://github.com/spirosrap/plex-open-web">Repo</a>
+            <a href="https://github.com/spirosrap/coinbase-perps-lab">Repo</a>
           </article>
         </div>
       </section>
@@ -176,6 +225,9 @@ edge: measurable</code></pre>
           <span>tmux</span>
           <span>CLI tools</span>
           <span>Browser extensions</span>
+          <span>Android</span>
+          <span>Systemd timers</span>
+          <span>Private media</span>
           <span>LLM workflows</span>
           <span>Trading systems</span>
           <span>Local dashboards</span>
@@ -188,8 +240,8 @@ edge: measurable</code></pre>
           <h2 id="contact-title">Send the repo, the constraint, and the thing that keeps breaking.</h2>
           <p>
             I am most useful around practical open source, automation, agent workflows,
-            software with sharp enough edges to be worth improving, plus the occasional lesson
-            from past markets tooling.
+            remote-machine weirdness, health/media tools, and the occasional lesson from
+            past markets tooling.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://github.com/spirosrap">Open GitHub</a>

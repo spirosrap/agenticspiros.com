@@ -280,6 +280,7 @@ pre {
 
 .section {
   padding: 6rem max(1.25rem, calc((100vw - var(--max)) / 2));
+  scroll-margin-top: 6rem;
 }
 
 .section-split,
@@ -307,6 +308,65 @@ h2 {
 
 .copy-column p:last-child {
   margin-bottom: 0;
+}
+
+.recent {
+  border-top: 1px solid var(--line);
+}
+
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line-strong);
+  border: 1px solid var(--line-strong);
+}
+
+.recent-card {
+  min-height: 268px;
+  background:
+    linear-gradient(180deg, rgba(0, 167, 181, 0.1), transparent 42%),
+    var(--paper);
+  padding: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+.recent-card span {
+  display: block;
+  margin-bottom: 1.3rem;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.recent-card h3 {
+  max-width: 16rem;
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.05;
+}
+
+.recent-card p {
+  margin-bottom: 1.1rem;
+  color: #35403a;
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+.recent-card a {
+  display: inline-block;
+  border-bottom: 2px solid var(--green);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.84rem;
+  font-weight: 900;
+  padding-bottom: 0.18rem;
+}
+
+.recent-card a:hover,
+.recent-card a:focus-visible {
+  border-bottom-color: var(--cyan);
+  outline: none;
 }
 
 .systems {
@@ -502,12 +562,14 @@ h2 {
 
   .section-split,
   .toolchain,
+  .recent-grid,
   .project-list,
   .principle-list {
     grid-template-columns: 1fr;
   }
 
   .project-card,
+  .recent-card,
   .principle-list li {
     min-height: auto;
   }
