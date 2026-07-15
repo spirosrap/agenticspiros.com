@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Spiros Raptis builds local-first apps, agentic workflows, fleet monitoring, and practical open-source software."
+      content="Spiros Raptis builds local-first apps, inspectable agentic workflows, fleet tooling, and practical open-source systems."
+    />
+    <meta name="theme-color" content="#07110e" />
+    <meta property="og:title" content="Spiros Raptis - Agentic Systems Engineer" />
+    <meta
+      property="og:description"
+      content="Useful software for awkward real-world constraints."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agenticspiros.com/" />
+    <meta
+      property="og:image"
+      content="https://agenticspiros.com/assets/posokanei-compare.webp"
     />
     <title>Spiros Raptis - Agentic Systems Engineer</title>
     <link rel="icon" href="assets/spirosrap-avatar.jpg" />
-    <link rel="preload" as="image" href="assets/posokanei-hero.png" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=20260715-2" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/posokanei-compare.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260715-3" />
+    <script src="site.js?v=20260715-3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -20,7 +39,7 @@
         <span class="brand-mark" aria-hidden="true">SR</span>
         <span class="brand-copy">
           <strong>Spiros Raptis</strong>
-          <span>Agentic systems engineer</span>
+          <span>Systems engineer</span>
         </span>
       </a>
       <nav class="nav-links" aria-label="Site sections">
@@ -29,78 +48,92 @@
         <a href="#approach">Approach</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="header-link" href="https://github.com/spirosrap">GitHub</a>
     </header>
 
     <main id="main">
       <section id="top" class="hero" aria-labelledby="hero-title">
         <img
           class="hero-backdrop"
-          src="assets/posokanei-hero.png"
+          src="assets/posokanei-compare.webp"
           alt=""
-          width="1440"
-          height="900"
+          width="1280"
+          height="720"
           fetchpriority="high"
         />
         <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Thessaloniki / Building in public since 2012</p>
-          <h1 id="hero-title">Spiros Raptis</h1>
-          <p class="hero-role">Agentic systems engineer</p>
-          <p class="hero-intro">
-            I build useful software around real constraints: local-first apps,
-            inspectable automation, resilient infrastructure, and tools that show
-            their work.
-          </p>
-          <div class="hero-actions" aria-label="Profile links">
-            <a class="button button-primary" href="https://github.com/spirosrap">GitHub</a>
-            <a class="button button-ghost" href="#work">Explore the work</a>
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <p class="eyebrow">Independent engineer / Thessaloniki</p>
+            <h1 id="hero-title">Spiros<br />Raptis</h1>
+            <p class="hero-statement">
+              I turn awkward real-world workflows into software that is clear,
+              resilient, and useful.
+            </p>
+            <p class="hero-detail">
+              Local-first apps. Agentic automation with receipts. Infrastructure
+              that admits when it is broken.
+            </p>
+            <div class="hero-actions" aria-label="Primary links">
+              <a class="button button-primary" href="#work">View the work</a>
+              <a class="button button-ghost" href="https://github.com/spirosrap">GitHub</a>
+            </div>
           </div>
-          <a class="hero-feature" href="https://agenticspiros.com/demo/posokanei-basket/">
-            <span>Current flagship</span>
-            <strong>Καλάθι Τιμών Supermarket</strong>
-            <span>Open live app</span>
+
+          <a class="hero-current" href="https://agenticspiros.com/demo/posokanei-basket/">
+            <span class="hero-current-kicker">Current flagship / 01</span>
+            <strong>Καλάθι Τιμών</strong>
+            <span class="hero-current-copy">
+              A practical Greek supermarket basket planner, built around complete
+              shop totals instead of isolated discounts.
+            </span>
+            <span class="hero-current-link">Open the live app <span aria-hidden="true">↗</span></span>
           </a>
         </div>
       </section>
 
-      <section class="signal-strip" aria-label="Profile facts">
-        <dl>
-          <div>
-            <dt>Public repos</dt>
-            <dd>104</dd>
-          </div>
-          <div>
-            <dt>GitHub since</dt>
-            <dd>2012</dd>
-          </div>
-          <div>
-            <dt>Current mode</dt>
-            <dd>Build / verify</dd>
-          </div>
-          <div>
-            <dt>Based in</dt>
-            <dd>Thessaloniki</dd>
-          </div>
-        </dl>
+      <section class="proof-strip" aria-label="Working profile">
+        <ul>
+          <li>
+            <span>01</span>
+            <strong>Local first</strong>
+            <small>Keep data and control close.</small>
+          </li>
+          <li>
+            <span>02</span>
+            <strong>Visible state</strong>
+            <small>Logs, history, and honest status.</small>
+          </li>
+          <li>
+            <span>03</span>
+            <strong>Cross-surface</strong>
+            <small>macOS, Linux, Android, and web.</small>
+          </li>
+          <li>
+            <span>04</span>
+            <strong>Public by default</strong>
+            <small>More than 100 open repositories.</small>
+          </li>
+        </ul>
       </section>
 
-      <section id="work" class="section selected-work" aria-labelledby="work-title">
-        <header class="section-heading">
+      <section id="work" class="section work" aria-labelledby="work-title">
+        <header class="section-intro">
           <div>
-            <p class="section-label">Selected work / 2026</p>
-            <h2 id="work-title">Useful systems, shipped.</h2>
+            <p class="section-label">Selected builds / 2026</p>
+            <h2 id="work-title">The work starts where tidy demos stop.</h2>
           </div>
           <p>
-            Recent projects move between public web apps, native control surfaces,
-            and small infrastructure tools. The common thread is visible state and
-            practical outcomes.
+            These projects deal with changing data, sleeping machines, unreliable
+            networks, and people who need the result to make sense at a glance.
           </p>
         </header>
 
-        <div class="work-grid">
-          <article class="work-card work-card-featured">
+        <div class="case-list">
+          <article class="case-study case-posokanei">
+            <p class="case-index" aria-hidden="true">01</p>
             <a
-              class="work-image"
+              class="case-media case-media-image"
               href="https://agenticspiros.com/demo/posokanei-basket/"
               aria-label="Open the supermarket basket planner"
             >
@@ -111,66 +144,128 @@
                 height="900"
                 loading="lazy"
               />
-              <span>Open live app</span>
+              <span>Live product <span aria-hidden="true">↗</span></span>
             </a>
-            <div class="work-content">
-              <p class="work-meta">React / Catalog data / Greece</p>
+            <div class="case-copy">
+              <p class="case-meta">Product / React / Public data</p>
               <h3>Καλάθι Τιμών Supermarket</h3>
-              <p>
-                A Greek and English basket planner that compares complete grocery
-                shops, weighs one-to-four-stop plans, filters to nearby chains, and
-                keeps shared baskets privacy-conscious.
+              <p class="case-lede">
+                Compare what a complete basket costs, not just which single item
+                happens to be cheapest.
               </p>
-              <div class="text-links" aria-label="Supermarket basket links">
-                <a href="https://agenticspiros.com/demo/posokanei-basket/">Live demo</a>
+              <p>
+                The app weighs one-to-four-stop plans, nearby chains, route
+                practicality, daily opportunities, and privacy-conscious shared
+                baskets. Its catalogue refresh path stays inspectable when the
+                upstream service refuses a direct request.
+              </p>
+              <ul class="case-outcomes" aria-label="Project outcomes">
+                <li>Complete basket comparison</li>
+                <li>Nearby multi-stop planning</li>
+                <li>Hourly catalogue snapshots</li>
+              </ul>
+              <div class="case-links">
+                <a href="https://agenticspiros.com/demo/posokanei-basket/">Live app</a>
                 <a href="https://github.com/spirosrap/posokanei-basket-demo">Source</a>
               </div>
             </div>
           </article>
 
-          <article class="work-card">
-            <div class="work-visual fleet-visual" aria-hidden="true">
-              <div class="fleet-title">
-                <span></span>
+          <article class="case-study case-fleet">
+            <p class="case-index" aria-hidden="true">02</p>
+            <div
+              class="case-media fleet-console"
+              role="img"
+              aria-label="Fleetlight interface showing five machines online and one requiring attention"
+            >
+              <div class="console-bar">
                 <strong>FLEETLIGHT</strong>
-                <small>LIVE</small>
+                <span><i></i> Live</span>
               </div>
               <div class="fleet-summary">
                 <div><strong>05</strong><span>online</span></div>
                 <div><strong>01</strong><span>attention</span></div>
                 <div><strong>00</strong><span>offline</span></div>
               </div>
-              <div class="fleet-lines"><span></span><span></span><span></span></div>
+              <div class="fleet-machines" aria-hidden="true">
+                <div><i></i><strong>studio-mac</strong><span>macOS</span><small>12 ms</small></div>
+                <div><i></i><strong>field-mac</strong><span>macOS</span><small>18 ms</small></div>
+                <div><i></i><strong>media-node</strong><span>Linux</span><small>24 ms</small></div>
+                <div class="attention"><i></i><strong>remote lab</strong><span>Linux</span><small>check</small></div>
+              </div>
+              <div class="console-foot"><span>Last verified 14:32:08</span><strong>All probes complete</strong></div>
             </div>
-            <div class="work-content">
-              <p class="work-meta">Native macOS / Swift / SSH</p>
+            <div class="case-copy">
+              <p class="case-meta">Native utility / Swift / SSH</p>
               <h3>Fleetlight</h3>
-              <p>
-                Menu-bar monitoring for Mac and Linux fleets, with truthful state,
-                local history, service checks, and verified maintenance outcomes.
+              <p class="case-lede">
+                A menu-bar control surface for a mixed Mac and Linux fleet.
               </p>
-              <div class="text-links">
+              <p>
+                Fleetlight combines reachability, service checks, local history,
+                guarded maintenance actions, and the difference between “command
+                sent” and “outcome verified.”
+              </p>
+              <ul class="case-outcomes" aria-label="Project outcomes">
+                <li>Truthful machine state</li>
+                <li>Guarded remote actions</li>
+                <li>Local operational history</li>
+              </ul>
+              <div class="case-links">
                 <a href="https://github.com/spirosrap/fleetlight-macos">Source</a>
               </div>
             </div>
           </article>
 
-          <article class="work-card">
-            <div class="work-visual camera-visual" aria-hidden="true">
-              <div class="camera-status"><span></span> FEED HEALTHY</div>
-              <div class="motion-zone motion-zone-one"></div>
-              <div class="motion-zone motion-zone-two"></div>
-              <div class="camera-crosshair"></div>
-              <div class="camera-time">14:32:08 / MOTION 0.8%</div>
+          <article class="case-study case-camera">
+            <p class="case-index" aria-hidden="true">03</p>
+            <div
+              class="case-media camera-console"
+              role="img"
+              aria-label="Camera sentinel interface with a healthy feed, motion zone, and event timeline"
+            >
+              <div class="console-bar">
+                <strong>CAM / ENTRY</strong>
+                <span><i></i> Feed healthy</span>
+              </div>
+              <div class="camera-feed" aria-hidden="true">
+                <div class="camera-time">14:32:08</div>
+                <div class="motion-zone"><span>ZONE 01</span></div>
+                <div class="camera-crosshair"></div>
+                <div class="camera-signal">
+                  <span style="height: 22%"></span>
+                  <span style="height: 38%"></span>
+                  <span style="height: 26%"></span>
+                  <span style="height: 64%"></span>
+                  <span style="height: 42%"></span>
+                  <span style="height: 78%"></span>
+                  <span style="height: 48%"></span>
+                  <span style="height: 31%"></span>
+                </div>
+              </div>
+              <div class="camera-stats">
+                <span>Motion <strong>0.8%</strong></span>
+                <span>Events <strong>03</strong></span>
+                <span>Uptime <strong>6d 18h</strong></span>
+              </div>
             </div>
-            <div class="work-content">
-              <p class="work-meta">Raspberry Pi / Python / Home Assistant</p>
+            <div class="case-copy">
+              <p class="case-meta">Edge system / Python / Raspberry Pi</p>
               <h3>Pi Camera Sentinel</h3>
-              <p>
-                A private-by-default camera stack with motion zones, event history,
-                alert batching, health signals, and guarded feed recovery.
+              <p class="case-lede">
+                Private-by-default monitoring that treats feed health as a first-class signal.
               </p>
-              <div class="text-links">
+              <p>
+                Motion zones, event history, alert batching, guarded recovery, and
+                health checks keep the system useful without turning a private feed
+                into a noisy cloud product.
+              </p>
+              <ul class="case-outcomes" aria-label="Project outcomes">
+                <li>Local video path</li>
+                <li>Health-aware recovery</li>
+                <li>Bounded alerting</li>
+              </ul>
+              <div class="case-links">
                 <a href="https://github.com/spirosrap/pi-camera-sentinel">Source</a>
               </div>
             </div>
@@ -179,144 +274,157 @@
       </section>
 
       <section id="systems" class="section systems" aria-labelledby="systems-title">
-        <header class="section-heading">
+        <header class="section-intro section-intro-dark">
           <div>
-            <p class="section-label">More systems</p>
-            <h2 id="systems-title">Different surfaces, same discipline.</h2>
+            <p class="section-label">Systems index</p>
+            <h2 id="systems-title">Different surfaces. Same discipline.</h2>
           </div>
           <p>
-            Native companions, browser tools, private media, and past markets work,
-            selected for the engineering decisions behind them.
+            Native companions, private media, agentic workflows, and earlier
+            markets tooling, selected for the engineering decisions behind them.
           </p>
         </header>
 
-        <div class="system-list">
-          <article class="system-row">
-            <div class="system-mark system-mark-image">
+        <div class="system-toolbar">
+          <div class="system-filters" aria-label="Filter systems by category">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="apps" aria-pressed="false">Apps</button>
+            <button type="button" data-filter="systems" aria-pressed="false">Systems</button>
+            <button type="button" data-filter="agents" aria-pressed="false">Agentic</button>
+          </div>
+          <p id="filter-status" class="filter-status" aria-live="polite">Showing 5 systems</p>
+        </div>
+
+        <div class="system-index">
+          <article class="system-item" data-category="apps">
+            <div class="system-symbol system-symbol-image">
               <img src="assets/italian-coach-icon.webp" alt="" width="96" height="96" loading="lazy" />
             </div>
-            <div>
+            <div class="system-name">
+              <p>01 / Apps</p>
               <h3>Italian Coach</h3>
-              <p>Adaptive, local-first Italian practice with mistake review and optional self-hosted sync.</p>
             </div>
-            <span class="system-tech">macOS / Android</span>
-            <a href="https://github.com/spirosrap/italian-coach">Repo</a>
+            <p class="system-description">
+              Adaptive, local-first Italian practice with mistake review and optional self-hosted sync.
+            </p>
+            <p class="system-stack">macOS / Android</p>
+            <a href="https://github.com/spirosrap/italian-coach" aria-label="Open Italian Coach repository">Repo <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="system-row">
-            <div class="system-mark">PX</div>
-            <div>
+
+          <article class="system-item" data-category="apps systems">
+            <div class="system-symbol system-symbol-plex">PX</div>
+            <div class="system-name">
+              <p>02 / Apps + systems</p>
               <h3>Plex Open</h3>
-              <p>Self-hosted browser and Android playback built around subtitles, remote access, and living-room use.</p>
             </div>
-            <span class="system-tech">Web / Android</span>
-            <a href="https://github.com/spirosrap/plex-open-web">Repo</a>
+            <p class="system-description">
+              Self-hosted browser and Android playback built around subtitles, remote access, and living-room use.
+            </p>
+            <p class="system-stack">Web / Android</p>
+            <a href="https://github.com/spirosrap/plex-open-web" aria-label="Open Plex Open repository">Repo <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="system-row">
-            <div class="system-mark">AU</div>
-            <div>
+
+          <article class="system-item" data-category="agents systems">
+            <div class="system-symbol system-symbol-agents">AU</div>
+            <div class="system-name">
+              <p>03 / Agentic</p>
               <h3>Review Automation</h3>
-              <p>Evidence-led workflows with model-aware controls, state recovery, guarded completion, and companion apps.</p>
             </div>
-            <span class="system-tech">Agents / macOS / iOS</span>
-            <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension">Repo</a>
+            <p class="system-description">
+              Evidence-led workflows with model controls, state recovery, guarded completion, and companion apps.
+            </p>
+            <p class="system-stack">Agents / macOS / iOS</p>
+            <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension" aria-label="Open review automation repository">Repo <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="system-row">
-            <div class="system-mark">SC</div>
-            <div>
-              <h3>CodexScreenshotBridge</h3>
-              <p>A Swift menu-bar utility that moves screenshots directly into a Codex workflow.</p>
+
+          <article class="system-item" data-category="apps">
+            <div class="system-symbol system-symbol-bridge">SC</div>
+            <div class="system-name">
+              <p>04 / Apps</p>
+              <h3>Screenshot Bridge</h3>
             </div>
-            <span class="system-tech">Swift / macOS</span>
-            <a href="https://github.com/spirosrap/CodexScreenshotBridge">Repo</a>
+            <p class="system-description">
+              A Swift menu-bar utility that moves screenshots directly into a Codex workflow.
+            </p>
+            <p class="system-stack">Swift / macOS</p>
+            <a href="https://github.com/spirosrap/CodexScreenshotBridge" aria-label="Open Screenshot Bridge repository">Repo <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="system-row">
-            <div class="system-mark">RS</div>
-            <div>
+
+          <article class="system-item" data-category="systems">
+            <div class="system-symbol system-symbol-markets">RS</div>
+            <div class="system-name">
+              <p>05 / Earlier work</p>
               <h3>Past Markets Lab</h3>
-              <p>Rust dashboards and rule-based tooling for inspecting positions, risk, and trading-system behavior.</p>
             </div>
-            <span class="system-tech">Rust / Local dashboards</span>
-            <a href="https://github.com/spirosrap/coinbase-perps-lab">Repo</a>
+            <p class="system-description">
+              Earlier local research and execution tooling; no longer an active trading focus.
+            </p>
+            <p class="system-stack">Rust / Local dashboards</p>
+            <a href="https://github.com/spirosrap/coinbase-perps-lab" aria-label="Open past markets lab repository">Repo <span aria-hidden="true">↗</span></a>
           </article>
         </div>
       </section>
 
       <section id="approach" class="section approach" aria-labelledby="approach-title">
-        <header class="section-heading section-heading-dark">
+        <header class="section-intro approach-intro">
           <div>
             <p class="section-label">Working principles</p>
-            <h2 id="approach-title">Keep the machinery visible.</h2>
+            <h2 id="approach-title">Make the machinery understandable.</h2>
           </div>
           <p>
-            The interesting part is not the amount of automation. It is whether the
-            state, evidence, and failure path remain understandable after the novelty
-            wears off.
+            Automation is only useful when the evidence, permissions, and failure
+            path remain legible after the novelty wears off.
           </p>
         </header>
-        <ol class="principle-list">
+
+        <ol class="principles">
           <li>
             <span>01</span>
-            <strong>Show what is true.</strong>
-            <p>Logs, receipts, history, and clear status beat optimistic dashboards.</p>
+            <h3>Show what is true.</h3>
+            <p>Receipts, history, and clear status beat optimistic dashboards.</p>
           </li>
           <li>
             <span>02</span>
-            <strong>Earn the abstraction.</strong>
-            <p>Start small, repeat the workflow, and add structure only where use proves it belongs.</p>
+            <h3>Earn the abstraction.</h3>
+            <p>Start small, repeat the workflow, and structure only where use proves it belongs.</p>
           </li>
           <li>
             <span>03</span>
-            <strong>Bound the agent.</strong>
-            <p>AI is useful when evidence, permissions, and the irreversible step are explicit.</p>
+            <h3>Bound the agent.</h3>
+            <p>Make evidence, permissions, and every irreversible step explicit.</p>
           </li>
         </ol>
       </section>
 
-      <section class="section profile" aria-labelledby="profile-title">
-        <div class="profile-copy">
-          <p class="section-label">Working style</p>
-          <h2 id="profile-title">The logic stays visible.</h2>
-          <p>
-            Most projects begin as one focused tool and grow only after repeated use.
-            That keeps the software explainable, portable, and easier to repair when
-            the real environment disagrees with the plan.
-          </p>
-        </div>
-        <dl class="stack-list">
-          <div>
-            <dt>Core stack</dt>
-            <dd>Python, JavaScript, Swift, Rust, Shell</dd>
-          </div>
-          <div>
-            <dt>Surfaces</dt>
-            <dd>Web, macOS, Android, iOS, Linux, Raspberry Pi</dd>
-          </div>
-          <div>
-            <dt>System habits</dt>
-            <dd>Local-first state, versioned changes, measurable recovery</dd>
-          </div>
-          <div>
-            <dt>Past work</dt>
-            <dd>Systematic trading tools and risk-oriented dashboards</dd>
-          </div>
-        </dl>
+      <section class="stack-band" aria-label="Core technologies">
+        <p>Across the stack</p>
+        <ul>
+          <li>Swift</li>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>Rust</li>
+          <li>Shell</li>
+          <li>Linux</li>
+          <li>macOS</li>
+          <li>Android</li>
+        </ul>
       </section>
 
       <section id="contact" class="contact" aria-labelledby="contact-title">
         <div class="contact-inner">
-          <p class="section-label">Contact</p>
-          <h2 id="contact-title">Send the repo, the constraint, and the thing that keeps breaking.</h2>
+          <p class="section-label">Start with the real problem</p>
+          <h2 id="contact-title">Bring the repo, the constraint, and the failure mode.</h2>
           <div class="contact-actions">
             <a class="button button-dark" href="https://github.com/spirosrap">Open GitHub</a>
-            <a class="button button-outline-dark" href="https://x.com/srdevb">DM @srdevb</a>
+            <a class="button button-outline-dark" href="https://x.com/srdevb">Message @srdevb</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>Spiros Raptis / Thessaloniki</span>
-      <span>Inspectable systems, not hidden magic.</span>
+      <p>© 2026 Spiros Raptis</p>
+      <p>Built in Thessaloniki / Source in public</p>
     </footer>
   </body>
 </html>
