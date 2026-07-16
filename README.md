@@ -3,7 +3,7 @@
 Static personal site for Spiros Raptis, live at
 [agenticspiros.com](https://agenticspiros.com).
 
-Current release: `v8.0.0`.
+Current release: `v9.0.0`.
 
 ## Local preview
 
@@ -29,15 +29,14 @@ This is intentionally plain HTML/CSS. It can be deployed to any Plesk static
 domain or subdomain by uploading these files to the domain document root:
 
 - `index.html`
-- `styles.v8.css`
 - `VERSION`
 - `.htaccess`
 - `robots.txt`
 - `assets/`
 
 No Node build, database, WordPress theme edits, or plugin changes are required.
-The small interaction script is inline so it does not consume another cold-path
-request.
+The stylesheet and small interaction script are inline so the first viewport
+does not wait on extra text-resource requests.
 
 The root `.htaccess` disables Apache PageSpeed because the current Plesk host
 rewrites the homepage incorrectly when it is enabled. It also enables gzip for
