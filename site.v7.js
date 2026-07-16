@@ -48,8 +48,12 @@ const observedSections = sectionLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 let interfaceFrame = 0;
+let activeSectionId = "";
 
 function setCurrentLink(sectionId) {
+  if (sectionId === activeSectionId) return;
+  activeSectionId = sectionId;
+
   sectionLinks.forEach((link) => {
     if (link.getAttribute("href") === `#${sectionId}`) {
       link.setAttribute("aria-current", "location");
@@ -62,9 +66,8 @@ function setCurrentLink(sectionId) {
 function updateInterfaceState() {
   const scrollRange = root.scrollHeight - window.innerHeight;
   const progress = scrollRange > 0
-    ? Math.min(100, Math.max(0, (window.scrollY / scrollRange) * 100))
+    ? Math.min(1, Math.max(0, window.scrollY / scrollRange))
     : 0;
-  root.style.setProperty("--scroll-progress", `${progress}%`);
 
   const referenceY = window.scrollY + 150;
   let currentSection = observedSections[0];
@@ -77,6 +80,7 @@ function updateInterfaceState() {
     currentSection = observedSections[observedSections.length - 1];
   }
 
+  root.style.setProperty("--scroll-progress", progress.toFixed(4));
   if (currentSection) setCurrentLink(currentSection.id);
   interfaceFrame = 0;
 }

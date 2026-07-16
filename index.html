@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="build-version" content="7.0.0" />
     <meta
       name="description"
       content="Spiros Raptis builds and operates dependable product software, local-first utilities, agentic workflows, and self-hosted infrastructure."
@@ -20,15 +21,18 @@
       content="https://agenticspiros.com/assets/kalathitimon-v018.jpg"
     />
     <title>Spiros Raptis - Independent Systems Engineer</title>
-    <link rel="icon" href="assets/spirosrap-avatar.jpg" />
+    <link rel="icon" type="image/webp" sizes="48x48" href="assets/favicon-48.webp" />
     <link
       rel="preload"
       as="image"
-      href="assets/kalathitimon-v018.jpg"
+      href="assets/kalathitimon-v018-1265.webp"
+      imagesrcset="assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
+      imagesizes="100vw"
+      type="image/webp"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="styles.css?v=20260716-6" />
-    <script src="site.js?v=20260716-6" defer></script>
+    <link rel="stylesheet" href="styles.v7.css" />
+    <script src="site.v7.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -61,10 +65,13 @@
       <section id="top" class="hero" aria-labelledby="hero-title">
         <img
           class="hero-backdrop"
-          src="assets/kalathitimon-v018.jpg"
+          src="assets/kalathitimon-v018-1265.webp"
+          srcset="assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
+          sizes="100vw"
           alt=""
           width="1265"
           height="712"
+          decoding="async"
           fetchpriority="high"
         />
         <div class="hero-overlay" aria-hidden="true"></div>
@@ -173,22 +180,29 @@
                   role="tabpanel"
                   aria-labelledby="view-product"
                   data-case-image="product"
-                  src="assets/kalathitimon-v018.jpg"
+                  src="assets/kalathitimon-v018-1265.webp"
+                  srcset="assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
+                  sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
                   alt="Kalathi Timon version 0.18.0 running on its dedicated production domain"
                   width="1265"
                   height="712"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   id="image-share"
                   role="tabpanel"
                   aria-labelledby="view-share"
                   data-case-image="share"
-                  src="assets/kalathitimon-share-v018.jpg"
+                  src="assets/kalathitimon-share-v018-1265.webp"
+                  srcset="assets/kalathitimon-share-v018-768.webp 768w, assets/kalathitimon-share-v018-1265.webp 1265w"
+                  sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
                   alt="Kalathi Timon compact same-origin basket sharing interface"
                   width="1265"
                   height="712"
                   loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
                   hidden
                 />
               </div>
@@ -410,7 +424,7 @@
 
         <div class="system-index">
           <article class="system-item">
-            <div class="system-symbol system-symbol-image"><img src="assets/italian-coach-icon.webp" alt="" width="96" height="96" loading="lazy" /></div>
+            <div class="system-symbol system-symbol-image"><img src="assets/italian-coach-icon.webp" alt="" width="96" height="96" loading="lazy" decoding="async" /></div>
             <div class="system-name"><p>01 / Learning app</p><h3>Italian Coach</h3></div>
             <p class="system-description">Adaptive, local-first Italian practice with mistake review and optional self-hosted sync.</p>
             <p class="system-stack">macOS / Android</p>
