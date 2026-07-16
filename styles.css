@@ -247,14 +247,14 @@ button {
 .hero-backdrop {
   object-fit: cover;
   object-position: center top;
-  filter: saturate(0.72) contrast(1.08);
+  filter: saturate(0.94) contrast(1.08);
   transform: scale(1.01);
 }
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(10, 17, 15, 0.98) 0%, rgba(10, 17, 15, 0.94) 42%, rgba(10, 17, 15, 0.66) 72%, rgba(10, 17, 15, 0.48) 100%),
-    linear-gradient(0deg, rgba(10, 17, 15, 0.92) 0%, rgba(10, 17, 15, 0.12) 58%, rgba(10, 17, 15, 0.36) 100%);
+    linear-gradient(90deg, rgba(10, 17, 15, 0.98) 0%, rgba(10, 17, 15, 0.93) 42%, rgba(10, 17, 15, 0.58) 72%, rgba(10, 17, 15, 0.3) 100%),
+    linear-gradient(0deg, rgba(10, 17, 15, 0.94) 0%, rgba(10, 17, 15, 0.08) 58%, rgba(10, 17, 15, 0.3) 100%);
 }
 
 .hero-inner {
@@ -740,9 +740,9 @@ h1 {
 
 .case-browser-screen {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #dfe7e3;
+  background: #101714;
 }
 
 .case-browser-screen img {
@@ -1927,7 +1927,7 @@ h1 {
   }
 
   .case-browser-screen {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
   }
 
   .case-copy {
@@ -2129,7 +2129,7 @@ h1 {
   }
 
   .hero-case-topline span {
-    max-width: 16ch;
+    max-width: 23ch;
   }
 
   .hero-evidence li {
