@@ -2,6 +2,39 @@ const caseBrowser = document.querySelector("[data-case-browser]");
 const caseViewTabs = [...document.querySelectorAll("[data-case-view][role='tab']")];
 const caseImages = [...document.querySelectorAll("[data-case-image]")];
 const caseViewOrder = caseViewTabs.map((tab) => tab.dataset.caseView);
+const shareImage = caseImages.find((image) => image.dataset.caseImage === "share");
+let sharePreload;
+
+function preloadShareView() {
+  if (!shareImage || sharePreload || (shareImage.complete && shareImage.naturalWidth > 0)) return;
+
+  sharePreload = new Image();
+  sharePreload.fetchPriority = "low";
+  sharePreload.decoding = "async";
+  sharePreload.sizes = shareImage.sizes;
+  sharePreload.srcset = shareImage.srcset;
+  sharePreload.src = shareImage.src;
+}
+
+if (caseBrowser && shareImage) {
+  if ("IntersectionObserver" in window) {
+    const shareObserver = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      preloadShareView();
+      shareObserver.disconnect();
+    }, { rootMargin: "400px 0px" });
+    shareObserver.observe(caseBrowser);
+  } else {
+    window.addEventListener("load", preloadShareView, { once: true });
+  }
+
+  const shareTab = caseViewTabs.find((tab) => tab.dataset.caseView === "share");
+  shareTab?.addEventListener("pointerenter", preloadShareView, { once: true });
+  shareTab?.addEventListener("focus", preloadShareView, { once: true });
+  document.querySelectorAll('a[href="#work"]').forEach((link) => {
+    link.addEventListener("click", preloadShareView, { once: true });
+  });
+}
 
 function activateCaseView(view, { focus = false } = {}) {
   const nextIndex = caseViewOrder.indexOf(view);

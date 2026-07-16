@@ -3,7 +3,7 @@
 Static personal site for Spiros Raptis, live at
 [agenticspiros.com](https://agenticspiros.com).
 
-Current release: `v7.0.0`.
+Current release: `v7.0.1`.
 
 ## Local preview
 
