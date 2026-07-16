@@ -1,88 +1,57 @@
-const explorer = document.querySelector("[data-project-explorer]");
-const projectTabs = [...document.querySelectorAll("[data-project][role='tab']")];
-const projectPanels = [...document.querySelectorAll("[data-project-panel]")];
-const projectCounter = document.querySelector("#project-counter");
-const projectSteps = [...document.querySelectorAll("[data-project-step]")];
-const projectOrder = projectTabs.map((tab) => tab.dataset.project);
+const caseBrowser = document.querySelector("[data-case-browser]");
+const caseViewTabs = [...document.querySelectorAll("[data-case-view][role='tab']")];
+const caseImages = [...document.querySelectorAll("[data-case-image]")];
+const caseViewOrder = caseViewTabs.map((tab) => tab.dataset.caseView);
 
-function activateProject(project, { focus = false } = {}) {
-  const nextIndex = projectOrder.indexOf(project);
-  if (!explorer || nextIndex < 0) return;
+function activateCaseView(view, { focus = false } = {}) {
+  const nextIndex = caseViewOrder.indexOf(view);
+  if (!caseBrowser || nextIndex < 0) return;
 
-  explorer.dataset.active = project;
+  caseBrowser.dataset.activeView = view;
 
-  projectTabs.forEach((tab) => {
-    const isActive = tab.dataset.project === project;
+  caseViewTabs.forEach((tab) => {
+    const isActive = tab.dataset.caseView === view;
     tab.setAttribute("aria-selected", String(isActive));
     tab.tabIndex = isActive ? 0 : -1;
     if (isActive && focus) tab.focus();
   });
 
-  projectPanels.forEach((panel) => {
-    panel.hidden = panel.dataset.projectPanel !== project;
+  caseImages.forEach((image) => {
+    image.hidden = image.dataset.caseImage !== view;
   });
-
-  if (projectCounter) {
-    projectCounter.textContent = `${String(nextIndex + 1).padStart(2, "0")} / ${String(projectOrder.length).padStart(2, "0")}`;
-  }
 }
 
-projectTabs.forEach((tab) => {
-  tab.addEventListener("click", () => activateProject(tab.dataset.project));
+caseViewTabs.forEach((tab) => {
+  tab.addEventListener("click", () => activateCaseView(tab.dataset.caseView));
 
   tab.addEventListener("keydown", (event) => {
-    const currentIndex = projectOrder.indexOf(tab.dataset.project);
+    const currentIndex = caseViewOrder.indexOf(tab.dataset.caseView);
     let nextIndex = currentIndex;
 
-    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % projectOrder.length;
-    if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + projectOrder.length) % projectOrder.length;
+    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % caseViewOrder.length;
+    if (event.key === "ArrowLeft") {
+      nextIndex = (currentIndex - 1 + caseViewOrder.length) % caseViewOrder.length;
+    }
     if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = projectOrder.length - 1;
+    if (event.key === "End") nextIndex = caseViewOrder.length - 1;
 
     if (nextIndex !== currentIndex) {
       event.preventDefault();
-      activateProject(projectOrder[nextIndex], { focus: true });
+      activateCaseView(caseViewOrder[nextIndex], { focus: true });
     }
   });
 });
 
-projectSteps.forEach((button) => {
-  button.addEventListener("click", () => {
-    const currentIndex = projectOrder.indexOf(explorer.dataset.active);
-    const direction = button.dataset.projectStep === "next" ? 1 : -1;
-    const nextIndex = (currentIndex + direction + projectOrder.length) % projectOrder.length;
-    activateProject(projectOrder[nextIndex]);
-  });
-});
-
 const root = document.documentElement;
-let scrollFrame = 0;
-
-function updateScrollProgress() {
-  const scrollRange = root.scrollHeight - window.innerHeight;
-  const progress = scrollRange > 0 ? Math.min(100, Math.max(0, (window.scrollY / scrollRange) * 100)) : 0;
-  root.style.setProperty("--scroll-progress", `${progress}%`);
-  scrollFrame = 0;
-}
-
-function requestScrollProgress() {
-  if (scrollFrame) return;
-  scrollFrame = window.requestAnimationFrame(updateScrollProgress);
-}
-
-window.addEventListener("scroll", requestScrollProgress, { passive: true });
-window.addEventListener("resize", requestScrollProgress);
-updateScrollProgress();
-
 const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
 const observedSections = sectionLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
-const visibleSections = new Map(observedSections.map((section) => [section.id, false]));
+let interfaceFrame = 0;
 
-function setCurrentLink(activeLink) {
+function setCurrentLink(sectionId) {
   sectionLinks.forEach((link) => {
-    if (link === activeLink) {
+    if (link.getAttribute("href") === `#${sectionId}`) {
       link.setAttribute("aria-current", "location");
     } else {
       link.removeAttribute("aria-current");
@@ -90,36 +59,40 @@ function setCurrentLink(activeLink) {
   });
 }
 
-function updateActiveSection() {
-  const activeSection = observedSections
-    .filter((section) => visibleSections.get(section.id))
-    .sort(
-      (first, second) =>
-        Math.abs(first.getBoundingClientRect().top - 100) -
-        Math.abs(second.getBoundingClientRect().top - 100),
-    )[0];
+function updateInterfaceState() {
+  const scrollRange = root.scrollHeight - window.innerHeight;
+  const progress = scrollRange > 0
+    ? Math.min(100, Math.max(0, (window.scrollY / scrollRange) * 100))
+    : 0;
+  root.style.setProperty("--scroll-progress", `${progress}%`);
 
-  if (!activeSection) return;
+  const referenceY = window.scrollY + 150;
+  let currentSection = observedSections[0];
 
-  const activeLink = sectionLinks.find(
-    (link) => link.getAttribute("href") === `#${activeSection.id}`,
-  );
+  observedSections.forEach((section) => {
+    if (section.offsetTop <= referenceY) currentSection = section;
+  });
 
-  if (activeLink) setCurrentLink(activeLink);
+  if (window.scrollY + window.innerHeight >= root.scrollHeight - 4) {
+    currentSection = observedSections[observedSections.length - 1];
+  }
+
+  if (currentSection) setCurrentLink(currentSection.id);
+  interfaceFrame = 0;
+}
+
+function requestInterfaceUpdate() {
+  if (interfaceFrame) return;
+  interfaceFrame = window.requestAnimationFrame(updateInterfaceState);
 }
 
 sectionLinks.forEach((link) => {
-  link.addEventListener("click", () => setCurrentLink(link));
+  link.addEventListener("click", () => {
+    const sectionId = link.getAttribute("href").slice(1);
+    setCurrentLink(sectionId);
+  });
 });
 
-if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => visibleSections.set(entry.target.id, entry.isIntersecting));
-      updateActiveSection();
-    },
-    { rootMargin: "-10% 0px -45% 0px", threshold: [0, 0.01] },
-  );
-
-  observedSections.forEach((section) => sectionObserver.observe(section));
-}
+window.addEventListener("scroll", requestInterfaceUpdate, { passive: true });
+window.addEventListener("resize", requestInterfaceUpdate);
+updateInterfaceState();
