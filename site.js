@@ -1,29 +1,78 @@
-const filterButtons = [...document.querySelectorAll("[data-filter]")];
-const systemItems = [...document.querySelectorAll(".system-item")];
-const filterStatus = document.querySelector("#filter-status");
+const explorer = document.querySelector("[data-project-explorer]");
+const projectTabs = [...document.querySelectorAll("[data-project][role='tab']")];
+const projectPanels = [...document.querySelectorAll("[data-project-panel]")];
+const projectCounter = document.querySelector("#project-counter");
+const projectSteps = [...document.querySelectorAll("[data-project-step]")];
+const projectOrder = projectTabs.map((tab) => tab.dataset.project);
 
-function applySystemFilter(filter) {
-  let visibleCount = 0;
+function activateProject(project, { focus = false } = {}) {
+  const nextIndex = projectOrder.indexOf(project);
+  if (!explorer || nextIndex < 0) return;
 
-  systemItems.forEach((item) => {
-    const categories = item.dataset.category.split(" ");
-    const isVisible = filter === "all" || categories.includes(filter);
-    item.hidden = !isVisible;
-    visibleCount += isVisible ? 1 : 0;
+  explorer.dataset.active = project;
+
+  projectTabs.forEach((tab) => {
+    const isActive = tab.dataset.project === project;
+    tab.setAttribute("aria-selected", String(isActive));
+    tab.tabIndex = isActive ? 0 : -1;
+    if (isActive && focus) tab.focus();
   });
 
-  filterButtons.forEach((button) => {
-    button.setAttribute("aria-pressed", String(button.dataset.filter === filter));
+  projectPanels.forEach((panel) => {
+    panel.hidden = panel.dataset.projectPanel !== project;
   });
 
-  if (filterStatus) {
-    filterStatus.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "system" : "systems"}`;
+  if (projectCounter) {
+    projectCounter.textContent = `${String(nextIndex + 1).padStart(2, "0")} / ${String(projectOrder.length).padStart(2, "0")}`;
   }
 }
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => applySystemFilter(button.dataset.filter));
+projectTabs.forEach((tab) => {
+  tab.addEventListener("click", () => activateProject(tab.dataset.project));
+
+  tab.addEventListener("keydown", (event) => {
+    const currentIndex = projectOrder.indexOf(tab.dataset.project);
+    let nextIndex = currentIndex;
+
+    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % projectOrder.length;
+    if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + projectOrder.length) % projectOrder.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = projectOrder.length - 1;
+
+    if (nextIndex !== currentIndex) {
+      event.preventDefault();
+      activateProject(projectOrder[nextIndex], { focus: true });
+    }
+  });
 });
+
+projectSteps.forEach((button) => {
+  button.addEventListener("click", () => {
+    const currentIndex = projectOrder.indexOf(explorer.dataset.active);
+    const direction = button.dataset.projectStep === "next" ? 1 : -1;
+    const nextIndex = (currentIndex + direction + projectOrder.length) % projectOrder.length;
+    activateProject(projectOrder[nextIndex]);
+  });
+});
+
+const root = document.documentElement;
+let scrollFrame = 0;
+
+function updateScrollProgress() {
+  const scrollRange = root.scrollHeight - window.innerHeight;
+  const progress = scrollRange > 0 ? Math.min(100, Math.max(0, (window.scrollY / scrollRange) * 100)) : 0;
+  root.style.setProperty("--scroll-progress", `${progress}%`);
+  scrollFrame = 0;
+}
+
+function requestScrollProgress() {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(updateScrollProgress);
+}
+
+window.addEventListener("scroll", requestScrollProgress, { passive: true });
+window.addEventListener("resize", requestScrollProgress);
+updateScrollProgress();
 
 const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
 const observedSections = sectionLinks
