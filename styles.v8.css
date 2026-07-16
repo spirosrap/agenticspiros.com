@@ -131,7 +131,6 @@ button {
   background: var(--green);
   transform: scaleX(var(--scroll-progress));
   transform-origin: left center;
-  transition: transform 80ms linear;
 }
 
 .brand {
@@ -246,11 +245,14 @@ button {
   height: 100%;
 }
 
+.hero-media {
+  position: absolute;
+  inset: 0;
+}
+
 .hero-backdrop {
   object-fit: cover;
   object-position: center top;
-  filter: saturate(0.94) contrast(1.08);
-  transform: scale(1.01);
 }
 
 .hero-overlay {
@@ -485,9 +487,8 @@ h1 {
   margin: 0 auto;
   padding: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(17, 24, 22, 0.78);
+  background: rgba(17, 24, 22, 0.9);
   list-style: none;
-  backdrop-filter: blur(14px);
 }
 
 .hero-evidence li {

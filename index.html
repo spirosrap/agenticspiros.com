@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="build-version" content="7.0.1" />
+    <meta name="build-version" content="8.0.0" />
     <meta
       name="description"
       content="Spiros Raptis builds and operates dependable product software, local-first utilities, agentic workflows, and self-hosted infrastructure."
@@ -21,18 +21,17 @@
       content="https://agenticspiros.com/assets/kalathitimon-v018.jpg"
     />
     <title>Spiros Raptis - Independent Systems Engineer</title>
-    <link rel="icon" type="image/webp" sizes="48x48" href="assets/favicon-48.webp" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='4' fill='%23111816'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-size='22' font-weight='700' fill='%2349c58b'%3ESR%3C/text%3E%3C/svg%3E" />
     <link
       rel="preload"
       as="image"
-      href="assets/kalathitimon-v018-1265.webp"
-      imagesrcset="assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
+      href="assets/kalathitimon-hero-v8-1264.avif"
+      imagesrcset="assets/kalathitimon-hero-v8-768.avif 768w, assets/kalathitimon-hero-v8-1264.avif 1264w"
       imagesizes="100vw"
-      type="image/webp"
+      type="image/avif"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="styles.v7.css?v=7.0.1" />
-    <script src="site.v7.js?v=7.0.1" defer></script>
+    <link rel="stylesheet" href="styles.v8.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -63,17 +62,27 @@
 
     <main id="main">
       <section id="top" class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero-backdrop"
-          src="assets/kalathitimon-v018-1265.webp"
-          srcset="assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
-          sizes="100vw"
-          alt=""
-          width="1265"
-          height="712"
-          decoding="async"
-          fetchpriority="high"
-        />
+        <picture class="hero-media">
+          <source
+            type="image/avif"
+            srcset="assets/kalathitimon-hero-v8-768.avif 768w, assets/kalathitimon-hero-v8-1264.avif 1264w"
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcset="assets/kalathitimon-hero-v8-768.webp 768w, assets/kalathitimon-hero-v8-1264.webp 1264w"
+            sizes="100vw"
+          />
+          <img
+            class="hero-backdrop"
+            src="assets/kalathitimon-hero-v8-1264.webp"
+            alt=""
+            width="1264"
+            height="712"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
         <div class="hero-overlay" aria-hidden="true"></div>
 
         <div class="hero-inner">
@@ -181,7 +190,7 @@
                   aria-labelledby="view-product"
                   data-case-image="product"
                   src="assets/kalathitimon-v018-1265.webp"
-                  srcset="assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
+                  srcset="assets/kalathitimon-v018-640.webp 640w, assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
                   sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
                   alt="Kalathi Timon version 0.18.0 running on its dedicated production domain"
                   width="1265"
@@ -195,7 +204,7 @@
                   aria-labelledby="view-share"
                   data-case-image="share"
                   src="assets/kalathitimon-share-v018-1265.webp?v=7.0.1"
-                  srcset="assets/kalathitimon-share-v018-768.webp?v=7.0.1 768w, assets/kalathitimon-share-v018-1265.webp?v=7.0.1 1265w"
+                  srcset="assets/kalathitimon-share-v018-640.webp 640w, assets/kalathitimon-share-v018-768.webp?v=7.0.1 768w, assets/kalathitimon-share-v018-1265.webp?v=7.0.1 1265w"
                   sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
                   alt="Kalathi Timon compact same-origin basket sharing interface"
                   width="1265"
@@ -491,5 +500,161 @@
       <p>Independent systems engineering / Thessaloniki</p>
       <p><a href="https://github.com/spirosrap/agenticspiros.com">Site source <span aria-hidden="true">↗</span></a></p>
     </footer>
+
+    <script>
+      const caseBrowser = document.querySelector("[data-case-browser]");
+      const caseViewTabs = [...document.querySelectorAll("[data-case-view][role='tab']")];
+      const caseImages = [...document.querySelectorAll("[data-case-image]")];
+      const caseViewOrder = caseViewTabs.map((tab) => tab.dataset.caseView);
+      const shareImage = caseImages.find((image) => image.dataset.caseImage === "share");
+      let sharePreload;
+
+      function preloadShareView() {
+        if (!shareImage || sharePreload || (shareImage.complete && shareImage.naturalWidth > 0)) return;
+
+        sharePreload = new Image();
+        sharePreload.fetchPriority = "low";
+        sharePreload.decoding = "async";
+        sharePreload.sizes = shareImage.sizes;
+        sharePreload.srcset = shareImage.srcset;
+        sharePreload.src = shareImage.src;
+      }
+
+      if (caseBrowser && shareImage) {
+        if ("IntersectionObserver" in window) {
+          const shareObserver = new IntersectionObserver((entries) => {
+            if (!entries.some((entry) => entry.isIntersecting)) return;
+            preloadShareView();
+            shareObserver.disconnect();
+          }, { rootMargin: "400px 0px" });
+          shareObserver.observe(caseBrowser);
+        } else {
+          window.addEventListener("load", preloadShareView, { once: true });
+        }
+
+        const shareTab = caseViewTabs.find((tab) => tab.dataset.caseView === "share");
+        shareTab?.addEventListener("pointerenter", preloadShareView, { once: true });
+        shareTab?.addEventListener("focus", preloadShareView, { once: true });
+        document.querySelectorAll('a[href="#work"]').forEach((link) => {
+          link.addEventListener("click", preloadShareView, { once: true });
+        });
+      }
+
+      function activateCaseView(view, { focus = false } = {}) {
+        const nextIndex = caseViewOrder.indexOf(view);
+        if (!caseBrowser || nextIndex < 0) return;
+
+        caseBrowser.dataset.activeView = view;
+
+        caseViewTabs.forEach((tab) => {
+          const isActive = tab.dataset.caseView === view;
+          tab.setAttribute("aria-selected", String(isActive));
+          tab.tabIndex = isActive ? 0 : -1;
+          if (isActive && focus) tab.focus();
+        });
+
+        caseImages.forEach((image) => {
+          image.hidden = image.dataset.caseImage !== view;
+        });
+      }
+
+      caseViewTabs.forEach((tab) => {
+        tab.addEventListener("click", () => activateCaseView(tab.dataset.caseView));
+
+        tab.addEventListener("keydown", (event) => {
+          const currentIndex = caseViewOrder.indexOf(tab.dataset.caseView);
+          let nextIndex = currentIndex;
+
+          if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % caseViewOrder.length;
+          if (event.key === "ArrowLeft") {
+            nextIndex = (currentIndex - 1 + caseViewOrder.length) % caseViewOrder.length;
+          }
+          if (event.key === "Home") nextIndex = 0;
+          if (event.key === "End") nextIndex = caseViewOrder.length - 1;
+
+          if (nextIndex !== currentIndex) {
+            event.preventDefault();
+            activateCaseView(caseViewOrder[nextIndex], { focus: true });
+          }
+        });
+      });
+
+      const root = document.documentElement;
+      const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+      const observedSections = sectionLinks
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+      let sectionOffsets = [];
+      let interfaceFrame = 0;
+      let resizeFrame = 0;
+      let activeSectionId = "";
+
+      function measureSections() {
+        sectionOffsets = observedSections.map((section) => ({
+          id: section.id,
+          top: section.offsetTop
+        }));
+      }
+
+      function setCurrentLink(sectionId) {
+        if (sectionId === activeSectionId) return;
+        activeSectionId = sectionId;
+
+        sectionLinks.forEach((link) => {
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      function updateInterfaceState() {
+        const scrollRange = root.scrollHeight - window.innerHeight;
+        const progress = scrollRange > 0
+          ? Math.min(1, Math.max(0, window.scrollY / scrollRange))
+          : 0;
+        const referenceY = window.scrollY + 150;
+        let currentSectionId = sectionOffsets[0]?.id;
+
+        sectionOffsets.forEach((section) => {
+          if (section.top <= referenceY) currentSectionId = section.id;
+        });
+
+        if (window.scrollY + window.innerHeight >= root.scrollHeight - 4) {
+          currentSectionId = sectionOffsets[sectionOffsets.length - 1]?.id;
+        }
+
+        root.style.setProperty("--scroll-progress", progress.toFixed(4));
+        if (currentSectionId) setCurrentLink(currentSectionId);
+        interfaceFrame = 0;
+      }
+
+      function requestInterfaceUpdate() {
+        if (interfaceFrame) return;
+        interfaceFrame = window.requestAnimationFrame(updateInterfaceState);
+      }
+
+      function requestResizeUpdate() {
+        if (resizeFrame) return;
+        resizeFrame = window.requestAnimationFrame(() => {
+          measureSections();
+          updateInterfaceState();
+          resizeFrame = 0;
+        });
+      }
+
+      sectionLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const sectionId = link.getAttribute("href").slice(1);
+          setCurrentLink(sectionId);
+        });
+      });
+
+      window.addEventListener("scroll", requestInterfaceUpdate, { passive: true });
+      window.addEventListener("resize", requestResizeUpdate);
+      window.addEventListener("load", requestResizeUpdate, { once: true });
+      requestResizeUpdate();
+    </script>
   </body>
 </html>

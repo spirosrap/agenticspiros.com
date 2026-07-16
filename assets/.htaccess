@@ -1,5 +1,9 @@
+<IfModule mod_mime.c>
+  AddType image/avif .avif
+</IfModule>
+
 <IfModule mod_headers.c>
-  <FilesMatch "\.(webp|jpg|jpeg|png|gif|ico)$">
+  <FilesMatch "\.(avif|webp|jpg|jpeg|png|gif|ico)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
