@@ -3,7 +3,14 @@
 Static personal site for Spiros Raptis, live at
 [agenticspiros.com](https://agenticspiros.com).
 
-Current release: `v9.0.0`.
+Current release: `v10.0.0`.
+
+Version 10 refreshes the portfolio around verified work shipped after the prior
+release. It presents Kalathi Timon 0.28.0 as the lead product, including local
+price watches, target prices, observed history, recent-change exploration, and
+the optimized change-data pipeline. It also brings Camera Sentinel, review
+automation, and Plex Open case notes up to date while preserving the static,
+framework-free delivery path.
 
 ## Local preview
 

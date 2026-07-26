@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="build-version" content="9.0.0" />
+    <meta name="build-version" content="10.0.0" />
     <meta
       name="description"
-      content="Spiros Raptis builds and operates dependable product software, local-first utilities, agentic workflows, and self-hosted infrastructure."
+      content="Spiros Raptis builds and operates dependable products, agentic workflows, private edge systems, and self-hosted infrastructure."
     />
     <meta name="theme-color" content="#111816" />
     <meta property="og:title" content="Spiros Raptis - Independent Systems Engineer" />
     <meta
       property="og:description"
-      content="Products and systems that hold up in operation."
+      content="Dependable products and systems, built through to verified operation."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://agenticspiros.com/" />
     <meta
       property="og:image"
-      content="https://agenticspiros.com/assets/kalathitimon-v018.jpg"
+      content="https://agenticspiros.com/assets/kalathitimon-watch-v028-og.jpg"
     />
     <title>Spiros Raptis - Independent Systems Engineer</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='4' fill='%23111816'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-size='22' font-weight='700' fill='%2349c58b'%3ESR%3C/text%3E%3C/svg%3E" />
     <link
       rel="preload"
       as="image"
-      href="assets/kalathitimon-hero-v9-1264.avif"
-      imagesrcset="assets/kalathitimon-hero-v9-768.avif 768w, assets/kalathitimon-hero-v9-1264.avif 1264w"
+      href="assets/kalathitimon-hero-v10-1264.avif"
+      imagesrcset="assets/kalathitimon-hero-v10-768.avif 768w, assets/kalathitimon-hero-v10-1264.avif 1264w"
       imagesizes="100vw"
       type="image/avif"
       fetchpriority="high"
@@ -282,7 +282,7 @@ button {
 
 .hero {
   position: relative;
-  min-height: 780px;
+  min-height: min(780px, calc(100svh - 18px));
   overflow: hidden;
   background: var(--ink);
   color: var(--white);
@@ -303,13 +303,13 @@ button {
 
 .hero-backdrop {
   object-fit: cover;
-  object-position: center top;
+  object-position: 58% top;
 }
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(10, 17, 15, 0.98) 0%, rgba(10, 17, 15, 0.93) 42%, rgba(10, 17, 15, 0.58) 72%, rgba(10, 17, 15, 0.3) 100%),
-    linear-gradient(0deg, rgba(10, 17, 15, 0.94) 0%, rgba(10, 17, 15, 0.08) 58%, rgba(10, 17, 15, 0.3) 100%);
+    linear-gradient(90deg, rgba(10, 17, 15, 0.99) 0%, rgba(10, 17, 15, 0.94) 43%, rgba(10, 17, 15, 0.62) 72%, rgba(10, 17, 15, 0.34) 100%),
+    linear-gradient(0deg, rgba(10, 17, 15, 0.95) 0%, rgba(10, 17, 15, 0.12) 60%, rgba(10, 17, 15, 0.38) 100%);
 }
 
 .hero-inner {
@@ -317,8 +317,8 @@ button {
   z-index: 1;
   display: grid;
   width: min(calc(100% - 48px), var(--max));
-  min-height: 780px;
-  grid-template-columns: minmax(0, 1fr) 350px;
+  min-height: min(780px, calc(100svh - 18px));
+  grid-template-columns: minmax(0, 1fr) 390px;
   align-items: end;
   gap: 6rem;
   margin: 0 auto;
@@ -457,7 +457,7 @@ h1 {
 
 .hero-case {
   align-self: end;
-  padding: 0.4rem 0 0.35rem 2rem;
+  padding: 0.65rem 0 0.55rem 2rem;
   border-left: 1px solid rgba(255, 255, 255, 0.32);
 }
 
@@ -771,7 +771,7 @@ h1 {
 }
 
 .case-view-tabs button {
-  min-width: 62px;
+  min-width: 68px;
   min-height: 32px;
   padding: 0.35rem 0.55rem;
   border: 0;
@@ -1034,7 +1034,7 @@ h1 {
 
 .fleet-machines > div {
   display: grid;
-  grid-template-columns: 8px minmax(0, 1fr) 72px 52px;
+  grid-template-columns: 8px minmax(0, 1fr) 78px 68px;
   align-items: center;
   gap: 0.55rem;
   padding: 0.46rem 0.55rem;
@@ -1193,7 +1193,8 @@ h1 {
   margin-top: 0.16rem;
   color: var(--white);
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
 }
 
 .secondary-copy {
@@ -1287,7 +1288,7 @@ h1 {
 .record-list article > p:first-child span {
   display: inline-block;
   min-width: 1.8rem;
-  color: #909c96;
+  color: var(--muted);
 }
 
 .record-list h4 {
@@ -1383,7 +1384,7 @@ h1 {
 .commitments small {
   margin-top: auto;
   padding-top: 2rem;
-  color: rgba(255, 255, 255, 0.36);
+  color: rgba(255, 255, 255, 0.58);
   font-size: 0.6rem;
 }
 
@@ -1684,7 +1685,7 @@ h1 {
 
   .hero,
   .hero-inner {
-    min-height: 860px;
+    min-height: min(860px, calc(100svh - 18px));
   }
 
   .hero-inner {
@@ -1838,7 +1839,7 @@ h1 {
 
   .hero,
   .hero-inner {
-    min-height: 790px;
+    min-height: min(790px, calc(100svh - 18px));
   }
 
   .hero-backdrop {
@@ -2156,6 +2157,46 @@ h1 {
   }
 }
 
+@media (max-height: 700px) {
+  .hero,
+  .hero-inner {
+    min-height: calc(100svh - 18px);
+  }
+
+  .hero-inner {
+    padding-top: 5rem;
+    padding-bottom: 9.8rem;
+  }
+
+  .hero-detail,
+  .hero-case {
+    display: none;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .hero-thesis {
+    margin-top: 0.8rem;
+    font-size: 1.35rem;
+  }
+
+  .hero-actions {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-height: 480px) {
+  .hero-inner {
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-evidence {
+    display: none;
+  }
+}
+
 @media (max-width: 430px) {
   .nav-links a {
     padding-right: 0.36rem;
@@ -2250,6 +2291,20 @@ h1 {
   }
 }
 
+@media (max-width: 430px) and (max-height: 700px) {
+  .hero-inner {
+    padding-top: 4.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .hero-thesis {
+    font-size: 1.08rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -2271,7 +2326,7 @@ h1 {
 
     <header class="site-header" aria-label="Primary navigation">
       <div class="header-inner">
-        <a class="brand" href="#top" aria-label="Spiros Raptis home">
+        <a class="brand" href="#top" aria-label="SR Spiros Raptis Independent systems engineer home">
           <span class="brand-mark" aria-hidden="true">SR</span>
           <span class="brand-copy">
             <strong>Spiros Raptis</strong>
@@ -2298,17 +2353,17 @@ h1 {
         <picture class="hero-media">
           <source
             type="image/avif"
-            srcset="assets/kalathitimon-hero-v9-768.avif 768w, assets/kalathitimon-hero-v9-1264.avif 1264w"
+            srcset="assets/kalathitimon-hero-v10-768.avif 768w, assets/kalathitimon-hero-v10-1264.avif 1264w"
             sizes="100vw"
           />
           <source
             type="image/webp"
-            srcset="assets/kalathitimon-hero-v8-768.webp 768w, assets/kalathitimon-hero-v8-1264.webp 1264w"
+            srcset="assets/kalathitimon-watch-v028-768.webp 768w, assets/kalathitimon-watch-v028-1265.webp 1265w"
             sizes="100vw"
           />
           <img
             class="hero-backdrop"
-            src="assets/kalathitimon-hero-v8-1264.webp"
+            src="assets/kalathitimon-watch-v028-1265.webp"
             alt=""
             width="1264"
             height="712"
@@ -2322,13 +2377,13 @@ h1 {
           <div class="hero-copy">
             <p class="eyebrow">Independent systems engineer / Thessaloniki</p>
             <h1 id="hero-title">Spiros Raptis</h1>
-            <p class="hero-thesis">Products and systems that hold up in operation.</p>
+            <p class="hero-thesis">Dependable products, built through to verified operation.</p>
             <p class="hero-detail">
-              I build and operate product apps, local-first utilities, agentic
-              workflows, and self-hosted infrastructure. The work continues past
-              launch: careful migrations, recovery paths, and verified outcomes.
+              I turn uncertain workflows into product software, agentic operations,
+              and private infrastructure with visible state, bounded failure, and
+              evidence that the result actually works.
             </p>
-            <div class="hero-actions" aria-label="Primary links">
+            <div class="hero-actions" role="group" aria-label="Primary links">
               <a class="button button-primary" href="#work">See the product work</a>
               <a class="button button-ghost" href="https://github.com/spirosrap">Public source</a>
             </div>
@@ -2336,14 +2391,14 @@ h1 {
 
           <aside class="hero-case" aria-label="Latest independent product release">
             <div class="hero-case-topline">
-              <span>Independent product / v0.18.0</span>
+              <span>Independent product / v0.28.0</span>
               <strong><i aria-hidden="true"></i> Production</strong>
             </div>
             <p class="hero-case-index">Now live / kalathitimon.com</p>
             <h2>Καλάθι Τιμών</h2>
             <p>
-              The supermarket planner now has its own production domain, same-origin
-              services, compact basket links, and a preserved compatibility mirror.
+              A supermarket planner with browser-local price watches, target prices,
+              observed history, searchable changes, and verified hourly publishing.
             </p>
             <a href="https://kalathitimon.com/">
               Open kalathitimon.com <span aria-hidden="true">↗</span>
@@ -2352,19 +2407,19 @@ h1 {
         </div>
 
         <ul class="hero-evidence" aria-label="Product ownership evidence">
-          <li><span>01</span><strong>Independent product</strong><small>A dedicated production identity</small></li>
-          <li><span>02</span><strong>Release discipline</strong><small>Versioned behavior and public source</small></li>
-          <li><span>03</span><strong>Same-origin sharing</strong><small>Compact links without a third party</small></li>
-          <li><span>04</span><strong>Continuity preserved</strong><small>The compatibility mirror remains live</small></li>
+          <li><span>01</span><strong>Price watch</strong><small>Private targets for up to 40 products</small></li>
+          <li><span>02</span><strong>Observed history</strong><small>Per-chain changes with exact timestamps</small></li>
+          <li><span>03</span><strong>Lean delivery</strong><small>Compressed, lazy-loaded change data</small></li>
+          <li><span>04</span><strong>Verified publishing</strong><small>Hourly snapshots with guarded release checks</small></li>
         </ul>
       </section>
 
       <section class="trust-band" aria-label="Engineering position">
-        <p>A dedicated domain is a small detail with a large implication: the project now owns its production identity.</p>
+        <p>The product now helps people act on prices, not only compare them once.</p>
         <dl>
-          <div><dt>Current release</dt><dd>v0.18.0</dd></div>
-          <div><dt>Primary domain</dt><dd>kalathitimon.com</dd></div>
-          <div><dt>Continuity</dt><dd>Compatibility mirror retained</dd></div>
+          <div><dt>Current release</dt><dd>v0.28.0</dd></div>
+          <div><dt>Personal state</dt><dd>Browser-local by design</dd></div>
+          <div><dt>Catalogue cadence</dt><dd>Validated hourly snapshots</dd></div>
         </dl>
       </section>
 
@@ -2385,48 +2440,48 @@ h1 {
           <header class="case-header">
             <div>
               <p>Case 01 / Independent product</p>
-              <span>React / same-origin services / dual-target publishing</span>
+              <span>React / local-first state / same-origin data services</span>
             </div>
-            <strong><i aria-hidden="true"></i> Production / v0.18.0</strong>
+            <strong><i aria-hidden="true"></i> Production / v0.28.0</strong>
           </header>
 
           <div class="case-feature-grid">
-            <div class="case-browser" data-case-browser data-active-view="product">
+            <div class="case-browser" data-case-browser data-active-view="watch">
               <div class="case-browser-bar">
                 <div aria-hidden="true"><i></i><i></i><i></i></div>
                 <span>kalathitimon.com</span>
-                <div class="case-view-tabs" role="tablist" aria-label="Kalathi Timon product views">
+                <div class="case-view-tabs" role="tablist" aria-label="Kalathi Timon feature views">
                   <button
-                    id="view-product"
+                    id="view-watch"
                     type="button"
                     role="tab"
                     aria-selected="true"
-                    aria-controls="image-product"
+                    aria-controls="image-watch"
                     tabindex="0"
-                    data-case-view="product"
-                  >Product</button>
+                    data-case-view="watch"
+                  >Watch</button>
                   <button
-                    id="view-share"
+                    id="view-history"
                     type="button"
                     role="tab"
                     aria-selected="false"
-                    aria-controls="image-share"
+                    aria-controls="image-history"
                     tabindex="-1"
-                    data-case-view="share"
-                  >Share</button>
+                    data-case-view="history"
+                  >History</button>
                 </div>
               </div>
               <div class="case-browser-screen">
                 <img
-                  id="image-product"
+                  id="image-watch"
                   role="tabpanel"
-                  aria-labelledby="view-product"
-                  data-case-image="product"
+                  aria-labelledby="view-watch"
+                  data-case-image="watch"
                   src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'/%3E"
-                  data-src="assets/kalathitimon-v018-1265.webp"
-                  data-srcset="assets/kalathitimon-v018-640.webp 640w, assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
+                  data-src="assets/kalathitimon-watch-v028-1265.webp"
+                  data-srcset="assets/kalathitimon-watch-v028-640.webp 640w, assets/kalathitimon-watch-v028-768.webp 768w, assets/kalathitimon-watch-v028-1265.webp 1265w"
                   sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                  alt="Kalathi Timon version 0.18.0 running on its dedicated production domain"
+                  alt="Kalathi Timon price watch with private targets and current supermarket prices"
                   width="1265"
                   height="712"
                   decoding="async"
@@ -2435,10 +2490,10 @@ h1 {
                 />
                 <noscript>
                   <img
-                    src="assets/kalathitimon-v018-1265.webp"
-                    srcset="assets/kalathitimon-v018-640.webp 640w, assets/kalathitimon-v018-768.webp 768w, assets/kalathitimon-v018-1265.webp 1265w"
+                    src="assets/kalathitimon-watch-v028-1265.webp"
+                    srcset="assets/kalathitimon-watch-v028-640.webp 640w, assets/kalathitimon-watch-v028-768.webp 768w, assets/kalathitimon-watch-v028-1265.webp 1265w"
                     sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                    alt="Kalathi Timon version 0.18.0 running on its dedicated production domain"
+                    alt="Kalathi Timon price watch with private targets and current supermarket prices"
                     width="1265"
                     height="712"
                     loading="lazy"
@@ -2446,14 +2501,14 @@ h1 {
                   />
                 </noscript>
                 <img
-                  id="image-share"
+                  id="image-history"
                   role="tabpanel"
-                  aria-labelledby="view-share"
-                  data-case-image="share"
-                  src="assets/kalathitimon-share-v018-1265.webp?v=7.0.1"
-                  srcset="assets/kalathitimon-share-v018-640.webp 640w, assets/kalathitimon-share-v018-768.webp?v=7.0.1 768w, assets/kalathitimon-share-v018-1265.webp?v=7.0.1 1265w"
+                  aria-labelledby="view-history"
+                  data-case-image="history"
+                  src="assets/kalathitimon-history-v027-1265.webp"
+                  srcset="assets/kalathitimon-history-v027-640.webp 640w, assets/kalathitimon-history-v027-768.webp 768w, assets/kalathitimon-history-v027-1265.webp 1265w"
                   sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                  alt="Kalathi Timon compact same-origin basket sharing interface"
+                  alt="Kalathi Timon per-chain price history with an interactive step chart"
                   width="1265"
                   height="712"
                   loading="lazy"
@@ -2465,73 +2520,74 @@ h1 {
             </div>
 
             <div class="case-copy">
-              <p class="case-kicker">Independent product ownership</p>
-              <h3 id="case-posokanei-title">A useful tool graduated into its own production surface.</h3>
+              <p class="case-kicker">Product depth after launch</p>
+              <h3 id="case-posokanei-title">From basket comparison to ongoing price intelligence.</h3>
               <p class="case-lede">
-                The domain move changed more than the address.
+                The latest releases turn one-off comparison into a repeatable buying workflow.
               </p>
               <p>
-                Καλάθι Τιμών now serves the app, PHP APIs, images, daily opportunities,
-                and compact basket links from kalathitimon.com. The hourly pipeline
-                publishes the same validated catalogue atomically to the new primary
-                domain and the established compatibility mirror.
+                People can watch products, set target prices, inspect observed history
+                by supermarket, explore every recent change, and export the same data
+                as CSV. Personal watch state stays in the browser, while current prices
+                are resolved from the latest validated catalogue when the list opens.
               </p>
 
               <dl class="case-facts">
-                <div><dt>Production domain</dt><dd>kalathitimon.com</dd></div>
-                <div><dt>Current release</dt><dd>v0.18.0</dd></div>
-                <div><dt>Sharing path</dt><dd>Same-origin /s/ links</dd></div>
-                <div><dt>Continuity path</dt><dd>Compatibility mirror</dd></div>
+                <div><dt>Price watch</dt><dd>Up to 40 local products</dd></div>
+                <div><dt>Target privacy</dt><dd>No server-side personal state</dd></div>
+                <div><dt>History</dt><dd>Observed per chain</dd></div>
+                <div><dt>Change export</dt><dd>Readable page plus CSV</dd></div>
               </dl>
 
               <div class="text-links">
                 <a href="https://kalathitimon.com/">Open kalathitimon.com <span aria-hidden="true">↗</span></a>
+                <a href="https://kalathitimon.com/changes/">Explore price changes <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/spirosrap/posokanei-basket-demo">Review source <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
 
           <dl class="case-outcomes">
-            <div><dt>Migration constraint</dt><dd>Move the product without breaking existing baskets or splitting catalogue state.</dd></div>
-            <div><dt>Engineering response</dt><dd>Use config-driven paths and publish one validated snapshot to both destinations.</dd></div>
-            <div><dt>Operational outcome</dt><dd>The product has an independent identity while established links keep working.</dd></div>
+            <div><dt>User problem</dt><dd>Repeatedly checking the same products makes price comparison another chore.</dd></div>
+            <div><dt>Engineering response</dt><dd>Resolve private local targets against current catalogue data and observed history.</dd></div>
+            <div><dt>Delivery outcome</dt><dd>A 9,487-change reference snapshot now transfers at about 484 KB while preserving full search and export.</dd></div>
           </dl>
         </article>
 
         <div class="case-pair">
-          <article class="case-secondary case-fleet" aria-labelledby="case-fleet-title">
+          <article class="case-secondary case-fleet" aria-labelledby="case-automation-title">
             <div
               class="project-visual fleet-console"
               role="img"
-              aria-label="Fleetlight interface showing five systems online and one requiring attention"
+              aria-label="Review automation interface showing prepared evidence, guarded submission, and a verified receipt"
             >
-              <div class="console-bar"><strong>FLEETLIGHT</strong><span><i></i> Verified live</span></div>
+              <div class="console-bar"><strong>REVIEW CONTROL</strong><span><i></i> State reconciled</span></div>
               <div class="fleet-summary">
-                <div><strong>05</strong><span>online</span></div>
-                <div><strong>01</strong><span>attention</span></div>
-                <div><strong>00</strong><span>offline</span></div>
+                <div><strong>09</strong><span>rubrics checked</span></div>
+                <div><strong>01</strong><span>guarded handoff</span></div>
+                <div><strong>01</strong><span>final receipt</span></div>
               </div>
               <div class="fleet-machines" aria-hidden="true">
-                <div><i></i><strong>studio-mac</strong><span>macOS</span><small>12 ms</small></div>
-                <div><i></i><strong>field-mac</strong><span>macOS</span><small>18 ms</small></div>
-                <div><i></i><strong>media-node</strong><span>Linux</span><small>24 ms</small></div>
-                <div class="attention"><i></i><strong>remote-lab</strong><span>Linux</span><small>check</small></div>
+                <div><i></i><strong>intake</strong><span>bound</span><small>verified</small></div>
+                <div><i></i><strong>evidence</strong><span>prepared</span><small>replayable</small></div>
+                <div class="attention"><i></i><strong>submit gate</strong><span>explicit</span><small>guarded</small></div>
+                <div><i></i><strong>closeout</strong><span>receipt</span><small>durable</small></div>
               </div>
-              <div class="console-foot"><span>Probe cycle complete</span><strong>Outcomes recorded</strong></div>
+              <div class="console-foot"><span>Handoff completed atomically</span><strong>Replay safe</strong></div>
             </div>
             <div class="secondary-copy">
-              <p class="case-kicker">Case 02 / Native operations</p>
-              <h3 id="case-fleet-title">Fleetlight</h3>
-              <p class="case-lede">A menu-bar control surface for a mixed Mac and Linux fleet.</p>
+              <p class="case-kicker">Case 02 / Agentic operations</p>
+              <h3 id="case-automation-title">Review Automation</h3>
+              <p class="case-lede">Evidence-led review workflows with an explicit final handoff.</p>
               <p>
-                Reachability, service probes, guarded maintenance, and local history
-                distinguish a command that was sent from an outcome that was verified.
+                Prepared evidence, worker validation, feedback replay, and atomic,
+                retryable completion make the risky last step inspectable and recoverable.
               </p>
               <dl class="secondary-proof">
-                <div><dt>Risk</dt><dd>Remote state can be stale or ambiguous.</dd></div>
-                <div><dt>Response</dt><dd>Probe before action; verify after it.</dd></div>
+                <div><dt>Risk</dt><dd>A partial handoff can leave intent and final state out of sync.</dd></div>
+                <div><dt>Response</dt><dd>Materialize state, gate the transition, and retain a durable receipt.</dd></div>
               </dl>
-              <a class="case-link" href="https://github.com/spirosrap/fleetlight-macos">Review repository <span aria-hidden="true">↗</span></a>
+              <a class="case-link" href="https://github.com/spirosrap/udacity-mentor-dashboard-extension">Review public tooling <span aria-hidden="true">↗</span></a>
             </div>
           </article>
 
@@ -2539,12 +2595,12 @@ h1 {
             <div
               class="project-visual camera-console"
               role="img"
-              aria-label="Camera sentinel interface with a healthy feed, motion zone, and event timeline"
+              aria-label="Camera Sentinel interface with a healthy feed, object confirmation, and power incident history"
             >
-              <div class="console-bar"><strong>CAM / ENTRY</strong><span><i></i> Feed healthy</span></div>
+              <div class="console-bar"><strong>CAM / PRIVATE EDGE</strong><span><i></i> Feed healthy</span></div>
               <div class="camera-feed" aria-hidden="true">
                 <div class="camera-time">14:32:08</div>
-                <div class="motion-zone"><span>ZONE 01</span></div>
+                <div class="motion-zone"><span>OBJECT CONFIRMED</span></div>
                 <div class="camera-crosshair"></div>
                 <div class="camera-signal">
                   <span style="height: 22%"></span><span style="height: 38%"></span>
@@ -2554,22 +2610,23 @@ h1 {
                 </div>
               </div>
               <div class="camera-stats">
-                <span>Motion <strong>0.8%</strong></span>
-                <span>Events <strong>03</strong></span>
-                <span>Uptime <strong>6d 18h</strong></span>
+                <span>Confirm <strong>cat / person</strong></span>
+                <span>Power <strong>history</strong></span>
+                <span>Release <strong>v1.20.0</strong></span>
               </div>
             </div>
             <div class="secondary-copy">
-              <p class="case-kicker">Case 03 / Private edge system</p>
+              <p class="case-kicker">Case 03 / Private edge system / v1.20.0</p>
               <h3 id="case-camera-title">Camera Sentinel</h3>
-              <p class="case-lede">Private monitoring that treats feed health as first-class data.</p>
+              <p class="case-lede">Private monitoring that separates motion from confirmed events.</p>
               <p>
-                Local video, motion zones, event history, bounded alerts, and guarded
-                recovery keep a failed or frozen feed from looking like a quiet scene.
+                Motion can be confirmed as a cat or person on a capable LAN host before
+                retention or delivery, while power incidents and successful recoveries
+                remain visible instead of disappearing into a healthy-looking dashboard.
               </p>
               <dl class="secondary-proof">
-                <div><dt>Risk</dt><dd>A healthy-looking interface can hide a dead feed.</dd></div>
-                <div><dt>Response</dt><dd>Monitor the signal, not only motion events.</dd></div>
+                <div><dt>Risk</dt><dd>Shadows create noise; transient power failures erase context.</dd></div>
+                <div><dt>Response</dt><dd>Confirm objects, fail open safely, and preserve incident history.</dd></div>
               </dl>
               <a class="case-link" href="https://github.com/spirosrap/pi-camera-sentinel">Review repository <span aria-hidden="true">↗</span></a>
             </div>
@@ -2591,26 +2648,26 @@ h1 {
           <div class="record-list">
             <article>
               <p><span>01</span> Product</p>
-              <h4>Καλάθι Τιμών moved to its own domain.</h4>
-              <p>Version 0.18.0 gave the product an independent production identity while preserving the original compatibility mirror.</p>
+              <h4>Καλάθι Τιμών added private price targets.</h4>
+              <p>Version 0.28.0 resolves browser-local watch lists against current supermarket prices and observed per-chain history.</p>
               <a href="https://kalathitimon.com/" aria-label="Open Kalathi Timon supermarket planner">Open <span aria-hidden="true">↗</span></a>
             </article>
             <article>
-              <p><span>02</span> Operations</p>
-              <h4>Fleet actions gained outcome receipts.</h4>
-              <p>Guarded actions and post-action probes now separate intent from confirmed machine state.</p>
-              <a href="https://github.com/spirosrap/fleetlight-macos" aria-label="Open Fleetlight repository">Repo <span aria-hidden="true">↗</span></a>
+              <p><span>02</span> Private edge</p>
+              <h4>Camera alerts gained object confirmation.</h4>
+              <p>Version 1.20.0 filters motion through cat/person confirmation while retaining fail-open behavior and power incident history.</p>
+              <a href="https://github.com/spirosrap/pi-camera-sentinel" aria-label="Open Camera Sentinel repository">Repo <span aria-hidden="true">↗</span></a>
             </article>
             <article>
               <p><span>03</span> Automation</p>
-              <h4>Review workflows made the last step explicit.</h4>
-              <p>Evidence capture, recovery markers, and guarded completion keep automation inspectable at the risky edge.</p>
+              <h4>Review handoffs became atomic and retryable.</h4>
+              <p>Validated workers, replayable feedback, guarded completion, and durable receipts now protect the full workflow boundary.</p>
               <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension" aria-label="Open review automation repository">Repo <span aria-hidden="true">↗</span></a>
             </article>
             <article>
               <p><span>04</span> Media</p>
-              <h4>Plex gained a quieter front door.</h4>
-              <p>A self-hosted web and Android surface keeps remote playback and subtitle-heavy use central.</p>
+              <h4>Plex Open made Safari playback dependable.</h4>
+              <p>Seekable HLS VOD, synchronized subtitle choices, Fix Match, and poster-only repair close the common browser playback gaps.</p>
               <a href="https://github.com/spirosrap/plex-open-web" aria-label="Open Plex Open repository">Repo <span aria-hidden="true">↗</span></a>
             </article>
           </div>
@@ -2674,7 +2731,7 @@ h1 {
           </div>
           <p>
             Selected public repositories across native apps, local-first tools,
-            private media, agentic automation, and earlier research tooling.
+            private media, agentic automation, edge systems, and earlier research tooling.
           </p>
         </header>
 
@@ -2689,14 +2746,14 @@ h1 {
           <article class="system-item">
             <div class="system-symbol system-symbol-plex">PX</div>
             <div class="system-name"><p>02 / Self-hosted media</p><h3>Plex Open</h3></div>
-            <p class="system-description">Browser and Android playback built around subtitles, remote access, and living-room use.</p>
+            <p class="system-description">Self-hosted browser and Android playback with seekable Safari VOD, persistent subtitles, and metadata repair.</p>
             <p class="system-stack">Web / Android</p>
             <a href="https://github.com/spirosrap/plex-open-web" aria-label="Open Plex Open repository">Repository <span aria-hidden="true">↗</span></a>
           </article>
           <article class="system-item">
             <div class="system-symbol system-symbol-agents">AU</div>
             <div class="system-name"><p>03 / Agentic operations</p><h3>Review Automation</h3></div>
-            <p class="system-description">Evidence-led workflows with model controls, state recovery, guarded completion, and companion apps.</p>
+            <p class="system-description">Evidence-led workflows with validated workers, replayable state, atomic handoffs, durable receipts, and companion apps.</p>
             <p class="system-stack">Agents / macOS / iOS</p>
             <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension" aria-label="Open review automation repository">Repository <span aria-hidden="true">↗</span></a>
           </article>
@@ -2710,7 +2767,7 @@ h1 {
           <article class="system-item">
             <div class="system-symbol system-symbol-markets">RS</div>
             <div class="system-name"><p>05 / Earlier work</p><h3>Past Markets Lab</h3></div>
-            <p class="system-description">Earlier local research and execution tooling; no longer an active trading focus.</p>
+            <p class="system-description">Earlier local research and execution tooling, preserved as past work rather than a current trading focus.</p>
             <p class="system-stack">Rust / Local dashboards</p>
             <a href="https://github.com/spirosrap/coinbase-perps-lab" aria-label="Open past markets lab repository">Repository <span aria-hidden="true">↗</span></a>
           </article>
@@ -2753,65 +2810,65 @@ h1 {
       const caseViewTabs = [...document.querySelectorAll("[data-case-view][role='tab']")];
       const caseImages = [...document.querySelectorAll("[data-case-image]")];
       const caseViewOrder = caseViewTabs.map((tab) => tab.dataset.caseView);
-      const productImage = caseImages.find((image) => image.dataset.caseImage === "product");
-      const shareImage = caseImages.find((image) => image.dataset.caseImage === "share");
-      let sharePreload;
+      const primaryCaseImage = caseImages.find((image) => image.dataset.caseImage === "watch");
+      const secondaryCaseImage = caseImages.find((image) => image.dataset.caseImage === "history");
+      let secondaryCasePreload;
 
-      function hydrateProductView() {
-        if (!productImage?.dataset.src) return;
+      function hydratePrimaryCaseView() {
+        if (!primaryCaseImage?.dataset.src) return;
 
-        productImage.srcset = productImage.dataset.srcset;
-        productImage.src = productImage.dataset.src;
-        delete productImage.dataset.src;
-        delete productImage.dataset.srcset;
-        productImage.hidden = false;
+        primaryCaseImage.srcset = primaryCaseImage.dataset.srcset;
+        primaryCaseImage.src = primaryCaseImage.dataset.src;
+        delete primaryCaseImage.dataset.src;
+        delete primaryCaseImage.dataset.srcset;
+        primaryCaseImage.hidden = false;
       }
 
-      if (caseBrowser && productImage) {
+      if (caseBrowser && primaryCaseImage) {
         if ("IntersectionObserver" in window) {
-          const productObserver = new IntersectionObserver((entries) => {
+          const primaryCaseObserver = new IntersectionObserver((entries) => {
             if (!entries.some((entry) => entry.isIntersecting)) return;
-            hydrateProductView();
-            productObserver.disconnect();
+            hydratePrimaryCaseView();
+            primaryCaseObserver.disconnect();
           }, { rootMargin: "320px 0px" });
-          productObserver.observe(caseBrowser);
+          primaryCaseObserver.observe(caseBrowser);
         } else {
-          window.addEventListener("load", hydrateProductView, { once: true });
+          window.addEventListener("load", hydratePrimaryCaseView, { once: true });
         }
 
         document.querySelectorAll('a[href="#work"]').forEach((link) => {
-          link.addEventListener("click", hydrateProductView, { once: true });
+          link.addEventListener("click", hydratePrimaryCaseView, { once: true });
         });
       }
 
-      function preloadShareView() {
-        if (!shareImage || sharePreload || (shareImage.complete && shareImage.naturalWidth > 0)) return;
+      function preloadSecondaryCaseView() {
+        if (!secondaryCaseImage || secondaryCasePreload || (secondaryCaseImage.complete && secondaryCaseImage.naturalWidth > 0)) return;
 
-        sharePreload = new Image();
-        sharePreload.fetchPriority = "low";
-        sharePreload.decoding = "async";
-        sharePreload.sizes = shareImage.sizes;
-        sharePreload.srcset = shareImage.srcset;
-        sharePreload.src = shareImage.src;
+        secondaryCasePreload = new Image();
+        secondaryCasePreload.fetchPriority = "low";
+        secondaryCasePreload.decoding = "async";
+        secondaryCasePreload.sizes = secondaryCaseImage.sizes;
+        secondaryCasePreload.srcset = secondaryCaseImage.srcset;
+        secondaryCasePreload.src = secondaryCaseImage.src;
       }
 
-      if (caseBrowser && shareImage) {
+      if (caseBrowser && secondaryCaseImage) {
         if ("IntersectionObserver" in window) {
-          const shareObserver = new IntersectionObserver((entries) => {
+          const secondaryCaseObserver = new IntersectionObserver((entries) => {
             if (!entries.some((entry) => entry.isIntersecting)) return;
-            preloadShareView();
-            shareObserver.disconnect();
+            preloadSecondaryCaseView();
+            secondaryCaseObserver.disconnect();
           }, { rootMargin: "120px 0px" });
-          shareObserver.observe(caseBrowser);
+          secondaryCaseObserver.observe(caseBrowser);
         } else {
-          window.addEventListener("load", preloadShareView, { once: true });
+          window.addEventListener("load", preloadSecondaryCaseView, { once: true });
         }
 
-        const shareTab = caseViewTabs.find((tab) => tab.dataset.caseView === "share");
-        shareTab?.addEventListener("pointerenter", preloadShareView, { once: true });
-        shareTab?.addEventListener("focus", preloadShareView, { once: true });
+        const secondaryCaseTab = caseViewTabs.find((tab) => tab.dataset.caseView === "history");
+        secondaryCaseTab?.addEventListener("pointerenter", preloadSecondaryCaseView, { once: true });
+        secondaryCaseTab?.addEventListener("focus", preloadSecondaryCaseView, { once: true });
         document.querySelectorAll('a[href="#work"]').forEach((link) => {
-          link.addEventListener("click", preloadShareView, { once: true });
+          link.addEventListener("click", preloadSecondaryCaseView, { once: true });
         });
       }
 
@@ -2819,7 +2876,7 @@ h1 {
         const nextIndex = caseViewOrder.indexOf(view);
         if (!caseBrowser || nextIndex < 0) return;
 
-        if (view === "product") hydrateProductView();
+        if (view === "watch") hydratePrimaryCaseView();
 
         caseBrowser.dataset.activeView = view;
 
