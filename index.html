@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="build-version" content="11.0.0" />
+    <meta name="build-version" content="12.0.0" />
     <meta
       name="description"
       content="Spiros Raptis builds and operates dependable products, agentic workflows, private edge systems, and self-hosted infrastructure."
@@ -18,15 +18,15 @@
     <meta property="og:url" content="https://agenticspiros.com/" />
     <meta
       property="og:image"
-      content="https://agenticspiros.com/assets/kalathitimon-history-v033-og.jpg"
+      content="https://agenticspiros.com/assets/kalathitimon-health-v037-og.jpg"
     />
     <title>Spiros Raptis - Independent Systems Engineer</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='4' fill='%23111816'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-size='22' font-weight='700' fill='%2349c58b'%3ESR%3C/text%3E%3C/svg%3E" />
     <link
       rel="preload"
       as="image"
-      href="assets/kalathitimon-hero-v11-1264.avif"
-      imagesrcset="assets/kalathitimon-hero-v11-768.avif 768w, assets/kalathitimon-hero-v11-1264.avif 1264w"
+      href="assets/kalathitimon-hero-v12-1264.avif"
+      imagesrcset="assets/kalathitimon-hero-v12-768.avif 768w, assets/kalathitimon-hero-v12-1264.avif 1264w"
       imagesizes="100vw"
       type="image/avif"
       fetchpriority="high"
@@ -481,7 +481,7 @@ h1 {
 .hero-case-topline i,
 .case-header > strong i,
 .console-bar i,
-.fleet-machines i {
+.download-list i {
   display: inline-block;
   width: 7px;
   height: 7px;
@@ -959,7 +959,7 @@ h1 {
   overflow: hidden;
 }
 
-.fleet-console,
+.media-console,
 .camera-console {
   display: grid;
   padding: 1.4rem;
@@ -967,7 +967,7 @@ h1 {
   color: var(--white);
 }
 
-.fleet-console {
+.media-console {
   grid-template-rows: auto auto 1fr auto;
   gap: 0.9rem;
 }
@@ -994,49 +994,49 @@ h1 {
   color: rgba(255, 255, 255, 0.64);
 }
 
-.fleet-summary {
+.media-summary {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.fleet-summary > div {
+.media-summary > div {
   padding: 0.75rem 0.9rem;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.fleet-summary > div:last-child {
+.media-summary > div:last-child {
   border-right: 0;
 }
 
-.fleet-summary strong,
-.fleet-summary span {
+.media-summary strong,
+.media-summary span {
   display: block;
 }
 
-.fleet-summary strong {
+.media-summary strong {
   font-family: var(--mono);
   font-size: 1.6rem;
   line-height: 1;
 }
 
-.fleet-summary > div:nth-child(2) strong {
+.media-summary > div:nth-child(2) strong {
   color: var(--amber);
 }
 
-.fleet-summary span {
+.media-summary span {
   margin-top: 0.3rem;
   color: rgba(255, 255, 255, 0.48);
   font-size: 0.65rem;
 }
 
-.fleet-machines {
+.download-list {
   display: grid;
   align-content: center;
   gap: 0.38rem;
 }
 
-.fleet-machines > div {
+.download-list > div {
   display: grid;
   grid-template-columns: 8px minmax(0, 1fr) 78px 68px;
   align-items: center;
@@ -1047,26 +1047,26 @@ h1 {
   font-size: 0.68rem;
 }
 
-.fleet-machines span,
-.fleet-machines small {
+.download-list span,
+.download-list small {
   color: rgba(255, 255, 255, 0.46);
 }
 
-.fleet-machines small {
+.download-list small {
   text-align: right;
 }
 
-.fleet-machines .attention {
+.download-list .selected {
   border-color: rgba(221, 168, 74, 0.36);
 }
 
-.fleet-machines .attention i {
+.download-list .selected i {
   background: var(--amber);
   box-shadow: 0 0 10px rgba(221, 168, 74, 0.44);
 }
 
 .console-foot {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.6rem;
 }
 
@@ -1111,23 +1111,35 @@ h1 {
   font-size: 0.64rem;
 }
 
-.motion-zone {
+.power-zone {
   position: absolute;
-  top: 22%;
-  right: 18%;
-  width: 35%;
-  height: 45%;
-  border: 1px dashed var(--coral);
+  top: 23%;
+  right: 15%;
+  display: grid;
+  width: 42%;
+  min-height: 45%;
+  align-content: center;
+  padding: 0.8rem;
+  border: 1px solid var(--green);
+  background: rgba(17, 24, 22, 0.76);
 }
 
-.motion-zone span {
-  position: absolute;
-  top: -1.25rem;
-  right: 0;
-  color: var(--coral);
+.power-zone strong,
+.power-zone span {
+  display: block;
+}
+
+.power-zone strong {
+  color: var(--green);
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 850;
+}
+
+.power-zone span {
+  margin-top: 0.32rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.62rem;
 }
 
 .camera-crosshair {
@@ -1310,6 +1322,18 @@ h1 {
   color: var(--green-deep);
   font-size: 0.76rem;
   font-weight: 850;
+}
+
+.record-state {
+  justify-self: end;
+  padding: 0.35rem 0.48rem;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 850;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .record-list article > a:hover,
@@ -1762,7 +1786,8 @@ h1 {
     grid-column: 2 / -1;
   }
 
-  .record-list article > a {
+  .record-list article > a,
+  .record-state {
     grid-column: 3;
     grid-row: 1;
   }
@@ -2025,7 +2050,7 @@ h1 {
     aspect-ratio: 4 / 3;
   }
 
-  .fleet-console,
+  .media-console,
   .camera-console {
     padding: 1rem;
   }
@@ -2072,7 +2097,8 @@ h1 {
     grid-column: 1 / -1;
   }
 
-  .record-list article > a {
+  .record-list article > a,
+  .record-state {
     grid-column: 2;
     grid-row: 1;
   }
@@ -2257,19 +2283,19 @@ h1 {
     padding-left: 0.4rem;
   }
 
-  .fleet-summary > div {
+  .media-summary > div {
     padding: 0.62rem;
   }
 
-  .fleet-summary strong {
+  .media-summary strong {
     font-size: 1.3rem;
   }
 
-  .fleet-machines > div {
+  .download-list > div {
     grid-template-columns: 8px minmax(0, 1fr) auto;
   }
 
-  .fleet-machines > div > span {
+  .download-list > div > span {
     display: none;
   }
 
@@ -2357,17 +2383,17 @@ h1 {
         <picture class="hero-media">
           <source
             type="image/avif"
-            srcset="assets/kalathitimon-hero-v11-768.avif 768w, assets/kalathitimon-hero-v11-1264.avif 1264w"
+            srcset="assets/kalathitimon-hero-v12-768.avif 768w, assets/kalathitimon-hero-v12-1264.avif 1264w"
             sizes="100vw"
           />
           <source
             type="image/webp"
-            srcset="assets/kalathitimon-history-v033-768.webp 768w, assets/kalathitimon-history-v033-1265.webp 1265w"
+            srcset="assets/kalathitimon-health-v037-768.webp 768w, assets/kalathitimon-health-v037-1265.webp 1265w"
             sizes="100vw"
           />
           <img
             class="hero-backdrop"
-            src="assets/kalathitimon-history-v033-1265.webp"
+            src="assets/kalathitimon-health-v037-1265.webp"
             alt=""
             width="1264"
             height="712"
@@ -2395,14 +2421,14 @@ h1 {
 
           <aside class="hero-case" aria-label="Latest independent product release">
             <div class="hero-case-topline">
-              <span>Independent product / v0.33.5</span>
+              <span>Independent product / v0.37.0</span>
               <strong><i aria-hidden="true"></i> Production</strong>
             </div>
             <p class="hero-case-index">Now live / kalathitimon.com</p>
             <h2>Καλάθι Τιμών</h2>
             <p>
-              A supermarket planner with equivalent-product swaps, clearer price
-              history, resilient official imagery, and verified publishing.
+              A supermarket planner that now makes catalogue completeness,
+              chain coverage, and rejected refreshes visible to everyone.
             </p>
             <a href="https://kalathitimon.com/">
               Open kalathitimon.com <span aria-hidden="true">↗</span>
@@ -2411,19 +2437,19 @@ h1 {
         </div>
 
         <ul class="hero-evidence" aria-label="Product ownership evidence">
-          <li><span>01</span><strong>Equivalent options</strong><small>Product-type-aware basket swaps</small></li>
-          <li><span>02</span><strong>Clear price history</strong><small>Actual and known-current spans</small></li>
-          <li><span>03</span><strong>Route-split delivery</strong><small>62 KB main / 8.3 KB history</small></li>
-          <li><span>04</span><strong>Image recovery</strong><small>Official sources with bounded retries</small></li>
+          <li><span>01</span><strong>Publication guard</strong><small>Partial catalogues stay out of production</small></li>
+          <li><span>02</span><strong>Data transparency</strong><small>Public health and coverage view</small></li>
+          <li><span>03</span><strong>Coverage profile</strong><small>Categories, chains, prices, and offers</small></li>
+          <li><span>04</span><strong>Lean delivery</strong><small>63.5 KiB startup JavaScript</small></li>
         </ul>
       </section>
 
       <section class="trust-band" aria-label="Engineering position">
-        <p>The product stays fast while its catalogue, history, and image quality improve in operation.</p>
+        <p>The product now exposes the same catalogue-integrity evidence used to decide whether a refresh is safe to publish.</p>
         <dl>
-          <div><dt>Current release</dt><dd>v0.33.5</dd></div>
-          <div><dt>Live preview feed</dt><dd>4.4 KB / Brotli</dd></div>
-          <div><dt>Image policy</dt><dd>Verified official sources</dd></div>
+          <div><dt>Current release</dt><dd>v0.37.0</dd></div>
+          <div><dt>Health payload</dt><dd>632 B / Brotli</dd></div>
+          <div><dt>Contraction gate</dt><dd>Explicit approval above 3%</dd></div>
         </dl>
       </section>
 
@@ -2446,46 +2472,46 @@ h1 {
               <p>Case 01 / Independent product</p>
               <span>React / local-first state / same-origin data services</span>
             </div>
-            <strong><i aria-hidden="true"></i> Production / v0.33.5</strong>
+            <strong><i aria-hidden="true"></i> Production / v0.37.0</strong>
           </header>
 
           <div class="case-feature-grid">
-            <div class="case-browser" data-case-browser data-active-view="history">
+            <div class="case-browser" data-case-browser data-active-view="health">
               <div class="case-browser-bar">
                 <div aria-hidden="true"><i></i><i></i><i></i></div>
                 <span>kalathitimon.com</span>
                 <div class="case-view-tabs" role="tablist" aria-label="Kalathi Timon feature views">
                   <button
-                    id="view-history"
+                    id="view-health"
                     type="button"
                     role="tab"
                     aria-selected="true"
-                    aria-controls="image-history"
+                    aria-controls="image-health"
                     tabindex="0"
-                    data-case-view="history"
-                  >History</button>
+                    data-case-view="health"
+                  >Health</button>
                   <button
-                    id="view-alternatives"
+                    id="view-history"
                     type="button"
                     role="tab"
                     aria-selected="false"
-                    aria-controls="image-alternatives"
+                    aria-controls="image-history"
                     tabindex="-1"
-                    data-case-view="alternatives"
-                  >Alternatives</button>
+                    data-case-view="history"
+                  >History</button>
                 </div>
               </div>
               <div class="case-browser-screen">
                 <img
-                  id="image-history"
+                  id="image-health"
                   role="tabpanel"
-                  aria-labelledby="view-history"
-                  data-case-image="history"
+                  aria-labelledby="view-health"
+                  data-case-image="health"
                   src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'/%3E"
-                  data-src="assets/kalathitimon-history-v033-1265.webp"
-                  data-srcset="assets/kalathitimon-history-v033-640.webp 640w, assets/kalathitimon-history-v033-768.webp 768w, assets/kalathitimon-history-v033-1265.webp 1265w"
+                  data-src="assets/kalathitimon-health-v037-1265.webp"
+                  data-srcset="assets/kalathitimon-health-v037-640.webp 640w, assets/kalathitimon-health-v037-768.webp 768w, assets/kalathitimon-health-v037-1265.webp 1265w"
                   sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                  alt="Kalathi Timon seven-day per-chain price history with actual and known-current spans"
+                  alt="Kalathi Timon catalogue health page showing published products, category coverage, and chain coverage"
                   width="1265"
                   height="712"
                   decoding="async"
@@ -2494,10 +2520,10 @@ h1 {
                 />
                 <noscript>
                   <img
-                    src="assets/kalathitimon-history-v033-1265.webp"
-                    srcset="assets/kalathitimon-history-v033-640.webp 640w, assets/kalathitimon-history-v033-768.webp 768w, assets/kalathitimon-history-v033-1265.webp 1265w"
+                    src="assets/kalathitimon-health-v037-1265.webp"
+                    srcset="assets/kalathitimon-health-v037-640.webp 640w, assets/kalathitimon-health-v037-768.webp 768w, assets/kalathitimon-health-v037-1265.webp 1265w"
                     sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                    alt="Kalathi Timon seven-day per-chain price history with actual and known-current spans"
+                    alt="Kalathi Timon catalogue health page showing published products, category coverage, and chain coverage"
                     width="1265"
                     height="712"
                     loading="lazy"
@@ -2505,14 +2531,14 @@ h1 {
                   />
                 </noscript>
                 <img
-                  id="image-alternatives"
+                  id="image-history"
                   role="tabpanel"
-                  aria-labelledby="view-alternatives"
-                  data-case-image="alternatives"
-                  src="assets/kalathitimon-alternatives-v029-1265.webp"
-                  srcset="assets/kalathitimon-alternatives-v029-640.webp 640w, assets/kalathitimon-alternatives-v029-768.webp 768w, assets/kalathitimon-alternatives-v029-1265.webp 1265w"
+                  aria-labelledby="view-history"
+                  data-case-image="history"
+                  src="assets/kalathitimon-history-v033-1265.webp"
+                  srcset="assets/kalathitimon-history-v033-640.webp 640w, assets/kalathitimon-history-v033-768.webp 768w, assets/kalathitimon-history-v033-1265.webp 1265w"
                   sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                  alt="Kalathi Timon showing matched equivalent products and a quantity-preserving basket replacement"
+                  alt="Kalathi Timon seven-day per-chain price history with actual and known-current spans"
                   width="1265"
                   height="712"
                   loading="lazy"
@@ -2524,76 +2550,74 @@ h1 {
             </div>
 
             <div class="case-copy">
-              <p class="case-kicker">Performance and resilience after launch</p>
-              <h3 id="case-posokanei-title">Price intelligence that stays fast as the catalogue gets richer.</h3>
+              <p class="case-kicker">Transparency and integrity after launch</p>
+              <h3 id="case-posokanei-title">Useful data starts with admitting when a refresh is incomplete.</h3>
               <p class="case-lede">
-                The latest releases improve the buying decision, the evidence behind it, and the delivery path.
+                The latest release turns publication safeguards into a public product surface.
               </p>
               <p>
-                People can compare equivalent products within the same type, replace
-                basket items without losing quantity, inspect seven-day per-chain
-                history, and enlarge official product images. Personal state remains
-                browser-local, while image repair uses verified fallbacks and bounded retries.
+                The health view compares the published catalogue with the previous
+                successful synchronization across products, categories, chains, prices,
+                and offers. Suspicious partial downloads are rejected while the last
+                verified snapshot remains live with its honest timestamp.
               </p>
 
               <dl class="case-facts">
-                <div><dt>Equivalent options</dt><dd>Up to six matched alternatives</dd></div>
-                <div><dt>Price history</dt><dd>Actual and known-current spans</dd></div>
-                <div><dt>Route delivery</dt><dd>8.3 KB history bundle</dd></div>
-                <div><dt>Image recovery</dt><dd>Official sources only</dd></div>
+                <div><dt>Publication</dt><dd>Last verified snapshot preserved</dd></div>
+                <div><dt>Coverage</dt><dd>Root categories and Greek chains</dd></div>
+                <div><dt>Contraction</dt><dd>Over 3% requires approval</dd></div>
+                <div><dt>Delivery</dt><dd>Lazy route / 63.5 KiB startup</dd></div>
               </dl>
 
               <div class="text-links">
                 <a href="https://kalathitimon.com/">Open kalathitimon.com <span aria-hidden="true">↗</span></a>
-                <a href="https://kalathitimon.com/changes/">Explore price changes <span aria-hidden="true">↗</span></a>
+                <a href="https://kalathitimon.com/health/">Inspect catalogue health <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/spirosrap/posokanei-basket-demo">Review source <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
 
           <dl class="case-outcomes">
-            <div><dt>User problem</dt><dd>Comparison loses value when history is unclear, images fail, or the app slows as data grows.</dd></div>
-            <div><dt>Engineering response</dt><dd>Split routes and payloads, keep matching in a worker, and bound official-image recovery.</dd></div>
-            <div><dt>Delivery outcome</dt><dd>Live v0.33.5 serves 62 KB of main JavaScript, an 8.3 KB history route, and a 4.4 KB preview feed over Brotli.</dd></div>
+            <div><dt>User problem</dt><dd>A partial source response can look plausible enough to silently weaken every comparison.</dd></div>
+            <div><dt>Engineering response</dt><dd>Fingerprint coverage, reject suspicious contractions, and retain the last complete publication.</dd></div>
+            <div><dt>Product outcome</dt><dd>A public bilingual health page explains what was published, what changed, and when protection intervened.</dd></div>
           </dl>
         </article>
 
         <div class="case-pair">
-          <article class="case-secondary case-fleet" aria-labelledby="case-automation-title">
+          <article class="case-secondary case-media" aria-labelledby="case-media-title">
             <div
-              class="project-visual fleet-console"
+              class="project-visual media-console"
               role="img"
-              aria-label="Review automation interface showing bounded quality control, prepared evidence, and a receipt-gated handoff"
+              aria-label="Plex Open browser download manager showing saved titles, actual storage use, and confirmed local cleanup"
             >
-              <div class="console-bar"><strong>REVIEW CONTROL</strong><span><i></i> State reconciled</span></div>
-              <div class="fleet-summary">
-                <div><strong>15m</strong><span>bounded QC</span></div>
-                <div><strong>01</strong><span>receipt gate</span></div>
-                <div><strong>01</strong><span>explicit handoff</span></div>
+              <div class="console-bar"><strong>PLEX OPEN / DOWNLOADS</strong><span><i></i> Browser storage</span></div>
+              <div class="media-summary">
+                <div><strong>03</strong><span>saved titles</span></div>
+                <div><strong>4.8 GB</strong><span>offline</span></div>
+                <div><strong>62 GB</strong><span>available</span></div>
               </div>
-              <div class="fleet-machines" aria-hidden="true">
-                <div><i></i><strong>intake</strong><span>bound</span><small>verified</small></div>
-                <div><i></i><strong>evidence</strong><span>prepared</span><small>replayable</small></div>
-                <div><i></i><strong>quality</strong><span>bounded</span><small>receipted</small></div>
-                <div class="attention"><i></i><strong>submit gate</strong><span>explicit</span><small>guarded</small></div>
-                <div><i></i><strong>closeout</strong><span>receipt</span><small>durable</small></div>
+              <div class="download-list" aria-hidden="true">
+                <div><i></i><strong>Movie</strong><span>2 subtitles</span><small>1.7 GB</small></div>
+                <div class="selected"><i></i><strong>Episode 04</strong><span>1 subtitle</span><small>1.4 GB</small></div>
+                <div class="selected"><i></i><strong>Episode 05</strong><span>1 subtitle</span><small>1.7 GB</small></div>
               </div>
-              <div class="console-foot"><span>Prepared state requires verified QC</span><strong>Replay safe</strong></div>
+              <div class="console-foot"><span>2 selected / 3.1 GB</span><strong>Confirmed local cleanup</strong></div>
             </div>
             <div class="secondary-copy">
-              <p class="case-kicker">Case 02 / Agentic operations</p>
-              <h3 id="case-automation-title">Review Automation</h3>
-              <p class="case-lede">Evidence-led review workflows with bounded quality control and an explicit final handoff.</p>
+              <p class="case-kicker">Case 02 / Self-hosted media / v0.26.0</p>
+              <h3 id="case-media-title">Plex Open</h3>
+              <p class="case-lede">Offline media is now visible, measurable, and safely removable from one browser-local view.</p>
               <p>
-                Worker validation now has a defined time boundary and produces a
-                receipt that must match the prepared review before the interface is
-                filled. The final handoff remains explicit and recoverable.
+                The Downloads hub reconciles metadata with actual browser-private
+                files, reports per-title size and available space, and confirms
+                multi-select cleanup without touching server media or prepared streams.
               </p>
               <dl class="secondary-proof">
-                <div><dt>Risk</dt><dd>Unbounded QC can stall a workflow or leave partial state behind.</dd></div>
-                <div><dt>Response</dt><dd>Bound the worker, verify its receipt, and gate the final transition.</dd></div>
+                <div><dt>Risk</dt><dd>Interrupted or duplicate offline files become invisible storage debt.</dd></div>
+                <div><dt>Response</dt><dd>Reconcile real files, expose size, and retain failed cleanup for retry.</dd></div>
               </dl>
-              <a class="case-link" href="https://github.com/spirosrap/udacity-mentor-dashboard-extension">Review public tooling <span aria-hidden="true">↗</span></a>
+              <a class="case-link" href="https://github.com/spirosrap/plex-open-web">Review repository <span aria-hidden="true">↗</span></a>
             </div>
           </article>
 
@@ -2601,12 +2625,12 @@ h1 {
             <div
               class="project-visual camera-console"
               role="img"
-              aria-label="Camera Sentinel interface with a healthy feed, bounded background confirmation, and visible delivery state"
+              aria-label="Camera Sentinel dashboard distinguishing stable current power from bounded seven-day voltage history"
             >
               <div class="console-bar"><strong>CAM / PRIVATE EDGE</strong><span><i></i> Feed healthy</span></div>
               <div class="camera-feed" aria-hidden="true">
-                <div class="camera-time">14:32:08</div>
-                <div class="motion-zone"><span>OBJECT CONFIRMED</span></div>
+                <div class="camera-time">POWER / 7 DAY HISTORY</div>
+                <div class="power-zone"><strong>STABLE NOW</strong><span>History retained separately</span></div>
                 <div class="camera-crosshair"></div>
                 <div class="camera-signal">
                   <span style="height: 22%"></span><span style="height: 38%"></span>
@@ -2616,23 +2640,23 @@ h1 {
                 </div>
               </div>
               <div class="camera-stats">
-                <span>Confirm <strong>background</strong></span>
-                <span>Queue <strong>bounded</strong></span>
-                <span>Release <strong>v1.24.0</strong></span>
+                <span>Current <strong>live flags</strong></span>
+                <span>History <strong>24h / 7d</strong></span>
+                <span>Release <strong>v1.29.0</strong></span>
               </div>
             </div>
             <div class="secondary-copy">
-              <p class="case-kicker">Case 03 / Private edge system / v1.24.0</p>
+              <p class="case-kicker">Case 03 / Private edge system / v1.29.0</p>
               <h3 id="case-camera-title">Camera Sentinel</h3>
-              <p class="case-lede">Private monitoring that keeps sampling while confirmation and delivery run.</p>
+              <p class="case-lede">A camera dashboard that distinguishes a current power fault from the history needed to diagnose it.</p>
               <p>
-                Motion sampling continues while object confirmation and alert delivery
-                run on a bounded background worker. Excess bursts coalesce into one
-                pending review, representative frames are retained, and outcomes stay visible.
+                Live voltage flags now remain separate from sticky boot history.
+                Expandable 24-hour, seven-day, and current-boot views retain incident
+                times and recovery durations without leaving a stable system marked unhealthy.
               </p>
               <dl class="secondary-proof">
-                <div><dt>Risk</dt><dd>Slow confirmation can block sampling or grow an unbounded queue.</dd></div>
-                <div><dt>Response</dt><dd>Bound work, coalesce bursts, retain evidence, and expose delivery state.</dd></div>
+                <div><dt>Risk</dt><dd>A historical flag can hide whether the power rail is failing now.</dd></div>
+                <div><dt>Response</dt><dd>Separate current state, windowed counts, and a bounded incident timeline.</dd></div>
               </dl>
               <a class="case-link" href="https://github.com/spirosrap/pi-camera-sentinel">Review repository <span aria-hidden="true">↗</span></a>
             </div>
@@ -2654,27 +2678,27 @@ h1 {
           <div class="record-list">
             <article>
               <p><span>01</span> Product</p>
-              <h4>Καλάθι Τιμών became faster and more resilient.</h4>
-              <p>Version 0.33.5 adds matched alternatives, clearer history, route-split delivery, and self-repair for official product images.</p>
-              <a href="https://kalathitimon.com/" aria-label="Open Kalathi Timon supermarket planner">Open <span aria-hidden="true">↗</span></a>
+              <h4>Καλάθι Τιμών made catalogue integrity public.</h4>
+              <p>Version 0.37.0 exposes coverage, successful comparisons, and protected refresh failures without publishing partial data.</p>
+              <a href="https://kalathitimon.com/health/" aria-label="Open Kalathi Timon catalogue health">Open <span aria-hidden="true">↗</span></a>
             </article>
             <article>
               <p><span>02</span> Private edge</p>
-              <h4>Camera confirmation moved off the sampling path.</h4>
-              <p>Version 1.24.0 keeps motion sampling live, coalesces excess bursts, and persists review and delivery outcomes.</p>
+              <h4>Camera power evidence became time-aware.</h4>
+              <p>Version 1.29.0 separates live health from sticky history and preserves 24-hour, seven-day, and boot-scoped incidents.</p>
               <a href="https://github.com/spirosrap/pi-camera-sentinel" aria-label="Open Camera Sentinel repository">Repo <span aria-hidden="true">↗</span></a>
             </article>
             <article>
-              <p><span>03</span> Automation</p>
-              <h4>Review QC became bounded and receipt-gated.</h4>
-              <p>Timed worker validation and matching run receipts now protect the prepared state before any interface handoff.</p>
-              <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension" aria-label="Open review automation repository">Repo <span aria-hidden="true">↗</span></a>
+              <p><span>03</span> Media</p>
+              <h4>Plex Open gained a real offline storage manager.</h4>
+              <p>Version 0.26.0 shows saved titles, actual size, free space, subtitle counts, and confirmed browser-local cleanup.</p>
+              <a href="https://github.com/spirosrap/plex-open-web" aria-label="Open Plex Open repository">Repo <span aria-hidden="true">↗</span></a>
             </article>
             <article>
-              <p><span>04</span> Media</p>
-              <h4>Plex Open reduced the delay to first playback.</h4>
-              <p>Bounded metadata warming, better direct-play selection, and consistent saved-position resume keep playback responsive.</p>
-              <a href="https://github.com/spirosrap/plex-open-web" aria-label="Open Plex Open repository">Repo <span aria-hidden="true">↗</span></a>
+              <p><span>04</span> Connected utility</p>
+              <h4>Mac and Pixel image transfer became dependable.</h4>
+              <p>A connected-only Swift and ADB bridge now imports new screenshots and copied photos with retry, echo suppression, and bounded cleanup.</p>
+              <span class="record-state">Private utility</span>
             </article>
           </div>
         </section>
@@ -2752,14 +2776,14 @@ h1 {
           <article class="system-item">
             <div class="system-symbol system-symbol-plex">PX</div>
             <div class="system-name"><p>02 / Self-hosted media</p><h3>Plex Open</h3></div>
-            <p class="system-description">Self-hosted browser and Android playback with bounded metadata warming, direct-play selection, and reliable resume.</p>
+            <p class="system-description">Self-hosted browser and Android playback with subtitle discovery, managed offline storage, and confirmed local cleanup.</p>
             <p class="system-stack">Web / Android</p>
             <a href="https://github.com/spirosrap/plex-open-web" aria-label="Open Plex Open repository">Repository <span aria-hidden="true">↗</span></a>
           </article>
           <article class="system-item">
             <div class="system-symbol system-symbol-agents">AU</div>
             <div class="system-name"><p>03 / Agentic operations</p><h3>Review Automation</h3></div>
-            <p class="system-description">Evidence-led workflows with bounded worker QC, replayable state, receipt-gated handoffs, and companion apps.</p>
+            <p class="system-description">Evidence-led workflows with bounded worker QC, replayable state, receipt-gated handoffs, and durable mobile status.</p>
             <p class="system-stack">Agents / macOS / iOS</p>
             <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension" aria-label="Open review automation repository">Repository <span aria-hidden="true">↗</span></a>
           </article>
@@ -2816,8 +2840,8 @@ h1 {
       const caseViewTabs = [...document.querySelectorAll("[data-case-view][role='tab']")];
       const caseImages = [...document.querySelectorAll("[data-case-image]")];
       const caseViewOrder = caseViewTabs.map((tab) => tab.dataset.caseView);
-      const primaryCaseImage = caseImages.find((image) => image.dataset.caseImage === "history");
-      const secondaryCaseImage = caseImages.find((image) => image.dataset.caseImage === "alternatives");
+      const primaryCaseImage = caseImages.find((image) => image.dataset.caseImage === "health");
+      const secondaryCaseImage = caseImages.find((image) => image.dataset.caseImage === "history");
       let secondaryCasePreload;
 
       function hydratePrimaryCaseView() {
@@ -2870,7 +2894,7 @@ h1 {
           window.addEventListener("load", preloadSecondaryCaseView, { once: true });
         }
 
-        const secondaryCaseTab = caseViewTabs.find((tab) => tab.dataset.caseView === "alternatives");
+        const secondaryCaseTab = caseViewTabs.find((tab) => tab.dataset.caseView === "history");
         secondaryCaseTab?.addEventListener("pointerenter", preloadSecondaryCaseView, { once: true });
         secondaryCaseTab?.addEventListener("focus", preloadSecondaryCaseView, { once: true });
         document.querySelectorAll('a[href="#work"]').forEach((link) => {
@@ -2882,7 +2906,7 @@ h1 {
         const nextIndex = caseViewOrder.indexOf(view);
         if (!caseBrowser || nextIndex < 0) return;
 
-        if (view === "history") hydratePrimaryCaseView();
+        if (view === "health") hydratePrimaryCaseView();
 
         caseBrowser.dataset.activeView = view;
 
