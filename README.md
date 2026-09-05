@@ -3,14 +3,22 @@
 Static personal site for Spiros Raptis, live at
 [agenticspiros.com](https://agenticspiros.com).
 
-Current release: `v12.0.0`.
+Current release: `v13.0.0`.
 
-Version 12 presents Kalathi Timon 0.37.0 as the lead product, including its
-public catalogue-health view, coverage safeguards, and protected publication
-path. It adds full cases for Plex Open 0.26.0 browser-local download management
-and Camera Sentinel 1.29.0 power history, plus a public-safe record of recent
-connected-device work. New responsive AVIF and WebP assets preserve the static,
-framework-free delivery path and its small first-load footprint.
+Version 13 refreshes the typography, navigation, project layout, and contact
+section. Three featured projects have concise introductions and native expandable
+release notes: Kalathi Timon 0.37.2, Fleetlight public macOS 1.67, and Plex Open
+Android 0.22.3. A dated activity section covers recent product, workflow, and
+desktop-integration work. Camera Sentinel and other maintained projects remain
+in the project index; markets tooling stays explicitly labeled as earlier work.
+
+The page uses system fonts, responsive local images, inline CSS, and a small
+progressive-enhancement navigation script. All content and release disclosures
+work without JavaScript. There are no third-party runtime resources or analytics.
+
+Content was checked on 5 September 2026 against repository commits, public
+release notes, and relevant task records. The activity summaries exclude private
+host identities, infrastructure addresses, account details, and review data.
 
 ## Local preview
 

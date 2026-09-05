@@ -1,2989 +1,360 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="build-version" content="12.0.0" />
-    <meta
-      name="description"
-      content="Spiros Raptis builds and operates dependable products, agentic workflows, private edge systems, and self-hosted infrastructure."
-    />
-    <meta name="theme-color" content="#111816" />
-    <meta property="og:title" content="Spiros Raptis - Independent Systems Engineer" />
-    <meta
-      property="og:description"
-      content="Dependable products and systems, built through to verified operation."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://agenticspiros.com/" />
-    <meta
-      property="og:image"
-      content="https://agenticspiros.com/assets/kalathitimon-health-v037-og.jpg"
-    />
-    <title>Spiros Raptis - Independent Systems Engineer</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='4' fill='%23111816'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-size='22' font-weight='700' fill='%2349c58b'%3ESR%3C/text%3E%3C/svg%3E" />
-    <link
-      rel="preload"
-      as="image"
-      href="assets/kalathitimon-hero-v12-1264.avif"
-      imagesrcset="assets/kalathitimon-hero-v12-768.avif 768w, assets/kalathitimon-hero-v12-1264.avif 1264w"
-      imagesizes="100vw"
-      type="image/avif"
-      fetchpriority="high"
-    />
-    <style>
-:root {
-  --ink: #111816;
-  --ink-raised: #17211e;
-  --ink-soft: #23302c;
-  --paper: #edf1ef;
-  --white: #ffffff;
-  --text: #18211e;
-  --muted: #5e6a65;
-  --line: #c8d0cc;
-  --line-dark: rgba(255, 255, 255, 0.15);
-  --green: #49c58b;
-  --green-deep: #176744;
-  --blue: #4b9bb2;
-  --amber: #dda84a;
-  --coral: #d76e54;
-  --steel: #cfe1e6;
-  --max: 1240px;
-  --sans: "Avenir Next", Inter, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  letter-spacing: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 84px;
-}
-
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-}
-
-body,
-button {
-  font-family: var(--sans);
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button {
-  color: inherit;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-::selection {
-  background: var(--amber);
-  color: var(--ink);
-}
-
-:focus-visible {
-  outline: 3px solid var(--blue);
-  outline-offset: 4px;
-}
-
-.skip-link {
-  position: fixed;
-  top: 8px;
-  left: 8px;
-  z-index: 1000;
-  padding: 0.7rem 1rem;
-  border-radius: 3px;
-  background: var(--white);
-  color: var(--ink);
-  font-weight: 800;
-  transform: translateY(-150%);
-  transition: transform 160ms ease;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
-.site-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 100;
-  min-height: 72px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  background: var(--ink);
-  color: var(--white);
-}
-
-.header-inner {
-  display: grid;
-  width: min(calc(100% - 40px), var(--max));
-  min-height: 72px;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 2rem;
-  margin: 0 auto;
-}
-
-.scroll-progress {
-  position: absolute;
-  right: 0;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--green);
-  transform: scaleX(0);
-  transform-origin: left center;
-}
-
-@keyframes page-progress {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-@supports (animation-timeline: scroll()) {
-  .scroll-progress {
-    animation-name: page-progress;
-    animation-duration: auto;
-    animation-timing-function: linear;
-    animation-timeline: scroll(root block);
-  }
-}
-
-.brand {
-  display: inline-flex;
-  min-width: 0;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.brand-mark {
-  display: grid;
-  width: 38px;
-  height: 38px;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  border-radius: 3px;
-  color: var(--green);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  font-weight: 900;
-}
-
-.brand-copy {
-  display: grid;
-  line-height: 1.05;
-}
-
-.brand-copy strong {
-  font-size: 0.9rem;
-}
-
-.brand-copy span {
-  margin-top: 0.22rem;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.68rem;
-}
-
-.nav-links {
-  display: flex;
-  min-width: 0;
-  justify-content: center;
-  gap: 0.3rem;
-}
-
-.nav-links a,
-.header-link {
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.78rem;
-  font-weight: 800;
-  transition:
-    background 160ms ease,
-    color 160ms ease;
-}
-
-.nav-links a {
-  position: relative;
-  padding: 0.65rem 0.75rem;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  right: 0.75rem;
-  bottom: 0.35rem;
-  left: 0.75rem;
-  height: 1px;
-  background: var(--green);
-  opacity: 0;
-  transform: scaleX(0.4);
-  transition:
-    opacity 160ms ease,
-    transform 160ms ease;
-}
-
-.nav-links a:hover,
-.nav-links a:focus-visible,
-.nav-links a[aria-current="location"] {
-  color: var(--white);
-}
-
-.nav-links a[aria-current="location"]::after {
-  opacity: 1;
-  transform: scaleX(1);
-}
-
-.header-link {
-  padding: 0.62rem 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  border-radius: 3px;
-}
-
-.header-link:hover,
-.header-link:focus-visible {
-  border-color: var(--green);
-  color: var(--green);
-}
-
-.hero {
-  position: relative;
-  min-height: min(780px, calc(100svh - 18px));
-  overflow: hidden;
-  background: var(--ink);
-  color: var(--white);
-}
-
-.hero-backdrop,
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-media {
-  position: absolute;
-  inset: 0;
-}
-
-.hero-backdrop {
-  object-fit: cover;
-  object-position: 58% top;
-}
-
-.hero-overlay {
-  background:
-    linear-gradient(90deg, rgba(10, 17, 15, 0.99) 0%, rgba(10, 17, 15, 0.94) 43%, rgba(10, 17, 15, 0.62) 72%, rgba(10, 17, 15, 0.34) 100%),
-    linear-gradient(0deg, rgba(10, 17, 15, 0.95) 0%, rgba(10, 17, 15, 0.12) 60%, rgba(10, 17, 15, 0.38) 100%);
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  width: min(calc(100% - 48px), var(--max));
-  min-height: min(780px, calc(100svh - 18px));
-  grid-template-columns: minmax(0, 1fr) 390px;
-  align-items: end;
-  gap: 6rem;
-  margin: 0 auto;
-  padding: 9rem 0 9.6rem;
-}
-
-.hero-copy {
-  max-width: 760px;
-}
-
-.eyebrow,
-.section-label,
-.case-header p,
-.case-kicker,
-.hero-case-index,
-.system-name > p,
-.stack-band > p,
-.record-list article > p:first-child,
-.commitments small,
-.hero-case-topline,
-.case-facts dt,
-.secondary-proof dt,
-.case-outcomes dt {
-  margin: 0;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: rgba(255, 255, 255, 0.66);
-}
-
-.eyebrow::before {
-  content: "";
-  width: 28px;
-  height: 2px;
-  background: var(--blue);
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-  overflow-wrap: break-word;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-}
-
-h1 {
-  margin-top: 1.1rem;
-  font-size: 5.8rem;
-  font-weight: 850;
-  line-height: 0.9;
-}
-
-.hero-thesis {
-  max-width: 24ch;
-  margin: 1.5rem 0 0;
-  color: var(--green);
-  font-size: 2rem;
-  font-weight: 760;
-  line-height: 1.12;
-}
-
-.hero-detail {
-  max-width: 58ch;
-  margin: 1rem 0 0;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.02rem;
-}
-
-.hero-actions,
-.contact-actions,
-.text-links {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-
-.hero-actions {
-  margin-top: 1.8rem;
-}
-
-.button {
-  display: inline-flex;
-  min-height: 48px;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.05rem;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  font-size: 0.82rem;
-  font-weight: 850;
-  transition:
-    background 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button-primary {
-  background: var(--green);
-  color: var(--ink);
-}
-
-.button-primary:hover,
-.button-primary:focus-visible {
-  background: var(--amber);
-}
-
-.button-ghost {
-  border-color: rgba(255, 255, 255, 0.38);
-  color: var(--white);
-}
-
-.button-ghost:hover,
-.button-ghost:focus-visible {
-  border-color: var(--white);
-  background: rgba(255, 255, 255, 0.09);
-}
-
-.hero-case {
-  align-self: end;
-  padding: 0.65rem 0 0.55rem 2rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.32);
-}
-
-.hero-case-topline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: rgba(255, 255, 255, 0.58);
-}
-
-.hero-case-topline strong {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--green);
-  font-family: var(--sans);
-  font-size: 0.68rem;
-}
-
-.hero-case-topline i,
-.case-header > strong i,
-.console-bar i,
-.download-list i {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 10px rgba(73, 197, 139, 0.48);
-}
-
-.hero-case-index {
-  margin-top: 2.2rem;
-  color: var(--blue);
-}
-
-.hero-case h2 {
-  margin-top: 0.55rem;
-  font-size: 2rem;
-  line-height: 1.05;
-}
-
-.hero-case > p:not(.hero-case-index) {
-  margin: 0.9rem 0 0;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.9rem;
-}
-
-.hero-case > a {
-  display: inline-block;
-  margin-top: 1.2rem;
-  padding-bottom: 0.18rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
-  font-weight: 850;
-}
-
-.hero-case > a span {
-  color: var(--green);
-}
-
-.hero-case > a:hover,
-.hero-case > a:focus-visible {
-  border-color: var(--green);
-  color: var(--green);
-}
-
-.hero-evidence {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  display: grid;
-  width: min(100%, var(--max));
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 0 auto;
-  padding: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(17, 24, 22, 0.9);
-  list-style: none;
-}
-
-.hero-evidence li {
-  min-width: 0;
-  min-height: 112px;
-  padding: 1.2rem 1.4rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.hero-evidence li:last-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.hero-evidence span,
-.hero-evidence strong,
-.hero-evidence small {
-  display: block;
-}
-
-.hero-evidence span {
-  color: var(--green);
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  font-weight: 850;
-}
-
-.hero-evidence strong {
-  margin-top: 0.42rem;
-  font-size: 0.9rem;
-}
-
-.hero-evidence small {
-  margin-top: 0.22rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.7rem;
-}
-
-.trust-band {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(520px, 1.1fr);
-  align-items: center;
-  gap: 4rem;
-  padding: 2.4rem max(1.25rem, calc((100vw - var(--max)) / 2));
-  border-bottom: 1px solid var(--line);
-  background: var(--white);
-}
-
-.trust-band > p {
-  max-width: 48ch;
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 720;
-  line-height: 1.4;
-}
-
-.trust-band dl {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 0;
-}
-
-.trust-band dl > div {
-  min-width: 0;
-  padding: 0.2rem 1.3rem;
-  border-left: 1px solid var(--line);
-}
-
-.trust-band dt,
-.trust-band dd {
-  margin: 0;
-}
-
-.trust-band dt {
-  color: var(--green-deep);
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  font-weight: 850;
-  text-transform: uppercase;
-}
-
-.trust-band dd {
-  margin-top: 0.35rem;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 720;
-}
-
-.section {
-  padding: 7rem max(1.25rem, calc((100vw - var(--max)) / 2));
-}
-
-.section-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.65fr);
-  align-items: end;
-  gap: 5rem;
-  margin-bottom: 4.5rem;
-}
-
-.section-intro > * {
-  min-width: 0;
-}
-
-.section-label {
-  margin-bottom: 0.95rem;
-  color: var(--green-deep);
-}
-
-.section h2,
-.contact h2 {
-  max-width: 16ch;
-  font-size: 4rem;
-  font-weight: 830;
-  line-height: 0.98;
-}
-
-.section-intro > p {
-  max-width: 48ch;
-  margin: 0;
-  color: var(--muted);
-  font-size: 1rem;
-}
-
-.work {
-  background: var(--paper);
-}
-
-.case-feature {
-  border-top: 2px solid var(--ink);
-  border-bottom: 1px solid var(--line);
-  background: var(--white);
-}
-
-.case-header {
-  display: flex;
-  min-height: 74px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 1rem 1.4rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.case-header > div {
-  min-width: 0;
-}
-
-.case-header p {
-  color: var(--green-deep);
-}
-
-.case-header div > span {
-  display: block;
-  margin-top: 0.25rem;
-  color: var(--muted);
-  font-size: 0.74rem;
-}
-
-.case-header > strong {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.75rem;
-}
-
-.case-feature-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
-  align-items: center;
-  gap: 3rem;
-  padding: 2rem;
-}
-
-.case-browser {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid #aeb9b3;
-  border-radius: 4px;
-  background: #dfe6e2;
-  box-shadow: 0 24px 55px rgba(17, 24, 22, 0.16);
-}
-
-.case-browser-bar {
-  display: grid;
-  min-height: 52px;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.5rem 0.65rem 0.5rem 0.9rem;
-  border-bottom: 1px solid var(--line);
-  background: var(--white);
-}
-
-.case-browser-bar > div:first-child {
-  display: flex;
-  gap: 0.35rem;
-}
-
-.case-browser-bar > div:first-child i {
-  display: block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #b8c0bc;
-}
-
-.case-browser-bar > div:first-child i:first-child {
-  background: var(--coral);
-}
-
-.case-browser-bar > div:first-child i:nth-child(2) {
-  background: var(--amber);
-}
-
-.case-browser-bar > div:first-child i:last-child {
-  background: var(--green);
-}
-
-.case-browser-bar > span {
-  overflow: hidden;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.case-view-tabs {
-  display: flex;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-}
-
-.case-view-tabs button {
-  min-width: 68px;
-  min-height: 32px;
-  padding: 0.35rem 0.55rem;
-  border: 0;
-  border-right: 1px solid var(--line);
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 0.68rem;
-  font-weight: 800;
-}
-
-.case-view-tabs button:last-child {
-  border-right: 0;
-}
-
-.case-view-tabs button[aria-selected="true"] {
-  background: var(--ink);
-  color: var(--white);
-}
-
-.case-browser-screen {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: #101714;
-}
-
-.case-browser-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  animation: case-view-in 220ms ease both;
-}
-
-@keyframes case-view-in {
-  from {
-    opacity: 0.35;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.case-copy {
-  min-width: 0;
-  padding-right: 1rem;
-}
-
-.case-kicker {
-  color: var(--green-deep);
-}
-
-.case-copy h3 {
-  margin-top: 0.8rem;
-  font-size: 2.7rem;
-  font-weight: 820;
-  line-height: 1;
-}
-
-.case-lede {
-  margin: 1.25rem 0 0;
-  font-size: 1.12rem;
-  font-weight: 720;
-  line-height: 1.38;
-}
-
-.case-copy > p:not(.case-kicker, .case-lede),
-.secondary-copy > p:not(.case-kicker, .case-lede) {
-  margin: 0.9rem 0 0;
-  color: var(--muted);
-}
-
-.case-facts,
-.secondary-proof,
-.case-outcomes {
-  margin: 0;
-}
-
-.case-facts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 1.5rem;
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-
-.case-facts > div {
-  min-width: 0;
-  padding: 0.8rem;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.case-facts dt,
-.secondary-proof dt,
-.case-outcomes dt {
-  color: var(--green-deep);
-  font-size: 0.62rem;
-}
-
-.case-facts dd,
-.secondary-proof dd,
-.case-outcomes dd {
-  margin: 0.32rem 0 0;
-  color: var(--muted);
-  font-size: 0.76rem;
-}
-
-.text-links {
-  flex-wrap: wrap;
-  margin-top: 1.35rem;
-}
-
-.text-links a,
-.case-link {
-  padding-bottom: 0.18rem;
-  border-bottom: 1px solid var(--ink);
-  font-size: 0.78rem;
-  font-weight: 850;
-}
-
-.text-links a span,
-.case-link span {
-  color: var(--green-deep);
-}
-
-.text-links a:hover,
-.text-links a:focus-visible,
-.case-link:hover,
-.case-link:focus-visible {
-  border-color: var(--green-deep);
-  color: var(--green-deep);
-}
-
-.case-outcomes {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-}
-
-.case-outcomes > div {
-  min-width: 0;
-  min-height: 122px;
-  padding: 1.3rem 1.4rem;
-  border-right: 1px solid var(--line);
-}
-
-.case-outcomes > div:last-child {
-  border-right: 0;
-}
-
-.case-outcomes dd {
-  max-width: 32ch;
-  color: var(--text);
-  font-size: 0.82rem;
-}
-
-.case-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.4rem;
-  margin-top: 1.4rem;
-}
-
-.case-secondary {
-  min-width: 0;
-  border-top: 2px solid var(--blue);
-  border-bottom: 1px solid var(--line);
-  background: var(--white);
-}
-
-.case-camera {
-  border-top-color: var(--coral);
-}
-
-.project-visual {
-  position: relative;
-  min-width: 0;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
-.media-console,
-.camera-console {
-  display: grid;
-  padding: 1.4rem;
-  background: #10171b;
-  color: var(--white);
-}
-
-.media-console {
-  grid-template-rows: auto auto 1fr auto;
-  gap: 0.9rem;
-}
-
-.console-bar,
-.console-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-}
-
-.console-bar strong {
-  color: var(--blue);
-}
-
-.console-bar > span {
-  display: flex;
-  align-items: center;
-  gap: 0.42rem;
-  color: rgba(255, 255, 255, 0.64);
-}
-
-.media-summary {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.media-summary > div {
-  padding: 0.75rem 0.9rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.media-summary > div:last-child {
-  border-right: 0;
-}
-
-.media-summary strong,
-.media-summary span {
-  display: block;
-}
-
-.media-summary strong {
-  font-family: var(--mono);
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
-.media-summary > div:nth-child(2) strong {
-  color: var(--amber);
-}
-
-.media-summary span {
-  margin-top: 0.3rem;
-  color: rgba(255, 255, 255, 0.48);
-  font-size: 0.65rem;
-}
-
-.download-list {
-  display: grid;
-  align-content: center;
-  gap: 0.38rem;
-}
-
-.download-list > div {
-  display: grid;
-  grid-template-columns: 8px minmax(0, 1fr) 78px 68px;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.46rem 0.55rem;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  background: rgba(255, 255, 255, 0.025);
-  font-size: 0.68rem;
-}
-
-.download-list span,
-.download-list small {
-  color: rgba(255, 255, 255, 0.46);
-}
-
-.download-list small {
-  text-align: right;
-}
-
-.download-list .selected {
-  border-color: rgba(221, 168, 74, 0.36);
-}
-
-.download-list .selected i {
-  background: var(--amber);
-  box-shadow: 0 0 10px rgba(221, 168, 74, 0.44);
-}
-
-.console-foot {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.6rem;
-}
-
-.console-foot strong {
-  color: var(--green);
-}
-
-.camera-console {
-  grid-template-rows: auto 1fr auto;
-  gap: 0.8rem;
-}
-
-.camera-console .console-bar strong {
-  color: var(--coral);
-}
-
-.camera-feed {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background-color: #19221f;
-  background-image:
-    linear-gradient(rgba(75, 155, 178, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(75, 155, 178, 0.08) 1px, transparent 1px);
-  background-size: 30px 30px;
-}
-
-.camera-feed::before {
-  content: "";
-  position: absolute;
-  inset: 18% 12%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.5);
-}
-
-.camera-time {
-  position: absolute;
-  top: 0.7rem;
-  left: 0.8rem;
-  color: rgba(255, 255, 255, 0.62);
-  font-family: var(--mono);
-  font-size: 0.64rem;
-}
-
-.power-zone {
-  position: absolute;
-  top: 23%;
-  right: 15%;
-  display: grid;
-  width: 42%;
-  min-height: 45%;
-  align-content: center;
-  padding: 0.8rem;
-  border: 1px solid var(--green);
-  background: rgba(17, 24, 22, 0.76);
-}
-
-.power-zone strong,
-.power-zone span {
-  display: block;
-}
-
-.power-zone strong {
-  color: var(--green);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  font-weight: 850;
-}
-
-.power-zone span {
-  margin-top: 0.32rem;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.62rem;
-}
-
-.camera-crosshair {
-  position: absolute;
-  top: 50%;
-  left: 38%;
-  width: 28px;
-  height: 28px;
-  border: 1px solid rgba(75, 155, 178, 0.72);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.camera-crosshair::before,
-.camera-crosshair::after {
-  content: "";
-  position: absolute;
-  background: rgba(75, 155, 178, 0.72);
-}
-
-.camera-crosshair::before {
-  top: 50%;
-  left: -9px;
-  width: 44px;
-  height: 1px;
-}
-
-.camera-crosshair::after {
-  top: -9px;
-  left: 50%;
-  width: 1px;
-  height: 44px;
-}
-
-.camera-signal {
-  position: absolute;
-  right: 0.8rem;
-  bottom: 0.7rem;
-  display: flex;
-  width: 92px;
-  height: 34px;
-  align-items: end;
-  gap: 4px;
-}
-
-.camera-signal span {
-  width: 100%;
-  background: var(--blue);
-  opacity: 0.78;
-}
-
-.camera-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
-}
-
-.camera-stats span {
-  padding: 0.56rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.46);
-  font-size: 0.63rem;
-}
-
-.camera-stats strong {
-  display: block;
-  margin-top: 0.16rem;
-  color: var(--white);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  overflow-wrap: anywhere;
-}
-
-.secondary-copy {
-  padding: 2rem;
-}
-
-.secondary-copy h3 {
-  margin-top: 0.55rem;
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.secondary-copy .case-lede {
-  min-height: 3.2rem;
-}
-
-.secondary-proof {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 1.4rem;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.secondary-proof > div {
-  min-width: 0;
-  padding: 0.85rem 0.75rem 0.85rem 0;
-}
-
-.secondary-proof > div + div {
-  padding-left: 0.85rem;
-  border-left: 1px solid var(--line);
-}
-
-.case-link {
-  display: inline-block;
-  margin-top: 1.3rem;
-}
-
-.work-record {
-  margin-top: 7rem;
-}
-
-.work-record > header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.55fr);
-  align-items: end;
-  gap: 4rem;
-  margin-bottom: 2.5rem;
-}
-
-.work-record .section-label {
-  margin-bottom: 0.75rem;
-}
-
-.work-record h3 {
-  max-width: 18ch;
-  font-size: 2.6rem;
-  line-height: 1;
-}
-
-.work-record > header > p {
-  max-width: 44ch;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.record-list {
-  border-top: 1px solid var(--line);
-}
-
-.record-list article {
-  display: grid;
-  grid-template-columns: 120px minmax(240px, 0.8fr) minmax(320px, 1.2fr) 54px;
-  align-items: center;
-  gap: 2rem;
-  min-height: 134px;
-  padding: 1.4rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.record-list article > p {
-  margin: 0;
-}
-
-.record-list article > p:first-child {
-  color: var(--green-deep);
-}
-
-.record-list article > p:first-child span {
-  display: inline-block;
-  min-width: 1.8rem;
-  color: var(--muted);
-}
-
-.record-list h4 {
-  font-size: 1.35rem;
-  line-height: 1.12;
-}
-
-.record-list h4 + p {
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-.record-list article > a {
-  justify-self: end;
-  color: var(--green-deep);
-  font-size: 0.76rem;
-  font-weight: 850;
-}
-
-.record-state {
-  justify-self: end;
-  padding: 0.35rem 0.48rem;
-  border: 1px solid var(--line);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  font-weight: 850;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.record-list article > a:hover,
-.record-list article > a:focus-visible {
-  color: var(--ink);
-}
-
-.practice {
-  background: var(--ink);
-  color: var(--white);
-}
-
-.section-intro-dark .section-label {
-  color: var(--green);
-}
-
-.section-intro-dark > p {
-  color: rgba(255, 255, 255, 0.58);
-}
-
-.commitments {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line-dark);
-  border-bottom: 1px solid var(--line-dark);
-  list-style: none;
-}
-
-.commitments li {
-  display: flex;
-  min-width: 0;
-  min-height: 330px;
-  flex-direction: column;
-  padding: 1.8rem;
-  border-left: 1px solid var(--line-dark);
-}
-
-.commitments li:first-child {
-  border-left: 0;
-}
-
-.commitments li > span {
-  color: var(--green);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  font-weight: 850;
-}
-
-.commitments li:nth-child(2) > span {
-  color: var(--blue);
-}
-
-.commitments li:nth-child(3) > span {
-  color: var(--amber);
-}
-
-.commitments li:nth-child(4) > span {
-  color: var(--coral);
-}
-
-.commitments h3 {
-  max-width: 11ch;
-  margin-top: 2.2rem;
-  font-size: 1.55rem;
-  line-height: 1.08;
-}
-
-.commitments p {
-  margin: 1rem 0 0;
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 0.88rem;
-}
-
-.commitments small {
-  margin-top: auto;
-  padding-top: 2rem;
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 0.6rem;
-}
-
-.practice-statement {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  align-items: start;
-  gap: 3rem;
-  padding-top: 4rem;
-}
-
-.practice-statement > p {
-  margin: 0;
-  color: var(--green);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  font-weight: 850;
-  text-transform: uppercase;
-}
-
-.practice-statement blockquote {
-  max-width: 29ch;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 2rem;
-  font-weight: 680;
-  line-height: 1.25;
-}
-
-.systems {
-  background: var(--white);
-}
-
-.system-index {
-  border-top: 2px solid var(--ink);
-}
-
-.system-item {
-  display: grid;
-  grid-template-columns: 58px 220px minmax(260px, 1fr) 175px 92px;
-  align-items: center;
-  gap: 1.4rem;
-  min-height: 112px;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.system-symbol {
-  display: grid;
-  width: 52px;
-  height: 52px;
-  place-items: center;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: var(--steel);
-  color: var(--ink);
-  font-family: var(--mono);
-  font-size: 0.76rem;
-  font-weight: 900;
-}
-
-.system-symbol-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.system-symbol-plex {
-  background: #f0d58f;
-}
-
-.system-symbol-agents {
-  background: #b9e3cb;
-}
-
-.system-symbol-bridge {
-  background: #e7b4a7;
-}
-
-.system-symbol-markets {
-  background: #d8ddda;
-}
-
-.system-name {
-  min-width: 0;
-}
-
-.system-name > p {
-  color: var(--muted);
-  font-size: 0.61rem;
-}
-
-.system-name h3 {
-  margin-top: 0.35rem;
-  font-size: 1.2rem;
-  line-height: 1.1;
-}
-
-.system-description,
-.system-stack {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.84rem;
-}
-
-.system-stack {
-  font-family: var(--mono);
-  font-size: 0.66rem;
-}
-
-.system-item > a {
-  justify-self: end;
-  color: var(--green-deep);
-  font-size: 0.72rem;
-  font-weight: 850;
-}
-
-.system-item > a:hover,
-.system-item > a:focus-visible {
-  color: var(--ink);
-}
-
-.stack-band {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem max(1.25rem, calc((100vw - var(--max)) / 2));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: var(--paper);
-}
-
-.stack-band > p {
-  color: var(--green-deep);
-}
-
-.stack-band ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.stack-band li {
-  display: flex;
-  align-items: center;
-  font-size: 0.82rem;
-  font-weight: 800;
-}
-
-.stack-band li:not(:last-child)::after {
-  content: "/";
-  margin: 0 0.72rem;
-  color: #99a49f;
-}
-
-.contact {
-  padding: 6rem max(1.25rem, calc((100vw - var(--max)) / 2));
-  background: var(--steel);
-  color: var(--ink);
-}
-
-.contact-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.55fr);
-  align-items: end;
-  gap: 5rem;
-}
-
-.contact .section-label {
-  color: #1b6174;
-}
-
-.contact h2 {
-  max-width: 18ch;
-  font-size: 3.7rem;
-}
-
-.contact-copy > p {
-  max-width: 44ch;
-  margin: 0;
-  color: #3f5358;
-}
-
-.contact-actions {
-  flex-wrap: wrap;
-  margin-top: 1.6rem;
-}
-
-.button-dark {
-  background: var(--ink);
-  color: var(--white);
-}
-
-.button-dark:hover,
-.button-dark:focus-visible {
-  background: var(--green-deep);
-}
-
-.button-outline-dark {
-  border-color: var(--ink);
-  color: var(--ink);
-}
-
-.button-outline-dark:hover,
-.button-outline-dark:focus-visible {
-  background: rgba(17, 24, 22, 0.08);
-}
-
-.site-footer {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 1.8rem max(1.25rem, calc((100vw - var(--max)) / 2));
-  background: var(--ink);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.74rem;
-}
-
-.site-footer p {
-  margin: 0;
-}
-
-.site-footer p:nth-child(2) {
-  text-align: center;
-}
-
-.site-footer p:last-child {
-  text-align: right;
-}
-
-.site-footer a:hover,
-.site-footer a:focus-visible {
-  color: var(--green);
-}
-
-@supports (content-visibility: auto) {
-  .project-visual {
-    content-visibility: auto;
-  }
-}
-
-@media (max-width: 1100px) {
-  .hero-inner {
-    grid-template-columns: minmax(0, 1fr) 310px;
-    gap: 3.5rem;
-  }
-
-  h1 {
-    font-size: 5.1rem;
-  }
-
-  .hero-thesis {
-    font-size: 1.8rem;
-  }
-
-  .section h2,
-  .contact h2 {
-    font-size: 3.5rem;
-  }
-
-  .case-feature-grid {
-    grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
-    gap: 2rem;
-  }
-
-  .case-copy h3 {
-    font-size: 2.35rem;
-  }
-
-  .record-list article {
-    grid-template-columns: 100px minmax(220px, 0.8fr) minmax(260px, 1.2fr) 48px;
-    gap: 1.3rem;
-  }
-
-  .system-item {
-    grid-template-columns: 56px 190px minmax(220px, 1fr) 150px 88px;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .header-link {
-    display: none;
-  }
-
-  .header-inner {
-    grid-template-columns: auto 1fr;
-  }
-
-  .nav-links {
-    justify-content: flex-end;
-  }
-
-  .hero,
-  .hero-inner {
-    min-height: min(860px, calc(100svh - 18px));
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    align-content: end;
-    gap: 2rem;
-    padding-top: 8.5rem;
-    padding-bottom: 10.2rem;
-  }
-
-  .hero-case {
-    max-width: 630px;
-    padding: 1.1rem 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    border-left: 0;
-  }
-
-  .hero-case-index {
-    margin-top: 0.8rem;
-  }
-
-  .hero-case > p:not(.hero-case-index) {
-    max-width: 56ch;
-  }
-
-  .trust-band {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-
-  .section-intro,
-  .work-record > header {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .section-intro > p,
-  .work-record > header > p {
-    max-width: 720px;
-  }
-
-  .case-feature-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .case-copy {
-    max-width: 700px;
-    padding: 0 0.5rem 0.5rem;
-  }
-
-  .case-pair {
-    grid-template-columns: 1fr;
-  }
-
-  .project-visual {
-    aspect-ratio: 16 / 8;
-  }
-
-  .secondary-copy .case-lede {
-    min-height: 0;
-  }
-
-  .record-list article {
-    grid-template-columns: 92px minmax(0, 1fr) 48px;
-    gap: 1rem;
-  }
-
-  .record-list h4 + p {
-    grid-column: 2 / -1;
-  }
-
-  .record-list article > a,
-  .record-state {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  .commitments {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .commitments li:nth-child(odd) {
-    border-left: 0;
-  }
-
-  .commitments li:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--line-dark);
-  }
-
-  .system-item {
-    grid-template-columns: 56px minmax(0, 1fr) auto;
-  }
-
-  .system-description {
-    grid-column: 2 / -1;
-  }
-
-  .system-stack {
-    grid-column: 2;
-  }
-
-  .system-item > a {
-    grid-column: 3;
-    grid-row: 3;
-  }
-
-  .contact-inner {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 720px) {
-  html {
-    scroll-padding-top: 72px;
-  }
-
-  .site-header,
-  .header-inner {
-    min-height: 62px;
-  }
-
-  .header-inner {
-    width: calc(100% - 24px);
-    gap: 0.5rem;
-  }
-
-  .brand-copy {
-    display: none;
-  }
-
-  .brand-mark {
-    width: 36px;
-    height: 36px;
-  }
-
-  .nav-links {
-    gap: 0;
-  }
-
-  .nav-links a {
-    padding: 0.52rem 0.48rem;
-    font-size: 0.68rem;
-  }
-
-  .nav-links a::after {
-    right: 0.48rem;
-    left: 0.48rem;
-  }
-
-  .hero,
-  .hero-inner {
-    min-height: min(790px, calc(100svh - 18px));
-  }
-
-  .hero-backdrop {
-    object-position: 62% top;
-  }
-
-  .hero-overlay {
-    background:
-      linear-gradient(90deg, rgba(10, 17, 15, 0.97) 0%, rgba(10, 17, 15, 0.91) 74%, rgba(10, 17, 15, 0.68) 100%),
-      linear-gradient(0deg, rgba(10, 17, 15, 0.92) 0%, rgba(10, 17, 15, 0.15) 55%);
-  }
-
-  .hero-inner {
-    width: calc(100% - 40px);
-    gap: 1.25rem;
-    padding-top: 6.5rem;
-    padding-bottom: 10.3rem;
-  }
-
-  h1 {
-    margin-top: 0.85rem;
-    font-size: 4rem;
-  }
-
-  .hero-thesis {
-    margin-top: 1rem;
-    font-size: 1.45rem;
-  }
-
-  .hero-detail {
-    margin-top: 0.7rem;
-    font-size: 0.88rem;
-  }
-
-  .hero-actions {
-    margin-top: 1.25rem;
-  }
-
-  .hero-case {
-    padding-top: 0.8rem;
-  }
-
-  .hero-case-topline,
-  .hero-case-index {
-    font-size: 0.61rem;
-  }
-
-  .hero-case h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-case > p:not(.hero-case-index) {
-    display: none;
-  }
-
-  .hero-case > a {
-    margin-top: 0.65rem;
-  }
-
-  .hero-evidence {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hero-evidence li {
-    min-height: 78px;
-    padding: 0.72rem 1rem;
-  }
-
-  .hero-evidence li:nth-child(3),
-  .hero-evidence li:nth-child(4) {
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
-  }
-
-  .hero-evidence li:nth-child(odd) {
-    border-left: 0;
-  }
-
-  .hero-evidence li:last-child {
-    border-right: 0;
-  }
-
-  .hero-evidence strong {
-    margin-top: 0.22rem;
-    font-size: 0.76rem;
-  }
-
-  .hero-evidence small {
-    display: none;
-  }
-
-  .trust-band {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .trust-band dl {
-    grid-template-columns: 1fr;
-  }
-
-  .trust-band dl > div {
-    padding: 0.7rem 0;
-    border-top: 1px solid var(--line);
-    border-left: 0;
-  }
-
-  .section {
-    padding-top: 5.2rem;
-    padding-bottom: 5.2rem;
-  }
-
-  .section-intro {
-    margin-bottom: 3rem;
-  }
-
-  .section h2,
-  .contact h2 {
-    font-size: 2.85rem;
-  }
-
-  .section-intro > p {
-    font-size: 0.94rem;
-  }
-
-  .case-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.65rem;
-    padding: 1rem;
-  }
-
-  .case-feature-grid {
-    gap: 2rem;
-    padding: 1rem;
-  }
-
-  .case-browser-bar {
-    grid-template-columns: auto 1fr;
-  }
-
-  .case-browser-bar > span {
-    display: none;
-  }
-
-  .case-view-tabs {
-    justify-self: end;
-  }
-
-  .case-browser-screen {
-    aspect-ratio: 16 / 9;
-  }
-
-  .case-copy {
-    padding: 0 0.25rem 0.5rem;
-  }
-
-  .case-copy h3 {
-    font-size: 2.1rem;
-  }
-
-  .case-facts {
-    grid-template-columns: 1fr;
-  }
-
-  .case-outcomes {
-    grid-template-columns: 1fr;
-  }
-
-  .case-outcomes > div {
-    min-height: 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .case-outcomes > div:last-child {
-    border-bottom: 0;
-  }
-
-  .project-visual {
-    aspect-ratio: 4 / 3;
-  }
-
-  .media-console,
-  .camera-console {
-    padding: 1rem;
-  }
-
-  .secondary-copy {
-    padding: 1.5rem;
-  }
-
-  .secondary-proof {
-    grid-template-columns: 1fr;
-  }
-
-  .secondary-proof > div + div {
-    padding-left: 0;
-    border-top: 1px solid var(--line);
-    border-left: 0;
-  }
-
-  .work-record {
-    margin-top: 5.5rem;
-  }
-
-  .work-record h3 {
-    font-size: 2.25rem;
-  }
-
-  .record-list article {
-    grid-template-columns: 1fr auto;
-    gap: 0.7rem 1rem;
-    padding: 1.35rem 0;
-  }
-
-  .record-list article > p:first-child,
-  .record-list h4,
-  .record-list h4 + p {
-    grid-column: 1;
-  }
-
-  .record-list h4 {
-    font-size: 1.22rem;
-  }
-
-  .record-list h4 + p {
-    grid-column: 1 / -1;
-  }
-
-  .record-list article > a,
-  .record-state {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .commitments {
-    grid-template-columns: 1fr;
-  }
-
-  .commitments li,
-  .commitments li:nth-child(odd) {
-    min-height: 0;
-    padding: 1.8rem 0;
-    border-top: 1px solid var(--line-dark);
-    border-bottom: 0;
-    border-left: 0;
-  }
-
-  .commitments li:first-child {
-    border-top: 0;
-  }
-
-  .commitments h3 {
-    margin-top: 1rem;
-  }
-
-  .commitments p {
-    max-width: 46ch;
-  }
-
-  .commitments small {
-    margin-top: 1.5rem;
-    padding-top: 0;
-  }
-
-  .practice-statement {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding-top: 3rem;
-  }
-
-  .practice-statement blockquote {
-    font-size: 1.55rem;
-  }
-
-  .system-item {
-    grid-template-columns: 50px minmax(0, 1fr) auto;
-    gap: 0.8rem;
-    padding: 1.2rem 0;
-  }
-
-  .system-symbol {
-    width: 46px;
-    height: 46px;
-  }
-
-  .system-description {
-    grid-column: 1 / -1;
-  }
-
-  .system-stack {
-    grid-column: 2;
-  }
-
-  .system-item > a {
-    grid-column: 3;
-    grid-row: 3;
-  }
-
-  .stack-band {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .contact {
-    padding-top: 4.8rem;
-    padding-bottom: 4.8rem;
-  }
-
-  .site-footer {
-    grid-template-columns: 1fr;
-  }
-
-  .site-footer p:nth-child(2),
-  .site-footer p:last-child {
-    text-align: left;
-  }
-}
-
-@media (max-height: 700px) {
-  .hero,
-  .hero-inner {
-    min-height: calc(100svh - 18px);
-  }
-
-  .hero-inner {
-    padding-top: 5rem;
-    padding-bottom: 9.8rem;
-  }
-
-  .hero-detail,
-  .hero-case {
-    display: none;
-  }
-
-  h1 {
-    font-size: 4rem;
-  }
-
-  .hero-thesis {
-    margin-top: 0.8rem;
-    font-size: 1.35rem;
-  }
-
-  .hero-actions {
-    margin-top: 1rem;
-  }
-}
-
-@media (max-height: 480px) {
-  .hero-inner {
-    padding-bottom: 1.5rem;
-  }
-
-  .hero-evidence {
-    display: none;
-  }
-}
-
-@media (max-width: 430px) {
-  .nav-links a {
-    padding-right: 0.36rem;
-    padding-left: 0.36rem;
-    font-size: 0.64rem;
-  }
-
-  .nav-links a::after {
-    right: 0.36rem;
-    left: 0.36rem;
-  }
-
-  h1 {
-    font-size: 3.45rem;
-  }
-
-  .hero-thesis {
-    font-size: 1.28rem;
-  }
-
-  .hero-actions {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .button {
-    min-height: 46px;
-    padding-right: 0.6rem;
-    padding-left: 0.6rem;
-    font-size: 0.73rem;
-  }
-
-  .hero-case-topline span {
-    max-width: 23ch;
-  }
-
-  .hero-evidence li {
-    padding-right: 0.75rem;
-    padding-left: 0.75rem;
-  }
-
-  .hero-evidence strong {
-    font-size: 0.7rem;
-  }
-
-  .section h2,
-  .contact h2 {
-    font-size: 2.5rem;
-  }
-
-  .case-view-tabs button {
-    min-width: 57px;
-    padding-right: 0.4rem;
-    padding-left: 0.4rem;
-  }
-
-  .media-summary > div {
-    padding: 0.62rem;
-  }
-
-  .media-summary strong {
-    font-size: 1.3rem;
-  }
-
-  .download-list > div {
-    grid-template-columns: 8px minmax(0, 1fr) auto;
-  }
-
-  .download-list > div > span {
-    display: none;
-  }
-
-  .console-foot {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .camera-stats span {
-    padding: 0.43rem;
-    font-size: 0.57rem;
-  }
-
-  .camera-stats strong {
-    font-size: 0.7rem;
-  }
-
-  .contact-actions {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 430px) and (max-height: 700px) {
-  .hero-inner {
-    padding-top: 4.5rem;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  .hero-thesis {
-    font-size: 1.08rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-}
-    </style>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header" aria-label="Primary navigation">
-      <div class="header-inner">
-        <a class="brand" href="#top" aria-label="SR Spiros Raptis Independent systems engineer home">
-          <span class="brand-mark" aria-hidden="true">SR</span>
-          <span class="brand-copy">
-            <strong>Spiros Raptis</strong>
-            <span>Independent systems engineer</span>
-          </span>
-        </a>
-
-        <nav class="nav-links" aria-label="Site sections">
-          <a href="#work">Work</a>
-          <a href="#practice">Practice</a>
-          <a href="#systems">Systems</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <a class="header-link" href="https://github.com/spirosrap">
-          GitHub <span aria-hidden="true">↗</span>
-        </a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="build-version" content="13.0.0" />
+  <meta name="description" content="Spiros Raptis builds useful software across the web, macOS, Android, and Linux. Explore Kalathi Timon, Fleetlight, Plex Open, and recent engineering work." />
+  <meta name="theme-color" content="#17191c" />
+  <link rel="canonical" href="https://agenticspiros.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Spiros Raptis — Software & Systems" />
+  <meta property="og:description" content="Independent engineering. Useful products, thoughtful interfaces, and the work that keeps them running." />
+  <meta property="og:url" content="https://agenticspiros.com/" />
+  <meta property="og:image" content="https://agenticspiros.com/assets/site-v13-og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Spiros Raptis — Software & Systems</title>
+  <link rel="icon" href="assets/favicon-48.webp" type="image/webp" />
+  <link rel="preload" as="image" href="assets/kalathitimon-hero-v12-1264.avif" imagesrcset="assets/kalathitimon-hero-v12-768.avif 768w, assets/kalathitimon-hero-v12-1264.avif 1264w" imagesizes="100vw" type="image/avif" fetchpriority="high" />
+  <style>
+:root{--ink:#17191c;--muted:#595f66;--paper:#f7f8f8;--line:#d9dee0;--blue:#245bcc;--green:#146a4c;--coral:#ba4932;--max:1240px;--sans:Arial,"Helvetica Neue",sans-serif;--mono:"SFMono-Regular",Consolas,monospace}
+*,*::before,*::after{box-sizing:border-box;letter-spacing:0}
+html{scroll-behavior:smooth;scroll-padding-top:94px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,p,figure,dl,dd{margin:0}
+h1,h2,h3,h4{line-height:1.12;font-weight:600;text-wrap:balance}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;max-width:100%;height:auto}
+button,a,summary{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+::selection{background:#cce1ff;color:var(--ink)}
+.wrap{width:min(var(--max),calc(100% - 80px));margin-inline:auto}
+.eyebrow{font:11px/1.5 var(--mono);text-transform:uppercase}
+.muted{color:var(--muted)}
+.skip{position:fixed;top:8px;left:8px;z-index:100;padding:10px 16px;background:white;transform:translateY(-160%)}
+.skip:focus{transform:none}
+.site-header{height:76px;position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.wordmark{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:700;white-space:nowrap}
+.monogram{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--ink);font:12px var(--mono)}
+.site-nav{display:flex;align-items:center;gap:30px;font-size:13px}
+.site-nav a{padding:12px 0}
+.site-nav a:hover,.site-nav a[aria-current="location"]{color:var(--blue)}
+.nav-contact{border-bottom:1px solid var(--ink)}
+.hero{position:relative;isolation:isolate;background:#171b1c;color:white;min-height:min(680px,calc(100svh - 150px));display:flex;align-items:center;overflow:hidden}
+.hero-media{position:absolute;inset:0;z-index:-2}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,20,23,.97) 0%,rgba(15,20,23,.88) 43%,rgba(15,20,23,.45) 100%)}
+.hero-inner{padding-block:60px 40px}
+.hero-top{display:flex;justify-content:space-between;gap:24px;color:#e1e7e9;margin-bottom:42px}
+.hero-top .edition{color:#bed1d4}
+h1{font-size:88px;font-weight:500;line-height:1.04}
+.hero-lede{font-size:36px;line-height:1.18;margin-top:20px;max-width:650px;color:#b4decf;font-weight:400}
+.hero-description{max-width:530px;margin-top:22px;color:#e0e5e7;font-size:16px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:46px;padding:10px 19px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600}
+.button-primary{background:white;color:var(--ink)}
+.button-primary:hover{background:#dcebe6}
+.button-outline{border-color:#8e9a9e;color:white}
+.button-outline:hover{background:#ffffff15}
+.arrow{font-family:Arial,sans-serif;font-weight:400}
+.hero-foot{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:20px;border-top:1px solid #ffffff35;font-size:11px;color:#dae0e2}
+.hero-foot a{text-decoration:underline;text-underline-offset:4px}
+.intro-strip{background:white;border-bottom:1px solid var(--line)}
+.intro-inner{display:grid;grid-template-columns:1.5fr 1fr;gap:70px;padding-block:32px;align-items:center}
+.intro-inner p{font-size:17px;max-width:610px}
+.disciplines{display:flex;justify-content:flex-end;gap:22px;flex-wrap:wrap;color:var(--muted);font:11px var(--mono)}
+.section{padding-block:86px}
+.section-heading{display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px;margin-bottom:42px}
+.section-heading h2{font-size:44px;margin-top:12px;font-weight:500}
+.section-heading > p{font-size:14px;max-width:300px;color:var(--muted)}
+.project{border-top:1px solid var(--ink);padding-top:22px;margin-bottom:62px}
+.project:last-child{margin-bottom:0}
+.project-top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:24px}
+.project-top .eyebrow{color:var(--muted)}
+.project-kind{font:11px var(--mono);color:var(--green)}
+.project-grid{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,1fr);gap:54px;align-items:center}
+.project-copy h3{font-size:34px;font-weight:500}
+.project-tagline{font-size:22px;line-height:1.3;margin:15px 0 20px;max-width:420px;text-wrap:balance}
+.project-description{font-size:15px;color:var(--muted);max-width:440px}
+.project-links{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:25px;font-size:13px;font-weight:600}
+.project-links a{padding-block:6px;border-bottom:1px solid var(--ink)}
+.project-links a:hover{color:var(--blue);border-color:var(--blue)}
+.release{margin-top:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.release summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 0;font-size:13px;font-weight:600;list-style:none}
+.release summary::-webkit-details-marker{display:none}
+.release summary::after{content:"+";font:22px/1 var(--mono)}
+.release[open] summary::after{content:"−"}
+.release-body{padding:0 0 18px;color:var(--muted);font-size:14px}
+.release-body p+p{margin-top:12px}
+.release-body a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.project-media{min-width:0}
+.browser-frame{overflow:hidden;border:1px solid #c4cdce;border-radius:4px;background:white}
+.browser-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);font:10px var(--mono)}
+.browser-dots{display:flex;gap:5px}
+.browser-dots i{width:5px;height:5px;border-radius:50%;background:#9ba4a8}
+.browser-frame img{width:100%;aspect-ratio:1265/712;object-fit:contain}
+figcaption{display:flex;justify-content:space-between;gap:14px;margin-top:10px;font:10px/1.5 var(--mono);color:var(--muted)}
+figure a{display:block}
+figure a:focus-visible{outline-offset:4px}
+.fleet-visual{background:#edf2f8;padding:32px;min-height:380px;border-top:3px solid var(--blue)}
+.visual-heading{display:flex;justify-content:space-between;align-items:center;font:11px var(--mono);color:#42536c}
+.fleet-visual h4{font-size:27px;font-weight:500;margin-top:36px}
+.fleet-platforms{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:27px}
+.platform{border-top:1px solid #a8b8cc;padding-top:16px}
+.platform strong{font-size:20px;font-weight:500}
+.platform p{font-size:12px;color:#43536a;margin-top:8px;line-height:1.65}
+.fleet-path{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #bccadb;margin-top:28px;padding-top:20px;color:#345078;font:11px var(--mono)}
+.fleet-path span+span::before{content:"→";margin-right:12px;color:#506a8d}
+.playback-visual{background:#202225;color:white;padding:32px;min-height:380px;border-top:3px solid #e1b769}
+.playback-visual .visual-heading{color:#dfd4bf}
+.playback-visual h4{font-size:27px;font-weight:500;margin-top:36px;max-width:350px}
+.playback-paths{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:27px}
+.playback-path{border-top:1px solid #777973;padding-top:16px}
+.playback-path strong{font-size:18px;color:#f3d69e;font-weight:500}
+.playback-path p{font-size:12px;color:#d1d4d6;margin-top:8px}
+.playback-foot{border-top:1px solid #646464;margin-top:28px;padding-top:18px;font:11px var(--mono);color:#e3e5e7}
+.notes-section{background:white;border-block:1px solid var(--line)}
+.notes-layout{display:grid;grid-template-columns:.75fr 1.6fr;gap:80px}
+.notes-intro{align-self:start;position:sticky;top:115px}
+.notes-intro h2{font-size:38px;font-weight:500;margin-top:14px}
+.notes-intro p:last-child{font-size:15px;max-width:300px;color:var(--muted);margin-top:20px}
+.notes-list{border-top:1px solid var(--ink)}
+.note{display:grid;grid-template-columns:95px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
+.note time{font:11px/1.7 var(--mono);color:var(--muted)}
+.note h3{font-size:20px;font-weight:500}
+.note p{font-size:14px;color:var(--muted);margin-top:10px}
+.note a{display:inline-block;font-size:12px;color:var(--blue);margin-top:12px;padding:4px 0}
+.index-row{display:grid;grid-template-columns:44px 220px 1fr 96px;gap:22px;align-items:center;padding:23px 0;border-top:1px solid var(--line)}
+.index-row:last-child{border-bottom:1px solid var(--line)}
+.index-mark{display:grid;place-items:center;width:38px;height:38px;font:11px var(--mono);background:#e3eae8;color:#294b3e;border-radius:3px}
+.index-row:nth-child(2n) .index-mark{background:#e2eaf4;color:#2a4a70}
+.index-row:nth-child(3n) .index-mark{background:#f5e3dd;color:#824d3b}
+.index-title h3{font-size:18px;font-weight:500}
+.index-title span{display:block;font:10px var(--mono);color:var(--muted);margin-top:6px}
+.index-row > p{font-size:14px;color:var(--muted)}
+.index-row > a{font-size:12px;justify-self:end;padding:10px 0}
+.index-row > a:hover{color:var(--blue)}
+.practice{background:#e7efed;border-block:1px solid #cddbd6}
+.practice-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:100px}
+.practice h2{font-size:38px;font-weight:500;margin-top:14px;max-width:400px}
+.practice-copy>p{font-size:19px;line-height:1.55}
+.practice-points{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:30px}
+.practice-points h3{font-size:15px;font-weight:600}
+.practice-points p{font-size:13px;color:#465d54;margin-top:8px}
+.contact{padding-block:80px;background:var(--ink);color:white}
+.contact-grid{display:flex;justify-content:space-between;align-items:end;gap:45px}
+.contact .eyebrow{color:#c3cbc8}
+.contact h2{font-size:44px;max-width:720px;margin-top:20px;font-weight:500}
+.contact p:last-child{color:#c4cbd0;margin-top:20px;max-width:550px;font-size:15px}
+.contact-links{display:flex;gap:24px;white-space:nowrap}
+.contact-links a{padding:10px 0;border-bottom:1px solid #929b9f;font-size:14px}
+.site-footer{background:var(--ink);color:#c4cbd0;border-top:1px solid #41464c}
+.footer-inner{display:flex;justify-content:space-between;gap:24px;padding-block:24px;font-size:11px}
+.footer-inner a:hover{color:white}
+@media(min-width:1600px){.hero-inner{padding-block:70px 42px}}
+@media(max-width:1100px){
+.wrap{width:calc(100% - 56px)}h1{font-size:76px}.hero-lede{font-size:32px}
+.project-grid{gap:32px}.project-copy h3{font-size:30px}.project-tagline{font-size:20px}
+.fleet-visual,.playback-visual{padding:24px}.fleet-path{font-size:10px;gap:5px}.fleet-path span+span::before{margin-right:6px}
+.notes-layout{gap:45px}.index-row{grid-template-columns:38px 190px 1fr 80px;gap:16px}.practice-grid{gap:50px}.contact-grid{align-items:start;flex-direction:column}
+}
+@media(max-width:760px){
+.wrap{width:calc(100% - 40px)}.site-header{height:64px}.wordmark-name{display:none}.site-nav{gap:22px;font-size:12px}.header-inner{gap:20px}
+.hero{min-height:0}.hero-inner{padding-block:38px 28px}.hero-top{margin-bottom:30px}.hero-top .edition{display:none}h1{font-size:58px}.hero-lede{font-size:29px;max-width:400px}.hero-description{font-size:15px;max-width:400px}.hero-actions{margin-top:24px}.hero-foot{margin-top:32px;font-size:10px}.hero-foot span{display:none}
+.hero::after{background:linear-gradient(90deg,rgba(15,20,23,.96),rgba(15,20,23,.8))}
+.intro-inner{grid-template-columns:1fr;gap:20px;padding-block:26px}.intro-inner p{font-size:15px}.disciplines{justify-content:flex-start;gap:18px;font-size:10px}
+.section{padding-block:56px}.section-heading{grid-template-columns:1fr;gap:18px;margin-bottom:30px}.section-heading h2{font-size:34px}.section-heading > p{max-width:400px}
+.project{margin-bottom:42px;padding-top:18px}.project-top{align-items:start;gap:12px;margin-bottom:20px}.project-kind{text-align:right;font-size:10px}.project-top .eyebrow{font-size:10px}
+.project-grid{grid-template-columns:1fr;gap:26px}.project-copy h3{font-size:30px}.project-tagline{font-size:22px;margin:12px 0 16px}.project-description{max-width:none}.project-links{margin-top:19px}
+.fleet-visual,.playback-visual{min-height:330px}.fleet-visual h4,.playback-visual h4{font-size:25px;margin-top:28px}.fleet-path{font-size:11px}
+.notes-layout{grid-template-columns:1fr;gap:28px}.notes-intro{position:static}.notes-intro h2{font-size:32px}.notes-intro p:last-child{max-width:none;margin-top:15px}
+.note{grid-template-columns:75px 1fr;gap:18px;padding:24px 0}.note h3{font-size:19px}.note time{font-size:10px}
+.index-row{grid-template-columns:38px 1fr auto;gap:12px 16px;padding:22px 0}.index-row > p{grid-column:2/-1}.index-row > a{grid-column:3;grid-row:1}.index-title h3{font-size:17px}
+.practice-grid{grid-template-columns:1fr;gap:28px}.practice h2{font-size:32px}.practice-copy>p{font-size:17px}
+.contact{padding-block:56px}.contact h2{font-size:34px}.contact-grid{gap:28px}.footer-inner{flex-wrap:wrap;gap:14px}.footer-inner span{flex-basis:100%}
+}
+@media(max-width:370px){
+.site-nav{gap:16px}.hero-top{font-size:10px}h1{font-size:47px}.hero-lede{font-size:25px}.hero-description{font-size:14px}.hero-inner{padding-block:28px 24px}.hero-foot{display:none}
+.button{padding-inline:14px;gap:14px}.section-heading h2{font-size:31px}.fleet-visual,.playback-visual{padding:21px}.fleet-path{flex-wrap:wrap;row-gap:10px}
+.note{grid-template-columns:1fr;gap:8px}.practice-points{grid-template-columns:1fr}.index-row{column-gap:12px}.index-title h3{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+.site-header{position:static}.hero{min-height:0}.hero-media,.hero::after{display:none}.hero{background:white;color:black}.hero-description,.hero-lede,.hero-top{color:black}
+.hero-actions,.hero-foot,.release,.site-nav,.contact,.site-footer{display:none}.section{padding-block:24px}.project,.note,.index-row{break-inside:avoid}.notes-intro{position:static}
+}
+  </style>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Spiros Raptis","url":"https://agenticspiros.com/","jobTitle":"Independent Software and Systems Engineer","sameAs":["https://github.com/spirosrap","https://x.com/srdevb"],"knowsAbout":["Software engineering","macOS","Android","Linux","Workflow automation"]}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top" aria-label="SR — Spiros Raptis, home"><span class="monogram" aria-hidden="true">SR</span><span class="wordmark-name">Spiros Raptis</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#work">Work</a><a href="#updates">Latest</a><a href="#about">About</a><a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <picture class="hero-media">
+        <source type="image/avif" srcset="assets/kalathitimon-hero-v12-768.avif 768w, assets/kalathitimon-hero-v12-1264.avif 1264w" sizes="100vw" />
+        <img src="assets/kalathitimon-health-v037-1265.webp" width="1265" height="712" alt="" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="wrap hero-inner">
+        <div class="hero-top eyebrow"><span>Independent software &amp; systems engineer</span><span class="edition">Portfolio / September 2026</span></div>
+        <h1 id="hero-title">Spiros Raptis</h1>
+        <p class="hero-lede">Useful software.<br />Built to stay useful.</p>
+        <p class="hero-description">I build products for the web, desktop, and mobile, then keep improving how they work in everyday use.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore my work <span class="arrow" aria-hidden="true">↘</span></a>
+          <a class="button button-outline" href="https://github.com/spirosrap">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-foot"><span>Based in Thessaloniki, Greece</span><a href="#kalathi">In the background: Καλάθι Τιμών <span aria-hidden="true">↗</span></a></div>
       </div>
-      <span class="scroll-progress" aria-hidden="true"></span>
-    </header>
-
-    <main id="main">
-      <section id="top" class="hero" aria-labelledby="hero-title">
-        <picture class="hero-media">
-          <source
-            type="image/avif"
-            srcset="assets/kalathitimon-hero-v12-768.avif 768w, assets/kalathitimon-hero-v12-1264.avif 1264w"
-            sizes="100vw"
-          />
-          <source
-            type="image/webp"
-            srcset="assets/kalathitimon-health-v037-768.webp 768w, assets/kalathitimon-health-v037-1265.webp 1265w"
-            sizes="100vw"
-          />
-          <img
-            class="hero-backdrop"
-            src="assets/kalathitimon-health-v037-1265.webp"
-            alt=""
-            width="1264"
-            height="712"
-            decoding="async"
-            fetchpriority="high"
-          />
-        </picture>
-        <div class="hero-overlay" aria-hidden="true"></div>
-
-        <div class="hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">Independent systems engineer / Thessaloniki</p>
-            <h1 id="hero-title">Spiros Raptis</h1>
-            <p class="hero-thesis">Dependable products, built through to verified operation.</p>
-            <p class="hero-detail">
-              I turn uncertain workflows into product software, agentic operations,
-              and private infrastructure with visible state, bounded failure, and
-              evidence that the result actually works.
-            </p>
-            <div class="hero-actions" role="group" aria-label="Primary links">
-              <a class="button button-primary" href="#work">See the product work</a>
-              <a class="button button-ghost" href="https://github.com/spirosrap">Public source</a>
-            </div>
-          </div>
-
-          <aside class="hero-case" aria-label="Latest independent product release">
-            <div class="hero-case-topline">
-              <span>Independent product / v0.37.0</span>
-              <strong><i aria-hidden="true"></i> Production</strong>
-            </div>
-            <p class="hero-case-index">Now live / kalathitimon.com</p>
-            <h2>Καλάθι Τιμών</h2>
-            <p>
-              A supermarket planner that now makes catalogue completeness,
-              chain coverage, and rejected refreshes visible to everyone.
-            </p>
-            <a href="https://kalathitimon.com/">
-              Open kalathitimon.com <span aria-hidden="true">↗</span>
+    </section>
+    <div class="intro-strip">
+      <div class="wrap intro-inner">
+        <p>From a better supermarket basket to a clearer view of a Linux fleet. Practical problems, carried through to working products.</p>
+        <div class="disciplines"><span>Web products</span><span>Native apps</span><span>Systems &amp; automation</span></div>
+      </div>
+    </div>
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><div><p class="eyebrow muted">01 / Selected work</p><h2 id="work-title">Built. Used. Improved.</h2></div><p>Three ongoing projects, and the details that make them better to use.</p></div>
+      <article class="project" id="kalathi" aria-labelledby="kalathi-title">
+        <div class="project-top"><p class="eyebrow">01 / Consumer web product</p><span class="project-kind">Public app · v0.37.2</span></div>
+        <div class="project-grid">
+          <figure class="project-media">
+            <a class="browser-frame" href="https://kalathitimon.com/health/" aria-label="kalathitimon.com/health — Open catalogue health">
+              <div class="browser-bar" aria-hidden="true"><span class="browser-dots"><i></i><i></i><i></i></span><span>kalathitimon.com/health</span><span>↗</span></div>
+              <img class="project-shot" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1265 712'/%3E" data-src="assets/kalathitimon-health-v037-1265.webp" data-srcset="assets/kalathitimon-health-v037-640.webp 640w, assets/kalathitimon-health-v037-768.webp 768w, assets/kalathitimon-health-v037-1265.webp 1265w" sizes="(max-width:760px) calc(100vw - 40px), 55vw" width="1265" height="712" decoding="async" alt="Kalathi Timon catalogue health view, showing published products, category coverage, and supermarket coverage" />
+              <noscript><style>.project-shot{display:none}</style><img src="assets/kalathitimon-health-v037-1265.webp" width="1265" height="712" loading="lazy" alt="Kalathi Timon catalogue health view" /></noscript>
             </a>
-          </aside>
-        </div>
-
-        <ul class="hero-evidence" aria-label="Product ownership evidence">
-          <li><span>01</span><strong>Publication guard</strong><small>Partial catalogues stay out of production</small></li>
-          <li><span>02</span><strong>Data transparency</strong><small>Public health and coverage view</small></li>
-          <li><span>03</span><strong>Coverage profile</strong><small>Categories, chains, prices, and offers</small></li>
-          <li><span>04</span><strong>Lean delivery</strong><small>63.5 KiB startup JavaScript</small></li>
-        </ul>
-      </section>
-
-      <section class="trust-band" aria-label="Engineering position">
-        <p>The product now exposes the same catalogue-integrity evidence used to decide whether a refresh is safe to publish.</p>
-        <dl>
-          <div><dt>Current release</dt><dd>v0.37.0</dd></div>
-          <div><dt>Health payload</dt><dd>632 B / Brotli</dd></div>
-          <div><dt>Contraction gate</dt><dd>Explicit approval above 3%</dd></div>
-        </dl>
-      </section>
-
-      <section id="work" class="section work" aria-labelledby="work-title">
-        <header class="section-intro">
-          <div>
-            <p class="section-label">Selected work / case notes</p>
-            <h2 id="work-title">Products with an operating story, not only a launch story.</h2>
-          </div>
-          <p>
-            The work spans consumer products, native operations, and private edge
-            systems. Each case includes the migration, failure condition, and
-            continuity work that keeps it useful after release day.
-          </p>
-        </header>
-
-        <article class="case-feature" aria-labelledby="case-posokanei-title">
-          <header class="case-header">
-            <div>
-              <p>Case 01 / Independent product</p>
-              <span>React / local-first state / same-origin data services</span>
-            </div>
-            <strong><i aria-hidden="true"></i> Production / v0.37.0</strong>
-          </header>
-
-          <div class="case-feature-grid">
-            <div class="case-browser" data-case-browser data-active-view="health">
-              <div class="case-browser-bar">
-                <div aria-hidden="true"><i></i><i></i><i></i></div>
-                <span>kalathitimon.com</span>
-                <div class="case-view-tabs" role="tablist" aria-label="Kalathi Timon feature views">
-                  <button
-                    id="view-health"
-                    type="button"
-                    role="tab"
-                    aria-selected="true"
-                    aria-controls="image-health"
-                    tabindex="0"
-                    data-case-view="health"
-                  >Health</button>
-                  <button
-                    id="view-history"
-                    type="button"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="image-history"
-                    tabindex="-1"
-                    data-case-view="history"
-                  >History</button>
-                </div>
-              </div>
-              <div class="case-browser-screen">
-                <img
-                  id="image-health"
-                  role="tabpanel"
-                  aria-labelledby="view-health"
-                  data-case-image="health"
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'/%3E"
-                  data-src="assets/kalathitimon-health-v037-1265.webp"
-                  data-srcset="assets/kalathitimon-health-v037-640.webp 640w, assets/kalathitimon-health-v037-768.webp 768w, assets/kalathitimon-health-v037-1265.webp 1265w"
-                  sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                  alt="Kalathi Timon catalogue health page showing published products, category coverage, and chain coverage"
-                  width="1265"
-                  height="712"
-                  decoding="async"
-                  fetchpriority="low"
-                  hidden
-                />
-                <noscript>
-                  <img
-                    src="assets/kalathitimon-health-v037-1265.webp"
-                    srcset="assets/kalathitimon-health-v037-640.webp 640w, assets/kalathitimon-health-v037-768.webp 768w, assets/kalathitimon-health-v037-1265.webp 1265w"
-                    sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                    alt="Kalathi Timon catalogue health page showing published products, category coverage, and chain coverage"
-                    width="1265"
-                    height="712"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </noscript>
-                <img
-                  id="image-history"
-                  role="tabpanel"
-                  aria-labelledby="view-history"
-                  data-case-image="history"
-                  src="assets/kalathitimon-history-v033-1265.webp"
-                  srcset="assets/kalathitimon-history-v033-640.webp 640w, assets/kalathitimon-history-v033-768.webp 768w, assets/kalathitimon-history-v033-1265.webp 1265w"
-                  sizes="(max-width: 900px) calc(100vw - 80px), 58vw"
-                  alt="Kalathi Timon seven-day per-chain price history with actual and known-current spans"
-                  width="1265"
-                  height="712"
-                  loading="lazy"
-                  decoding="async"
-                  fetchpriority="low"
-                  hidden
-                />
-              </div>
-            </div>
-
-            <div class="case-copy">
-              <p class="case-kicker">Transparency and integrity after launch</p>
-              <h3 id="case-posokanei-title">Useful data starts with admitting when a refresh is incomplete.</h3>
-              <p class="case-lede">
-                The latest release turns publication safeguards into a public product surface.
-              </p>
-              <p>
-                The health view compares the published catalogue with the previous
-                successful synchronization across products, categories, chains, prices,
-                and offers. Suspicious partial downloads are rejected while the last
-                verified snapshot remains live with its honest timestamp.
-              </p>
-
-              <dl class="case-facts">
-                <div><dt>Publication</dt><dd>Last verified snapshot preserved</dd></div>
-                <div><dt>Coverage</dt><dd>Root categories and Greek chains</dd></div>
-                <div><dt>Contraction</dt><dd>Over 3% requires approval</dd></div>
-                <div><dt>Delivery</dt><dd>Lazy route / 63.5 KiB startup</dd></div>
-              </dl>
-
-              <div class="text-links">
-                <a href="https://kalathitimon.com/">Open kalathitimon.com <span aria-hidden="true">↗</span></a>
-                <a href="https://kalathitimon.com/health/">Inspect catalogue health <span aria-hidden="true">↗</span></a>
-                <a href="https://github.com/spirosrap/posokanei-basket-demo">Review source <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-          </div>
-
-          <dl class="case-outcomes">
-            <div><dt>User problem</dt><dd>A partial source response can look plausible enough to silently weaken every comparison.</dd></div>
-            <div><dt>Engineering response</dt><dd>Fingerprint coverage, reject suspicious contractions, and retain the last complete publication.</dd></div>
-            <div><dt>Product outcome</dt><dd>A public bilingual health page explains what was published, what changed, and when protection intervened.</dd></div>
-          </dl>
-        </article>
-
-        <div class="case-pair">
-          <article class="case-secondary case-media" aria-labelledby="case-media-title">
-            <div
-              class="project-visual media-console"
-              role="img"
-              aria-label="Plex Open browser download manager showing saved titles, actual storage use, and confirmed local cleanup"
-            >
-              <div class="console-bar"><strong>PLEX OPEN / DOWNLOADS</strong><span><i></i> Browser storage</span></div>
-              <div class="media-summary">
-                <div><strong>03</strong><span>saved titles</span></div>
-                <div><strong>4.8 GB</strong><span>offline</span></div>
-                <div><strong>62 GB</strong><span>available</span></div>
-              </div>
-              <div class="download-list" aria-hidden="true">
-                <div><i></i><strong>Movie</strong><span>2 subtitles</span><small>1.7 GB</small></div>
-                <div class="selected"><i></i><strong>Episode 04</strong><span>1 subtitle</span><small>1.4 GB</small></div>
-                <div class="selected"><i></i><strong>Episode 05</strong><span>1 subtitle</span><small>1.7 GB</small></div>
-              </div>
-              <div class="console-foot"><span>2 selected / 3.1 GB</span><strong>Confirmed local cleanup</strong></div>
-            </div>
-            <div class="secondary-copy">
-              <p class="case-kicker">Case 02 / Self-hosted media / v0.26.0</p>
-              <h3 id="case-media-title">Plex Open</h3>
-              <p class="case-lede">Offline media is now visible, measurable, and safely removable from one browser-local view.</p>
-              <p>
-                The Downloads hub reconciles metadata with actual browser-private
-                files, reports per-title size and available space, and confirms
-                multi-select cleanup without touching server media or prepared streams.
-              </p>
-              <dl class="secondary-proof">
-                <div><dt>Risk</dt><dd>Interrupted or duplicate offline files become invisible storage debt.</dd></div>
-                <div><dt>Response</dt><dd>Reconcile real files, expose size, and retain failed cleanup for retry.</dd></div>
-              </dl>
-              <a class="case-link" href="https://github.com/spirosrap/plex-open-web">Review repository <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-
-          <article class="case-secondary case-camera" aria-labelledby="case-camera-title">
-            <div
-              class="project-visual camera-console"
-              role="img"
-              aria-label="Camera Sentinel dashboard distinguishing stable current power from bounded seven-day voltage history"
-            >
-              <div class="console-bar"><strong>CAM / PRIVATE EDGE</strong><span><i></i> Feed healthy</span></div>
-              <div class="camera-feed" aria-hidden="true">
-                <div class="camera-time">POWER / 7 DAY HISTORY</div>
-                <div class="power-zone"><strong>STABLE NOW</strong><span>History retained separately</span></div>
-                <div class="camera-crosshair"></div>
-                <div class="camera-signal">
-                  <span style="height: 22%"></span><span style="height: 38%"></span>
-                  <span style="height: 26%"></span><span style="height: 64%"></span>
-                  <span style="height: 42%"></span><span style="height: 78%"></span>
-                  <span style="height: 48%"></span><span style="height: 31%"></span>
-                </div>
-              </div>
-              <div class="camera-stats">
-                <span>Current <strong>live flags</strong></span>
-                <span>History <strong>24h / 7d</strong></span>
-                <span>Release <strong>v1.29.0</strong></span>
-              </div>
-            </div>
-            <div class="secondary-copy">
-              <p class="case-kicker">Case 03 / Private edge system / v1.29.0</p>
-              <h3 id="case-camera-title">Camera Sentinel</h3>
-              <p class="case-lede">A camera dashboard that distinguishes a current power fault from the history needed to diagnose it.</p>
-              <p>
-                Live voltage flags now remain separate from sticky boot history.
-                Expandable 24-hour, seven-day, and current-boot views retain incident
-                times and recovery durations without leaving a stable system marked unhealthy.
-              </p>
-              <dl class="secondary-proof">
-                <div><dt>Risk</dt><dd>A historical flag can hide whether the power rail is failing now.</dd></div>
-                <div><dt>Response</dt><dd>Separate current state, windowed counts, and a bounded incident timeline.</dd></div>
-              </dl>
-              <a class="case-link" href="https://github.com/spirosrap/pi-camera-sentinel">Review repository <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-        </div>
-
-        <section class="work-record" aria-labelledby="record-title">
-          <header>
-            <div>
-              <p class="section-label">Recent operating record</p>
-              <h3 id="record-title">Work that moved from idea to maintained behavior.</h3>
-            </div>
-            <p>
-              Public-safe summaries only. Private hostnames, workflow data,
-              personal metrics, and infrastructure details stay out.
-            </p>
-          </header>
-
-          <div class="record-list">
-            <article>
-              <p><span>01</span> Product</p>
-              <h4>Καλάθι Τιμών made catalogue integrity public.</h4>
-              <p>Version 0.37.0 exposes coverage, successful comparisons, and protected refresh failures without publishing partial data.</p>
-              <a href="https://kalathitimon.com/health/" aria-label="Open Kalathi Timon catalogue health">Open <span aria-hidden="true">↗</span></a>
-            </article>
-            <article>
-              <p><span>02</span> Private edge</p>
-              <h4>Camera power evidence became time-aware.</h4>
-              <p>Version 1.29.0 separates live health from sticky history and preserves 24-hour, seven-day, and boot-scoped incidents.</p>
-              <a href="https://github.com/spirosrap/pi-camera-sentinel" aria-label="Open Camera Sentinel repository">Repo <span aria-hidden="true">↗</span></a>
-            </article>
-            <article>
-              <p><span>03</span> Media</p>
-              <h4>Plex Open gained a real offline storage manager.</h4>
-              <p>Version 0.26.0 shows saved titles, actual size, free space, subtitle counts, and confirmed browser-local cleanup.</p>
-              <a href="https://github.com/spirosrap/plex-open-web" aria-label="Open Plex Open repository">Repo <span aria-hidden="true">↗</span></a>
-            </article>
-            <article>
-              <p><span>04</span> Connected utility</p>
-              <h4>Mac and Pixel image transfer became dependable.</h4>
-              <p>A connected-only Swift and ADB bridge now imports new screenshots and copied photos with retry, echo suppression, and bounded cleanup.</p>
-              <span class="record-state">Private utility</span>
-            </article>
-          </div>
-        </section>
-      </section>
-
-      <section id="practice" class="section practice" aria-labelledby="practice-title">
-        <header class="section-intro section-intro-dark">
-          <div>
-            <p class="section-label">Engineering practice</p>
-            <h2 id="practice-title">Dependability is an operating model.</h2>
-          </div>
-          <p>
-            A reliable system is not one that never fails. It is one that exposes
-            the failure, contains the damage, preserves a recovery path, and makes
-            the final state easy to verify.
-          </p>
-        </header>
-
-        <ol class="commitments">
-          <li>
-            <span>01</span>
-            <h3>Diagnose the actual state.</h3>
-            <p>Start with probes, logs, page state, and the user-visible symptom before changing configuration.</p>
-            <small>Observe / reconcile / decide</small>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>Bound the risky action.</h3>
-            <p>Keep permissions narrow and irreversible transitions explicit enough for a person to inspect.</p>
-            <small>Guard / confirm / execute</small>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Make recovery routine.</h3>
-            <p>Snapshots, receipts, local history, and bounded retries turn failure into an ordinary operating state.</p>
-            <small>Record / retry / restore</small>
-          </li>
-          <li>
-            <span>04</span>
-            <h3>Verify at the surface.</h3>
-            <p>A successful command is only an intermediate event. The product or machine state is the result.</p>
-            <small>Probe / compare / close</small>
-          </li>
-        </ol>
-
-        <div class="practice-statement">
-          <p>The professional standard</p>
-          <blockquote>
-            Leave the system easier to understand, safer to operate, and less
-            dependent on memory than it was before.
-          </blockquote>
-        </div>
-      </section>
-
-      <section id="systems" class="section systems" aria-labelledby="systems-title">
-        <header class="section-intro">
-          <div>
-            <p class="section-label">Open systems index</p>
-            <h2 id="systems-title">A broader record of shipped work.</h2>
-          </div>
-          <p>
-            Selected public repositories across native apps, local-first tools,
-            private media, agentic automation, edge systems, and earlier research tooling.
-          </p>
-        </header>
-
-        <div class="system-index">
-          <article class="system-item">
-            <div class="system-symbol system-symbol-image"><img src="assets/italian-coach-icon.webp" alt="" width="96" height="96" loading="lazy" decoding="async" /></div>
-            <div class="system-name"><p>01 / Learning app</p><h3>Italian Coach</h3></div>
-            <p class="system-description">Adaptive, local-first Italian practice with mistake review and optional self-hosted sync.</p>
-            <p class="system-stack">macOS / Android</p>
-            <a href="https://github.com/spirosrap/italian-coach" aria-label="Open Italian Coach repository">Repository <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="system-item">
-            <div class="system-symbol system-symbol-plex">PX</div>
-            <div class="system-name"><p>02 / Self-hosted media</p><h3>Plex Open</h3></div>
-            <p class="system-description">Self-hosted browser and Android playback with subtitle discovery, managed offline storage, and confirmed local cleanup.</p>
-            <p class="system-stack">Web / Android</p>
-            <a href="https://github.com/spirosrap/plex-open-web" aria-label="Open Plex Open repository">Repository <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="system-item">
-            <div class="system-symbol system-symbol-agents">AU</div>
-            <div class="system-name"><p>03 / Agentic operations</p><h3>Review Automation</h3></div>
-            <p class="system-description">Evidence-led workflows with bounded worker QC, replayable state, receipt-gated handoffs, and durable mobile status.</p>
-            <p class="system-stack">Agents / macOS / iOS</p>
-            <a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension" aria-label="Open review automation repository">Repository <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="system-item">
-            <div class="system-symbol system-symbol-bridge">SC</div>
-            <div class="system-name"><p>04 / Native utility</p><h3>Screenshot Bridge</h3></div>
-            <p class="system-description">A Swift menu-bar utility that moves screenshots directly into a Codex workflow.</p>
-            <p class="system-stack">Swift / macOS</p>
-            <a href="https://github.com/spirosrap/CodexScreenshotBridge" aria-label="Open Screenshot Bridge repository">Repository <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="system-item">
-            <div class="system-symbol system-symbol-markets">RS</div>
-            <div class="system-name"><p>05 / Earlier work</p><h3>Past Markets Lab</h3></div>
-            <p class="system-description">Earlier local research and execution tooling, preserved as past work rather than a current trading focus.</p>
-            <p class="system-stack">Rust / Local dashboards</p>
-            <a href="https://github.com/spirosrap/coinbase-perps-lab" aria-label="Open past markets lab repository">Repository <span aria-hidden="true">↗</span></a>
-          </article>
-        </div>
-      </section>
-
-      <section class="stack-band" aria-label="Core technologies">
-        <p>Working stack</p>
-        <ul><li>Swift</li><li>Python</li><li>JavaScript</li><li>Rust</li><li>Shell</li><li>Linux</li><li>macOS</li><li>Android</li></ul>
-      </section>
-
-      <section id="contact" class="contact" aria-labelledby="contact-title">
-        <div class="contact-inner">
-          <div>
-            <p class="section-label">Start with the real operating condition</p>
-            <h2 id="contact-title">A dependable system begins with an honest account of what can fail.</h2>
-          </div>
-          <div class="contact-copy">
-            <p>
-              Bring the repository, the constraint, and the behavior that needs
-              to become observable, recoverable, or easier to operate.
-            </p>
-            <div class="contact-actions">
-              <a class="button button-dark" href="https://github.com/spirosrap">Open GitHub</a>
-              <a class="button button-outline-dark" href="https://x.com/srdevb">Message @srdevb</a>
-            </div>
+            <figcaption><span>Καλάθι Τιμών / Catalogue health</span><span>Web</span></figcaption>
+          </figure>
+          <div class="project-copy">
+            <h3 id="kalathi-title">Καλάθι Τιμών</h3>
+            <p class="project-tagline">A shopping list becomes a better buying decision.</p>
+            <p class="project-description">Compare the cost of your whole basket across Greek supermarkets. Choose up to four stops, explore price changes, and see when an extra trip is worth the saving.</p>
+            <div class="project-links"><a href="https://kalathitimon.com/">Open the app <span aria-hidden="true">↗</span></a><a href="https://github.com/spirosrap/posokanei-basket-demo">Source <span aria-hidden="true">↗</span></a></div>
+            <details class="release"><summary>Latest: clearer prices, better catalogue checks</summary><div class="release-body"><p>Package cost and price per kilogram or litre are now clearly distinguished. Six consistent full downloads over at least six hours can establish a changed retailer baseline, while broader completeness checks remain in place.</p><p>The <a href="https://kalathitimon.com/health/">public health page</a> explains catalogue coverage; <a href="https://kalathitimon.com/changes/">price history</a> makes changes inspectable and exportable.</p></div></details>
           </div>
         </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>© 2026 Spiros Raptis</p>
-      <p>Independent systems engineering / Thessaloniki</p>
-      <p><a href="https://github.com/spirosrap/agenticspiros.com">Site source <span aria-hidden="true">↗</span></a></p>
-    </footer>
-
-    <script>
-      const caseBrowser = document.querySelector("[data-case-browser]");
-      const caseViewTabs = [...document.querySelectorAll("[data-case-view][role='tab']")];
-      const caseImages = [...document.querySelectorAll("[data-case-image]")];
-      const caseViewOrder = caseViewTabs.map((tab) => tab.dataset.caseView);
-      const primaryCaseImage = caseImages.find((image) => image.dataset.caseImage === "health");
-      const secondaryCaseImage = caseImages.find((image) => image.dataset.caseImage === "history");
-      let secondaryCasePreload;
-
-      function hydratePrimaryCaseView() {
-        if (!primaryCaseImage?.dataset.src) return;
-
-        primaryCaseImage.srcset = primaryCaseImage.dataset.srcset;
-        primaryCaseImage.src = primaryCaseImage.dataset.src;
-        delete primaryCaseImage.dataset.src;
-        delete primaryCaseImage.dataset.srcset;
-        primaryCaseImage.hidden = false;
-      }
-
-      if (caseBrowser && primaryCaseImage) {
-        if ("IntersectionObserver" in window) {
-          const primaryCaseObserver = new IntersectionObserver((entries) => {
-            if (!entries.some((entry) => entry.isIntersecting)) return;
-            hydratePrimaryCaseView();
-            primaryCaseObserver.disconnect();
-          }, { rootMargin: "320px 0px" });
-          primaryCaseObserver.observe(caseBrowser);
-        } else {
-          window.addEventListener("load", hydratePrimaryCaseView, { once: true });
+      </article>
+      <article class="project" id="fleetlight" aria-labelledby="fleetlight-title">
+        <div class="project-top"><p class="eyebrow">02 / Native operations software</p><span class="project-kind">Public macOS · v1.67</span></div>
+        <div class="project-grid">
+          <figure class="project-media">
+            <div class="fleet-visual">
+              <div class="visual-heading"><span>FLEETLIGHT</span><span>macOS + Android</span></div>
+              <h4>One view of a mixed fleet.</h4>
+              <div class="fleet-platforms"><div class="platform"><strong>macOS</strong><p>Local observer<br />Health &amp; incident history<br />Verified maintenance</p></div><div class="platform"><strong>Linux</strong><p>Remote monitoring<br />APT · pacman · more<br />Runtime-aware updates</p></div></div>
+              <div class="fleet-path"><span>Observe</span><span>Check</span><span>Maintain</span><span>Verify</span></div>
+            </div>
+            <figcaption><span>System model / Monitoring through maintenance</span><span>Swift</span></figcaption>
+          </figure>
+          <div class="project-copy">
+            <h3 id="fleetlight-title">Fleetlight</h3>
+            <p class="project-tagline">Know what needs attention. Verify what changed.</p>
+            <p class="project-description">A native Mac app for monitoring and maintaining Macs and Linux machines, with an Android companion. It brings health checks, incident history, and confirmed updates into one place.</p>
+            <div class="project-links"><a href="https://github.com/spirosrap/fleetlight-macos">macOS source <span aria-hidden="true">↗</span></a><a href="https://github.com/spirosrap/fleetlight-android">Android source <span aria-hidden="true">↗</span></a></div>
+            <details class="release"><summary>Latest: Arch support and smarter tool updates</summary><div class="release-body"><p>Package detection now understands pacman-based Linux systems. Tool updates recognize installations managed by mise and verify the active version afterward.</p><p>Fresh checks can clear an old failure once the machine is confirmed current. Public macOS 1.67 and Android 1.15.6 were released together; the new updater behavior runs on macOS.</p></div></details>
+          </div>
+        </div>
+      </article>
+      <article class="project" id="plex" aria-labelledby="plex-title">
+        <div class="project-top"><p class="eyebrow">03 / Self-hosted media</p><span class="project-kind">Android · v0.22.3</span></div>
+        <div class="project-grid">
+          <figure class="project-media">
+            <div class="playback-visual">
+              <div class="visual-heading"><span>PLEX OPEN</span><span>Web + Android</span></div>
+              <h4>Your library. Wherever you watch.</h4>
+              <div class="playback-paths"><div class="playback-path"><strong>Connected</strong><p>Browse your library<br />Resume across devices<br />Find subtitles</p></div><div class="playback-path"><strong>Offline</strong><p>Saved video &amp; artwork<br />Local subtitle tracks<br />Managed device storage</p></div></div>
+              <div class="playback-foot">Playback paths / Shared server, private local copies</div>
+            </div>
+            <figcaption><span>Playback model / Online and offline</span><span>Android · Web</span></figcaption>
+          </figure>
+          <div class="project-copy">
+            <h3 id="plex-title">Plex Open</h3>
+            <p class="project-tagline">Media that keeps working when the connection changes.</p>
+            <p class="project-description">A web interface and native Android client for a self-hosted media library. Offline downloads keep video, artwork, and subtitles together, with visible storage use and confirmed removal.</p>
+            <div class="project-links"><a href="https://github.com/spirosrap/plex-open-android">Android source <span aria-hidden="true">↗</span></a><a href="https://github.com/spirosrap/plex-open-web">Web source <span aria-hidden="true">↗</span></a></div>
+            <details class="release"><summary>Latest: offline subtitles and clearer sign-in recovery</summary><div class="release-body"><p>Saved titles can acquire additional subtitle tracks while connected and retain them for offline playback. An expired session now leads to sign-in with a clear explanation.</p><p>Android 0.22.3 also dismisses the keyboard after a search, keeping the results ready to browse. The web app remains on 0.26.0 with its browser download manager.</p></div></details>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="section notes-section" id="updates" aria-labelledby="updates-title">
+      <div class="wrap notes-layout">
+        <div class="notes-intro"><p class="eyebrow muted">02 / Recent work</p><h2 id="updates-title">The work<br />between releases.</h2><p>Recent improvements across products, workflow automation, and the systems underneath.</p></div>
+        <div class="notes-list">
+          <article class="note"><time datetime="2026-09-04">04 SEP 2026</time><div><h3>Fleetlight meets more Linux setups.</h3><p>Added pacman package awareness and native mise updates. The controller verifies the installed result and reconciles earlier update warnings.</p><a href="https://github.com/spirosrap/fleetlight-macos/commit/e9b31b0">View the release work <span aria-hidden="true">↗</span></a></div></article>
+          <article class="note"><time datetime="2026-09-04">04 SEP 2026</time><div><h3>Bringing Mac and Wayland desktops together.</h3><p>Recent integration work covers remote viewing, shared input, and clipboard transfer between macOS and a Hyprland desktop. Recovery across restarts is an ongoing focus.</p></div></article>
+          <article class="note"><time datetime="2026-09-01">01 SEP 2026</time><div><h3>More resilient review workflows.</h3><p>Improved recovery when browser routes time out or a review tab needs to be restored. The work keeps evidence, workflow state, and the final handoff aligned.</p></div></article>
+          <article class="note"><time datetime="2026-08-31">31 AUG 2026</time><div><h3>Small labels. Meaningful price clarity.</h3><p>Kalathi Timon now separates package prices from normalized unit prices. Catalogue checks also adapt to persistent retailer changes after repeated confirmation.</p><a href="https://github.com/spirosrap/posokanei-basket-demo/commit/9edf9fb">View the change <span aria-hidden="true">↗</span></a></div></article>
+          <article class="note"><time datetime="2026-08-30">30 AUG 2026</time><div><h3>A smoother return to the media library.</h3><p>Plex Open Android handles expired sessions explicitly and gets the keyboard out of the way after searching. Offline subtitles received attention earlier in August.</p><a href="https://github.com/spirosrap/plex-open-android">Explore Android releases <span aria-hidden="true">↗</span></a></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="section wrap" id="systems" aria-labelledby="systems-title">
+      <div class="section-heading"><div><p class="eyebrow muted">03 / Project index</p><h2 id="systems-title">A wider body of work.</h2></div><p>More apps and utilities, built around real everyday needs.</p></div>
+      <div class="project-index">
+        <article class="index-row"><span class="index-mark" aria-hidden="true">CS</span><div class="index-title"><h3>Camera Sentinel</h3><span>Private edge systems</span></div><p>Camera monitoring with bounded background processing and power history that distinguishes current faults from past incidents.</p><a href="https://github.com/spirosrap/pi-camera-sentinel" aria-label="Camera Sentinel source">Source <span aria-hidden="true">↗</span></a></article>
+        <article class="index-row"><span class="index-mark" aria-hidden="true">IC</span><div class="index-title"><h3>Italian Coach</h3><span>macOS / Android</span></div><p>Local-first language practice with mistake review and optional self-hosted synchronization.</p><a href="https://github.com/spirosrap/italian-coach" aria-label="Italian Coach source">Source <span aria-hidden="true">↗</span></a></article>
+        <article class="index-row"><span class="index-mark" aria-hidden="true">RW</span><div class="index-title"><h3>Review tooling</h3><span>Workflow automation</span></div><p>Browser tools and companion apps that make review work easier to track, inspect, and recover.</p><a href="https://github.com/spirosrap/udacity-mentor-dashboard-extension" aria-label="Public review tooling source">Source <span aria-hidden="true">↗</span></a></article>
+        <article class="index-row"><span class="index-mark" aria-hidden="true">SB</span><div class="index-title"><h3>Screenshot Bridge</h3><span>Swift / macOS</span></div><p>A menu-bar utility that brings screenshots into a coding workflow with fewer manual steps.</p><a href="https://github.com/spirosrap/CodexScreenshotBridge" aria-label="Screenshot Bridge source">Source <span aria-hidden="true">↗</span></a></article>
+        <article class="index-row"><span class="index-mark" aria-hidden="true">ML</span><div class="index-title"><h3>Markets Lab</h3><span>Earlier work</span></div><p>Research and execution tooling from an earlier trading focus, retained as part of the engineering record.</p><a href="https://github.com/spirosrap/coinbase-perps-lab" aria-label="Earlier Markets Lab source">Source <span aria-hidden="true">↗</span></a></article>
+      </div>
+    </section>
+    <section class="section practice" id="about" aria-labelledby="about-title">
+      <div class="wrap practice-grid">
+        <div><p class="eyebrow muted">04 / How I work</p><h2 id="about-title">The details matter<br />after launch, too.</h2></div>
+        <div class="practice-copy"><p>I'm an independent engineer based in Thessaloniki. My work spans consumer apps, native tools, automation, and Linux systems. I like turning a recurring frustration into something useful, then refining it through actual use.</p><div class="practice-points"><div><h3>Make the state clear.</h3><p>Show what is happening, what changed, and what needs attention.</p></div><div><h3>Follow through.</h3><p>Test the result where it is used, and keep a practical path to recovery.</p></div></div></div>
+      </div>
+    </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid"><div><p class="eyebrow">Have something worth building?</p><h2 id="contact-title">Let's make it work.</h2><p>A product idea, a workflow that keeps getting in the way, or a system that could be easier to run.</p></div><div class="contact-links"><a href="https://x.com/srdevb">Message on X <span aria-hidden="true">↗</span></a><a href="https://github.com/spirosrap">GitHub <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Spiros Raptis</span><span>Updated 5 September 2026 · v13.0.0</span><a href="https://github.com/spirosrap/agenticspiros.com">Site source <span aria-hidden="true">↗</span></a></div></footer>
+  <script>
+    const projectShot = document.querySelector(".project-shot");
+    function loadProjectShot() {
+      projectShot.srcset = projectShot.dataset.srcset;
+      projectShot.src = projectShot.dataset.src;
+    }
+    if ("IntersectionObserver" in window) {
+      const imageObserver = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          loadProjectShot();
+          imageObserver.disconnect();
         }
-
-        document.querySelectorAll('a[href="#work"]').forEach((link) => {
-          link.addEventListener("click", hydratePrimaryCaseView, { once: true });
+      }, { rootMargin: "100px 0px" });
+      imageObserver.observe(projectShot);
+    } else {
+      loadProjectShot();
+    }
+    const navigation = [...document.querySelectorAll(".site-nav a")];
+    const sections = navigation.map(link => document.querySelector(link.hash));
+    if ("IntersectionObserver" in window) {
+      const visible = new Set();
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => entry.isIntersecting ? visible.add(entry.target.id) : visible.delete(entry.target.id));
+        const active = sections.find(section => visible.has(section.id));
+        navigation.forEach(link => {
+          if (active && link.hash === "#" + active.id) link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
         });
-      }
-
-      function preloadSecondaryCaseView() {
-        if (!secondaryCaseImage || secondaryCasePreload || (secondaryCaseImage.complete && secondaryCaseImage.naturalWidth > 0)) return;
-
-        secondaryCasePreload = new Image();
-        secondaryCasePreload.fetchPriority = "low";
-        secondaryCasePreload.decoding = "async";
-        secondaryCasePreload.sizes = secondaryCaseImage.sizes;
-        secondaryCasePreload.srcset = secondaryCaseImage.srcset;
-        secondaryCasePreload.src = secondaryCaseImage.src;
-      }
-
-      if (caseBrowser && secondaryCaseImage) {
-        if ("IntersectionObserver" in window) {
-          const secondaryCaseObserver = new IntersectionObserver((entries) => {
-            if (!entries.some((entry) => entry.isIntersecting)) return;
-            preloadSecondaryCaseView();
-            secondaryCaseObserver.disconnect();
-          }, { rootMargin: "120px 0px" });
-          secondaryCaseObserver.observe(caseBrowser);
-        } else {
-          window.addEventListener("load", preloadSecondaryCaseView, { once: true });
-        }
-
-        const secondaryCaseTab = caseViewTabs.find((tab) => tab.dataset.caseView === "history");
-        secondaryCaseTab?.addEventListener("pointerenter", preloadSecondaryCaseView, { once: true });
-        secondaryCaseTab?.addEventListener("focus", preloadSecondaryCaseView, { once: true });
-        document.querySelectorAll('a[href="#work"]').forEach((link) => {
-          link.addEventListener("click", preloadSecondaryCaseView, { once: true });
-        });
-      }
-
-      function activateCaseView(view, { focus = false } = {}) {
-        const nextIndex = caseViewOrder.indexOf(view);
-        if (!caseBrowser || nextIndex < 0) return;
-
-        if (view === "health") hydratePrimaryCaseView();
-
-        caseBrowser.dataset.activeView = view;
-
-        caseViewTabs.forEach((tab) => {
-          const isActive = tab.dataset.caseView === view;
-          tab.setAttribute("aria-selected", String(isActive));
-          tab.tabIndex = isActive ? 0 : -1;
-          if (isActive && focus) tab.focus();
-        });
-
-        caseImages.forEach((image) => {
-          image.hidden = image.dataset.caseImage !== view;
-        });
-      }
-
-      caseViewTabs.forEach((tab) => {
-        tab.addEventListener("click", () => activateCaseView(tab.dataset.caseView));
-
-        tab.addEventListener("keydown", (event) => {
-          const currentIndex = caseViewOrder.indexOf(tab.dataset.caseView);
-          let nextIndex = currentIndex;
-
-          if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % caseViewOrder.length;
-          if (event.key === "ArrowLeft") {
-            nextIndex = (currentIndex - 1 + caseViewOrder.length) % caseViewOrder.length;
-          }
-          if (event.key === "Home") nextIndex = 0;
-          if (event.key === "End") nextIndex = caseViewOrder.length - 1;
-
-          if (nextIndex !== currentIndex) {
-            event.preventDefault();
-            activateCaseView(caseViewOrder[nextIndex], { focus: true });
-          }
-        });
-      });
-
-      const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-      const observedSections = sectionLinks
-        .map((link) => document.querySelector(link.getAttribute("href")))
-        .filter(Boolean);
-      let activeSectionId = "";
-
-      function setCurrentLink(sectionId) {
-        if (sectionId === activeSectionId) return;
-        activeSectionId = sectionId;
-
-        sectionLinks.forEach((link) => {
-          if (link.getAttribute("href") === `#${sectionId}`) {
-            link.setAttribute("aria-current", "location");
-          } else {
-            link.removeAttribute("aria-current");
-          }
-        });
-      }
-
-      sectionLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          const sectionId = link.getAttribute("href").slice(1);
-          setCurrentLink(sectionId);
-        });
-      });
-
-      if (observedSections.length) {
-        setCurrentLink(observedSections[0].id);
-
-        if ("IntersectionObserver" in window) {
-          const navigationObserver = new IntersectionObserver((entries) => {
-            const activeEntry = entries
-              .filter((entry) => entry.isIntersecting)
-              .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-
-            if (activeEntry) setCurrentLink(activeEntry.target.id);
-          }, { rootMargin: "-72px 0px -68% 0px" });
-
-          observedSections.forEach((section) => navigationObserver.observe(section));
-        }
-      }
-    </script>
-  </body>
+      }, { rootMargin: "-20% 0px -45% 0px" });
+      sections.forEach(section => observer.observe(section));
+    }
+  </script>
+</body>
 </html>
