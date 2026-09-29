@@ -3,10 +3,11 @@
 Static personal site for Spiros Raptis, live at
 [agenticspiros.com](https://agenticspiros.com).
 
-Current release: `v14.0.0`.
+Current release: `v14.1.0`.
 
-Version 14 is a visual redesign: self-hosted Commissioner and Instrument Serif
-type, a warm paper palette with a single green accent, rounded tinted project
+Version 14 is a visual redesign: self-hosted IBM Plex Mono for headlines and
+labels with IBM Plex Sans for body text (one type family, so small and large
+text read as a single system), a warm paper palette with a single green accent, rounded tinted project
 cards, a timeline for recent work, a card grid for the project index, and a
 contained dark contact panel. Kalathi Timon is listed at 0.38.2 with its
 29 September interface refresh. Three featured projects have concise introductions and native expandable
@@ -15,7 +16,7 @@ Android 0.22.3. A dated activity section covers recent product, workflow, and
 desktop-integration work. Camera Sentinel and other maintained projects remain
 in the project index; markets tooling stays explicitly labeled as earlier work.
 
-The page uses four self-hosted woff2 font files (about 95 KB in total, latin
+The page uses four self-hosted woff2 font files (about 96 KB in total, latin
 and Greek subsets), responsive local images, inline CSS, and a small
 progressive-enhancement navigation script. All content and release disclosures
 work without JavaScript. There are no third-party runtime resources or analytics.
