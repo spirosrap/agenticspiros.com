@@ -3,22 +3,25 @@
 Static personal site for Spiros Raptis, live at
 [agenticspiros.com](https://agenticspiros.com).
 
-Current release: `v15.2.0`.
+Current release: `v15.2.1`.
+
+Version 15.2.1 replaces the Kalathi Timon hero and phone images with captures
+from 0.39.2 and removes a historical version number from the Fleetlight demo
+screenshot caption. The Fleetlight screenshot remains a fictional demo capture;
+the Linux card names the current 0.8.6 release separately.
 
 Version 15.2 refreshes the site's product and activity copy through 6 November
 2026. It covers Kalathi Timon 0.39.2, Fleetlight for Linux 0.8.6, and the new
 WatchBridge project; it also removes outdated version badges from the macOS,
-Android, and Plex Open editions. The existing Kalathi Timon 0.38.2 preview and
-Fleetlight 0.5.0 demo screenshot remain labeled with their capture versions.
+Android, and Plex Open editions.
 
-Version 15.1 replaces the Fleetlight screenshot with the 0.5.0 fleet overview
-(agent quota cards, resource gauges and activity), captured on 21 October 2026
-from the app's fictional demo mode.
+Version 15.1 refreshed the Fleetlight overview screenshot (agent quota cards,
+resource gauges and activity) with fictional demo data captured on 21 October
+2026.
 
 Version 15 repositions the site for prospective clients while keeping the
 IBM Plex type system and green accent from version 14. The page now opens with
-a value proposition, real product screenshots (Kalathi Timon 0.38.2 and
-Fleetlight for Linux 0.5.0 with its public demo data), and a proof strip, then
+a value proposition, product screenshots, and a proof strip, then
 continues with a services section, three case studies with facts, stack and
 expandable release notes, a four-step process, a dated activity timeline, the
 project index, and an about section with working principles and toolbox.
