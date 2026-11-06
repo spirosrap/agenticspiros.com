@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="build-version" content="15.1.0" />
-  <meta name="description" content="Spiros Raptis is an independent software and systems engineer. Web products, native apps for macOS, Android and Linux, and the automation that keeps them running." />
+  <meta name="build-version" content="15.2.0" />
+  <meta name="description" content="Spiros Raptis is an independent software and systems engineer building web products, native apps, automation, and practical AI workflows." />
   <meta name="theme-color" content="#0a100e" />
   <link rel="canonical" href="https://agenticspiros.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Spiros Raptis — Software & Systems Engineer" />
-  <meta property="og:description" content="Software that ships. Systems that stay up. Web products, native apps, and the automation that keeps them running." />
+  <meta property="og:description" content="Software that ships. Systems that stay up. Web products, native apps, automation, and practical AI workflows." />
   <meta property="og:url" content="https://agenticspiros.com/" />
   <meta property="og:image" content="https://agenticspiros.com/assets/site-v15-og.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -311,7 +311,7 @@ html{scroll-padding-top:76px}
           <p class="status"><i aria-hidden="true"></i>Available for new projects</p>
           <p class="hero-role">Spiros Raptis · Software &amp; systems engineer</p>
           <h1 id="hero-title">Software that ships.<span>Systems that stay up.</span></h1>
-          <p class="hero-description">I design, build, and run web products, native apps, and automation. You work directly with the engineer who writes the code, ships it, and keeps it healthy afterwards.</p>
+          <p class="hero-description">I design, build, and run web products, native apps, automation, and practical AI workflows. You work directly with the engineer who writes the code, ships it, and keeps it healthy afterwards.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#contact">Start a project <span class="arrow" aria-hidden="true">→</span></a>
             <a class="button button-outline" href="#work">See the work <span class="arrow" aria-hidden="true">↓</span></a>
@@ -320,7 +320,7 @@ html{scroll-padding-top:76px}
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="window">
-            <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span><span>kalathitimon.com</span><span>v0.38.2</span></div>
+            <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span><span>kalathitimon.com</span><span>Preview · v0.38.2</span></div>
             <img src="assets/kalathitimon-app-v0382-1440.webp" srcset="assets/kalathitimon-app-v0382-800.webp 800w, assets/kalathitimon-app-v0382-1440.webp 1440w" sizes="(max-width:960px) calc(100vw - 40px), 600px" width="1440" height="900" alt="" fetchpriority="high" decoding="async" />
           </div>
           <div class="window window-dark window-float">
@@ -375,7 +375,7 @@ html{scroll-padding-top:76px}
       <div class="wrap">
         <div class="section-heading" data-reveal><div><p class="eyebrow">02 / Selected work</p><h2 id="work-title">Built. Used. Improved.</h2></div><p>Three products in active development. All are public, and you can read the source.</p></div>
         <article class="project project-kalathi" id="kalathi" aria-labelledby="kalathi-title" data-reveal>
-          <div class="project-top"><p class="eyebrow">Consumer web product</p><div class="versions"><span>Live · v0.38.2</span></div></div>
+          <div class="project-top"><p class="eyebrow">Consumer web product</p><div class="versions"><span>Live · v0.39.2</span></div></div>
           <div class="project-grid">
             <figure class="project-media">
               <div class="media-kalathi">
@@ -391,15 +391,15 @@ html{scroll-padding-top:76px}
               <h3 id="kalathi-title">Καλάθι Τιμών</h3>
               <p class="project-tagline">A shopping list becomes a better buying decision.</p>
               <p class="project-description">Compare the cost of your whole basket across Greek supermarkets. Choose up to four stops, explore price changes, and see when an extra trip is worth the saving.</p>
-              <dl class="facts"><div><dt>9,000+</dt><dd>products in the live catalogue</dd></div><div><dt>Hourly</dt><dd>price refresh, checked before publishing</dd></div><div><dt>64 KiB</dt><dd>startup JavaScript budget, enforced</dd></div></dl>
+              <dl class="facts"><div><dt>10,000+</dt><dd>products in the live catalogue</dd></div><div><dt>Hourly</dt><dd>price refresh, checked before publishing</dd></div><div><dt>64 KiB</dt><dd>startup JavaScript budget, enforced</dd></div></dl>
               <ul class="stack" aria-label="Technology"><li>React</li><li>Vite</li><li>Web Workers</li><li>PHP</li><li>GitHub Actions</li></ul>
               <div class="project-links"><a href="https://kalathitimon.com/">Open the app <span aria-hidden="true">↗</span></a><a href="https://kalathitimon.com/changes/">Price history <span aria-hidden="true">↗</span></a><a href="https://github.com/spirosrap/posokanei-basket-demo">Source <span aria-hidden="true">↗</span></a></div>
-              <details class="release"><summary>Latest: catalogue refreshes that survive an outage</summary><div class="release-body"><p>Version 0.38.2 keeps the other chains updating when one small retailer feed disappears. Affected products stay in saved baskets without stale prices, with a visible warning until the source recovers. Version 0.38.1 added health checks that catch failed refreshes, prices older than three hours, and a stalled scheduler.</p><p>The interface moved to a warmer palette with Greek-native type on 29 September 2026. The <a href="https://kalathitimon.com/health/">public health page</a> explains catalogue coverage; <a href="https://kalathitimon.com/changes/">price history</a> makes changes inspectable and exportable.</p></div></details>
+              <details class="release"><summary>Latest: a clearer first visit and visible catalogue health</summary><div class="release-body"><p>Version 0.39.2 adds navigation, a short guide, and optional steps above the basket planner so a first-time visitor can get oriented. The catalogue notice appears when a refresh actually needs attention; the ordinary update time stays unobtrusive.</p><p>Refresh health is checked before new prices are published, and a missing retailer feed no longer stalls the other chains. The <a href="https://kalathitimon.com/health/">public health page</a> explains catalogue coverage; <a href="https://kalathitimon.com/changes/">price history</a> makes changes inspectable and exportable.</p></div></details>
             </div>
           </div>
         </article>
         <article class="project project-fleet" id="fleetlight" aria-labelledby="fleetlight-title" data-reveal>
-          <div class="project-top"><p class="eyebrow">Native operations software</p><div class="versions"><span>macOS 4.52</span><span>Linux 0.5.0</span><span>Android 1.15.6</span></div></div>
+          <div class="project-top"><p class="eyebrow">Native operations software</p><div class="versions"><span>macOS</span><span>Linux 0.8.6</span><span>Android</span></div></div>
           <div class="project-grid">
             <figure class="project-media">
               <a class="frame frame-dark" href="https://github.com/spirosrap/fleetlight-linux" aria-label="Fleetlight for Linux source on GitHub">
@@ -414,12 +414,12 @@ html{scroll-padding-top:76px}
               <dl class="facts"><div><dt>3 editions</dt><dd>macOS, Linux, and Android, each native</dd></div><div><dt>SSH only</dt><dd>uses the access you already have</dd></div><div><dt>Verified</dt><dd>every update is checked after it runs</dd></div></dl>
               <ul class="stack" aria-label="Technology"><li>Swift</li><li>Kotlin</li><li>Python</li><li>GTK4 / libadwaita</li><li>SSH</li></ul>
               <div class="project-links"><a href="https://github.com/spirosrap/fleetlight-macos">macOS source <span aria-hidden="true">↗</span></a><a href="https://github.com/spirosrap/fleetlight-linux">Linux source <span aria-hidden="true">↗</span></a><a href="https://github.com/spirosrap/fleetlight-android">Android source <span aria-hidden="true">↗</span></a></div>
-              <details class="release"><summary>Latest: a native edition for the Linux desktop</summary><div class="release-body"><p>Fleetlight for Linux 0.5.0 is a native GTK4 and libadwaita app that monitors Linux and macOS hosts directly, with no Mac controller required. The fleet overview shows CPU, memory and disk gauges with 24-hour reachability for every computer, the remaining Codex, Cursor and Claude quota, fleet-wide updates that run in parallel, and desktop notifications when a computer goes offline or a service stops.</p><p>On macOS, version 4.52 supports native Omarchy update checks and unattended jobs, and refreshes Linux desktop app status on a schedule.</p></div></details>
+              <details class="release"><summary>Latest: updates that recover when a source lags</summary><div class="release-body"><p>The native Linux edition monitors Linux and macOS hosts directly over SSH, with no Mac controller required. Its fleet overview shows resources, reachability, agent quota, and recent activity; updates report what changed after they run.</p><p>Version 0.8.6 retries mise-managed CLI updates directly from GitHub when the versions host has not caught up. Recent releases also retry network failures and close restart jobs that never report back, rather than leaving the fleet waiting indefinitely.</p></div></details>
             </div>
           </div>
         </article>
         <article class="project project-plex" id="plex" aria-labelledby="plex-title" data-reveal>
-          <div class="project-top"><p class="eyebrow">Self-hosted media</p><div class="versions"><span>Android 0.22.3</span><span>Web 0.26.0</span></div></div>
+          <div class="project-top"><p class="eyebrow">Self-hosted media</p><div class="versions"><span>Android</span><span>Web</span></div></div>
           <div class="project-grid">
             <figure class="project-media">
               <div class="playback-visual">
@@ -437,7 +437,7 @@ html{scroll-padding-top:76px}
               <dl class="facts"><div><dt>Offline</dt><dd>video, artwork, and subtitles saved together</dd></div><div><dt>Resume</dt><dd>synchronized position across devices</dd></div><div><dt>Background</dt><dd>picture-in-picture and lock-screen playback</dd></div></dl>
               <ul class="stack" aria-label="Technology"><li>Java</li><li>Media3</li><li>Python</li><li>JavaScript</li><li>HLS</li></ul>
               <div class="project-links"><a href="https://github.com/spirosrap/plex-open-android">Android source <span aria-hidden="true">↗</span></a><a href="https://github.com/spirosrap/plex-open-web">Web source <span aria-hidden="true">↗</span></a></div>
-              <details class="release"><summary>Latest: offline subtitles and clearer sign-in recovery</summary><div class="release-body"><p>Saved titles can acquire additional subtitle tracks while connected and retain them for offline playback. An expired session now leads to sign-in with a clear explanation, and the keyboard gets out of the way after a search.</p><p>In progress on Android: more reliable seeking for transcoded titles. The web app remains on 0.26.0 with its browser download manager.</p></div></details>
+              <details class="release"><summary>Offline playback and a more capable web library</summary><div class="release-body"><p>Saved titles keep video, artwork, and subtitles together for offline playback. While connected, viewers can add subtitle tracks to saved titles and resume across devices.</p><p>The web app has a downloads hub for managing browser storage, along with library search, collections, and a sign-in flow that explains expired sessions.</p></div></details>
             </div>
           </div>
         </article>
@@ -458,14 +458,17 @@ html{scroll-padding-top:76px}
       <div class="wrap notes-layout">
         <div class="notes-intro" data-reveal><p class="eyebrow">04 / Recent work</p><h2 id="updates-title">The work<br />between releases.</h2><p>Recent improvements across products, workflow automation, and the systems underneath.</p></div>
         <div class="notes-list">
+          <article class="note"><time datetime="2026-11-06">06 NOV 2026</time><div><span class="note-tag">Fleetlight</span><h3>Updates recover when a release source lags.</h3><p>Fleetlight for Linux 0.8.6 retries mise-managed CLI updates directly from GitHub when the versions host has not caught up. Recent releases also handle network failures and stalled restarts without leaving an update in limbo.</p><a class="text-link" href="https://github.com/spirosrap/fleetlight-linux/commit/a51c612">View the release <span aria-hidden="true">↗</span></a></div></article>
+          <article class="note"><time datetime="2026-10-15">15 OCT 2026</time><div><span class="note-tag">WatchBridge</span><h3>Android notifications on an Apple Watch.</h3><p>A native Android app sends selected notifications through APNs to a standalone watchOS app. The watch stays paired to an iPhone, but there is no relay server in between.</p><a class="text-link" href="https://github.com/spirosrap/watchbridge">Explore WatchBridge <span aria-hidden="true">↗</span></a></div></article>
+          <article class="note"><time datetime="2026-10-03">03 OCT 2026</time><div><span class="note-tag">Καλάθι Τιμών</span><h3>A clearer way into the basket planner.</h3><p>Version 0.39.2 adds navigation, a short guide, and optional steps for first-time visitors. A catalogue warning now appears only when a refresh needs attention.</p><a class="text-link" href="https://github.com/spirosrap/posokanei-basket-demo/commit/1a0e64f">View the release <span aria-hidden="true">↗</span></a></div></article>
+          <details class="earlier">
+            <summary>Earlier work</summary>
           <article class="note"><time datetime="2026-09-30">30 SEP 2026</time><div><span class="note-tag">Fleetlight</span><h3>Fleetlight arrives on the Linux desktop.</h3><p>Version 0.4.0 rebuilds the Linux edition as a native libadwaita app with a fleet overview, trend sparklines, and desktop notifications. Agent quota cards now show the subscribed plan next to what remains.</p><a class="text-link" href="https://github.com/spirosrap/fleetlight-linux">View the Linux edition <span aria-hidden="true">↗</span></a></div></article>
           <article class="note"><time datetime="2026-09-29">29 SEP 2026</time><div><span class="note-tag">Καλάθι Τιμών</span><h3>A warmer face for Καλάθι Τιμών.</h3><p>The shopping app moved to a calmer palette, Greek-native type, and cleaner cards in light and dark mode, with no change to how baskets and plans are computed.</p><a class="text-link" href="https://kalathitimon.com/">Open the app <span aria-hidden="true">↗</span></a></div></article>
           <article class="note"><time datetime="2026-09-28">28 SEP 2026</time><div><span class="note-tag">Καλάθι Τιμών</span><h3>One missing feed no longer stalls the catalogue.</h3><p>Version 0.38.2 keeps the other chains updating when a small retailer source disappears. Its products stay in saved baskets without stale prices, behind a visible warning, until the source recovers.</p><a class="text-link" href="https://github.com/spirosrap/posokanei-basket-demo/commit/255e181">View the change <span aria-hidden="true">↗</span></a></div></article>
           <article class="note"><time datetime="2026-09-21">21 SEP 2026</time><div><span class="note-tag">Καλάθι Τιμών</span><h3>Health checks that notice a quiet failure.</h3><p>Version 0.38.1 restored reliable catalogue synchronization and taught the health check to detect failed refreshes, prices older than three hours, and a stalled scheduler, even when the server still answers normally.</p><a class="text-link" href="https://github.com/spirosrap/posokanei-basket-demo/commit/6309fe1">View the release <span aria-hidden="true">↗</span></a></div></article>
           <article class="note"><time datetime="2026-09-19">19 SEP 2026</time><div><span class="note-tag">Fleetlight</span><h3>Quota at a glance, updates on autopilot.</h3><p>Fleetlight for Linux shows the remaining Codex and Cursor quota from the signed-in sessions, with Claude added a few days later, and can install tool and package updates as soon as checks find them. Restarts always stay manual.</p><a class="text-link" href="https://github.com/spirosrap/fleetlight-linux">View the source <span aria-hidden="true">↗</span></a></div></article>
           <article class="note"><time datetime="2026-09-11">11 SEP 2026</time><div><span class="note-tag">Fleetlight</span><h3>Native update checks for Omarchy machines.</h3><p>Fleetlight on macOS now runs Omarchy's own update checks and unattended jobs, and refreshes Linux desktop app status on a schedule instead of waiting for a manual check.</p><a class="text-link" href="https://github.com/spirosrap/fleetlight-macos/commit/14b8296">View the change <span aria-hidden="true">↗</span></a></div></article>
-          <details class="earlier">
-            <summary>Earlier work</summary>
             <article class="note"><time datetime="2026-09-05">05 SEP 2026</time><div><span class="note-tag">Καλάθι Τιμών</span><h3>Undo for the basket, and a faster way to find things in it.</h3><p>Version 0.38.0 added undo and redo for up to 20 basket edits, search inside the basket by name, brand, or barcode, and a filter for products that fall outside the selected plan.</p><a class="text-link" href="https://github.com/spirosrap/posokanei-basket-demo/commit/d64ef13">View the release <span aria-hidden="true">↗</span></a></div></article>
             <article class="note"><time datetime="2026-09-04">04 SEP 2026</time><div><span class="note-tag">Fleetlight</span><h3>Fleetlight meets more Linux setups.</h3><p>Added pacman package awareness and native mise updates. The controller verifies the installed result and reconciles earlier update warnings.</p><a class="text-link" href="https://github.com/spirosrap/fleetlight-macos/commit/e9b31b0">View the release work <span aria-hidden="true">↗</span></a></div></article>
             <article class="note"><time datetime="2026-09-04">04 SEP 2026</time><div><span class="note-tag">Desktop integration</span><h3>Bringing Mac and Wayland desktops together.</h3><p>Recent integration work covers remote viewing, shared input, and clipboard transfer between macOS and a Hyprland desktop. Recovery across restarts is an ongoing focus.</p></div></article>
@@ -479,6 +482,7 @@ html{scroll-padding-top:76px}
     <section class="section wrap" id="systems" aria-labelledby="systems-title">
       <div class="section-heading" data-reveal><div><p class="eyebrow">05 / Project index</p><h2 id="systems-title">A wider body of work.</h2></div><p>More apps and utilities, each built around a real everyday need.</p></div>
       <div class="project-index">
+        <article class="index-row" data-reveal><span class="index-mark" aria-hidden="true">WB</span><div class="index-title"><h3>WatchBridge</h3><span>Kotlin · SwiftUI</span></div><p>Android notifications delivered to an Apple Watch through APNs, without a relay server.</p><a class="text-link" href="https://github.com/spirosrap/watchbridge" aria-label="WatchBridge source">Source <span aria-hidden="true">↗</span></a></article>
         <article class="index-row" data-reveal><span class="index-mark" aria-hidden="true">CS</span><div class="index-title"><h3>Camera Sentinel</h3><span>Python · Raspberry Pi</span></div><p>Camera monitoring with bounded background processing and power history that distinguishes current faults from past incidents.</p><a class="text-link" href="https://github.com/spirosrap/pi-camera-sentinel" aria-label="Camera Sentinel source">Source <span aria-hidden="true">↗</span></a></article>
         <article class="index-row" data-reveal><span class="index-mark" aria-hidden="true">IC</span><div class="index-title"><h3>Italian Coach</h3><span>macOS · Android</span></div><p>Local-first language practice with mistake review and optional self-hosted synchronization.</p><a class="text-link" href="https://github.com/spirosrap/italian-coach" aria-label="Italian Coach source">Source <span aria-hidden="true">↗</span></a></article>
         <article class="index-row" data-reveal><span class="index-mark" aria-hidden="true">RW</span><div class="index-title"><h3>Review tooling</h3><span>Browser extension</span></div><p>Browser tools and companion apps that make review work easier to track, inspect, and recover.</p><a class="text-link" href="https://github.com/spirosrap/udacity-mentor-dashboard-extension" aria-label="Public review tooling source">Source <span aria-hidden="true">↗</span></a></article>
@@ -501,7 +505,7 @@ html{scroll-padding-top:76px}
         </div>
         <div class="about-copy" data-reveal>
           <p class="about-lede">I'm an independent engineer who likes turning a recurring frustration into something useful, then refining it through actual use.</p>
-          <p>My work spans consumer apps, native tools, automation, and Linux systems. Years of reviewing other people's code have made me strict about clear state, honest error handling, and software that explains what it is doing.</p>
+          <p>My work spans consumer apps, native tools, automation, AI workflows, and Linux systems. Years of reviewing other people's code have made me strict about clear state, honest error handling, and software that explains what it is doing.</p>
           <div class="principles">
             <div><h3>Make the state clear.</h3><p>Show what is happening, what changed, and what needs attention.</p></div>
             <div><h3>Follow through.</h3><p>Test the result where it is used, and keep a practical path to recovery.</p></div>
@@ -520,7 +524,7 @@ html{scroll-padding-top:76px}
       <div class="wrap"><div class="contact-card" data-reveal><div class="contact-grid"><div><p class="eyebrow">Have something worth building?</p><h2 id="contact-title">Let's make it work.</h2><p>A product idea, a workflow that keeps getting in the way, or a system that could be easier to run. Tell me what you are trying to get done.</p></div><div class="contact-links"><a class="button button-primary" href="https://x.com/srdevb">Message on X <span class="arrow" aria-hidden="true">↗</span></a><a class="button button-outline" href="https://github.com/spirosrap">GitHub <span class="arrow" aria-hidden="true">↗</span></a></div></div></div></div>
     </section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Spiros Raptis</span><span>Updated 21 October 2026 · v15.1.0</span><a href="https://github.com/spirosrap/agenticspiros.com">Site source <span aria-hidden="true">↗</span></a></div></footer>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Spiros Raptis</span><span>Updated 6 November 2026 · v15.2.0</span><a href="https://github.com/spirosrap/agenticspiros.com">Site source <span aria-hidden="true">↗</span></a></div></footer>
   <script>
     const navigation = [...document.querySelectorAll(".site-nav a")];
     const sections = navigation.map(link => document.querySelector(link.hash));
