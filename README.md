@@ -3,7 +3,11 @@
 Static personal site for Spiros Raptis, live at
 [agenticspiros.com](https://agenticspiros.com).
 
-Current release: `v15.2.1`.
+Current release: `v15.3.0`.
+
+Version 15.3.0 adds the CHIMERA vocal band (hosted under `/chimera-song-mouth/`,
+source in `spirosrap/chimera-song-mouth`) to the recent-work notes and the
+project index.
 
 Version 15.2.1 replaces the Kalathi Timon hero and phone images with captures
 from 0.39.2 and removes a historical version number from the Fleetlight demo
