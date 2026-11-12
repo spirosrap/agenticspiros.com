@@ -3,7 +3,11 @@
 Static personal site for Spiros Raptis, live at
 [agenticspiros.com](https://agenticspiros.com).
 
-Current release: `v15.3.0`.
+Current release: `v15.4.0`.
+
+Version 15.4.0 adds the Fable Piano library (hosted under `/fable-piano/`,
+source in `spirosrap/fable-piano`, built on kishida’s Fable Piano) to the
+recent-work notes and the project index.
 
 Version 15.3.0 adds the CHIMERA vocal band (hosted under `/chimera-song-mouth/`,
 source in `spirosrap/chimera-song-mouth`) to the recent-work notes and the
